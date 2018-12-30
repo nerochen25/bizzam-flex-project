@@ -1,9 +1,9 @@
 .project-title {
     font-size: 48px;
-    /* background: linear-gradient(330deg, #ff9900 0%, #0C2EB7 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); */
-    /* -webkit-background-clip: text;
+    background: linear-gradient(330deg, #ff9900 0%, #0C2EB7 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
+    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
     text-align: center;
     color: #ff9900;
     margin-top: 40px;
@@ -11,12 +11,12 @@
 }
 
 .blue {
-    color: #0C2EB7;
+    /* color: #0C2EB7; */
     font-size: 40px;
 }
 
 .orange {
-    color: #ff9900;
+    /* color: #ff9900; */
     font-size: 40px;
 }
 

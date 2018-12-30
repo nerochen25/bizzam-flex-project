@@ -18,7 +18,7 @@
 }
 
 .labels {
-    margin-left: 30px;
+    margin-left: 70px;
     color: #0C2EB7;
     font-family: 'Antic Slab',
     Monaco,
@@ -29,6 +29,11 @@
     margin: 15px 40px;
     padding: 10px 40px;
     border: 2px solid rgb(157, 166, 202);
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
 }
 
 .input-field-1 {
@@ -36,17 +41,19 @@
 }
 
 .form-btn {
-    margin-left: 30px;
+    margin-left: 70px;
+    margin-bottom: 20px;
     border: 2px ridge #0C2EB7;
     color: #ff9900;
     background-color: #0C2EB7;
     font-size: 16px;
-    padding: 5px 20px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    font-weight: 700;
+    padding: 5px 26px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
 }
 
 .form-btn:hover {
