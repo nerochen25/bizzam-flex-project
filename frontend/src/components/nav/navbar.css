@@ -1,0 +1,91 @@
+.project-title {
+    font-size: 48px;
+    /* background: linear-gradient(330deg, #ff9900 0%, #0C2EB7 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); */
+    /* -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    text-align: center;
+    color: #ff9900;
+    margin-top: 40px;
+    position: relative;
+}
+
+.blue {
+    color: #0C2EB7;
+    font-size: 40px;
+}
+
+.orange {
+    color: #ff9900;
+    font-size: 40px;
+}
+
+.rotate-scale-up {
+    -webkit-animation: rotate-scale-up 0.65s linear both;
+    animation: rotate-scale-up 0.65s linear both;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+}
+
+@-webkit-keyframes rotate-scale-up {
+    0% {
+        -webkit-transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+    }
+
+    50% {
+        -webkit-transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+    }
+
+    100% {
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+    }
+}
+
+@keyframes rotate-scale-up {
+    0% {
+        -webkit-transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+    }
+
+    50% {
+        -webkit-transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+    }
+
+    100% {
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    /* align-items: flex-end; */
+}
+
+.navbar .links1 {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    color: #0C2EB7;
+    /* border: 1px solid #ff9900;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px; */
+    padding: 8px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.navbar .links1:hover {
+    color: #ff9900;
+}

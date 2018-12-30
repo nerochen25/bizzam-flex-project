@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-// import './navbar.css'
+import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -26,23 +26,27 @@ class NavBar extends React.Component {
             </div>
         );
       } else {
-        return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <br />
-                <Link to={'/login'}>Login</Link>
-            </div>
-        );
+        return <div className="navbar">
+				<Link to={'/signup'} className="links1">
+					Signup
+				</Link>
+				<br />
+				<Link to={'/login'} className="links1">
+					Login
+				</Link>
+			</div>;
       }
   }
 
   render() {
-      return (
-        <div>
-            <h1>BizZam NavBar</h1>
-            { this.getLinks() }
-        </div>
-      );
+      return <div>
+          <h1 className="project-title rotate-scale-up">
+					<span className="blue">Biz</span>
+                    Z
+                    <span className="orange">am</span>
+				</h1>
+				{this.getLinks()}
+			</div>;
   }
 }
 
