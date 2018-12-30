@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const Theme = require('../../models/Theme')
-const validateThemeInput = require('../../validation/themes')
+const validateThemeInput = require('../../validation/theme')
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),
@@ -24,3 +24,6 @@ router.post('/',
             .then(theme => res.json(theme))
     }
 )
+
+
+module.exports = router;
