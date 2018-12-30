@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup_form.css';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class LoginForm extends React.Component {
     }
 
     // Set or clear errors
-    this.setState({errors: nextProps.errors})
+    this.setState({errors: nextProps.errors});
   }
 
   // Handle field updates (called in the render method)
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user); 
+    this.props.login(user);
   }
 
   // Render the session errors if there are any
@@ -58,28 +59,25 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="Username"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input type="submit" value="Submit"/>
-            {this.renderErrors()}
-          </div>
-        </form>
-      </div>
-    );
+    return <div className="login-form-container">
+			<form onSubmit={this.handleSubmit} className="loginup-form">
+				<div>
+          <label className="labels">
+              USERNAME
+              <input type="text" value={this.state.username} onChange={this.update('username')} placeholder="Username" className="input-fields input-field-1"/>
+					</label>
+					<br />
+          <label className="labels">
+              PASSWORD
+              <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password" className="input-fields input-field-1"/>
+					</label>
+
+					<br />
+          <input type="submit" value="Submit" className="form-btn"/>
+					{this.renderErrors()}
+				</div>
+			</form>
+		</div>;
   }
 }
 

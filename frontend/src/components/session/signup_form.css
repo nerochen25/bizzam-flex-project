@@ -1,10 +1,11 @@
-.signup-form-container {
+.signup-form-container, .login-form-container {
     display: flex;
     justify-content: center;
     margin-top: 10%;
 }
 
-.signup-form {
+.signup-form,
+.loginup-form {
     border: 2px ridge #ff9900;
     border-radius: 5px;
     -webkit-border-radius: 5px;
