@@ -67,7 +67,6 @@
     position: absolute;
     top: 60px;
     right: 30px;
-    /* align-items: flex-end; */
 }
 
 .navbar .links1 {
@@ -75,12 +74,6 @@
     display: flex;
     justify-content: space-between;
     color: #0C2EB7;
-    /* border: 1px solid #ff9900;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px; */
     padding: 8px;
     margin-right: 20px;
     text-decoration: none;
