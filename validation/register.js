@@ -14,7 +14,7 @@ module.exports = function validateRegisterInput(data) {
       }
 
     if (!Validator.isAlphanumeric(data.username)) {
-        errors.username = 'Username must consist of Alphanumberic characters';
+        errors.username = 'Username must consist of Alphanumeric characters';
       }
     
     if (Validator.isEmpty(data.username)) {

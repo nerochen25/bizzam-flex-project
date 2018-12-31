@@ -11,9 +11,9 @@ module.exports = function validateLoginInput(data) {
     // if (!Validator.isusername(data.username)) {
     //     errors.username = 'username is invalid';
     // }
-    
+
     if (!Validator.isAlphanumeric(data.username)) {
-        errors.username = 'Username must consist of Alphanumberic characters';
+        errors.username = 'Username must consist of Alphanumeric characters';
       }
 
     if (Validator.isEmpty(data.username)) {
