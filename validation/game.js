@@ -22,7 +22,7 @@ module.exports = function validateGameInput(data) {
         errors.theme = 'theme cannot be blank'
     }
     
-    if (!Validator.isLength(data.gameType { max: 125 })) {
+    if (!Validator.isLength(data.gameType, { max: 125 })) {
         errors.gameType = 'gameType cannot exceed 125 characters'
     }
 
