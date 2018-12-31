@@ -8,7 +8,7 @@ const subThemeItem = {
 const themeSchema = Schema({
     name: String,
     description: String,
-    themeItem: [ subThemeItem ]
+    themeItems: [ subThemeItem ]
 })
 // has many games, no refrence stored in this model
 
