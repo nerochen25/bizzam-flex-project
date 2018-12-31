@@ -1,5 +1,6 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
+// const currentUser = require('../models/User.js')
 
 
 module.exports = function validateGameInput(data) {
@@ -16,7 +17,7 @@ module.exports = function validateGameInput(data) {
     // if (userIncluded) {
     //     errors.boards = 'current user already has a board'
     // }
-    
+
     if (Validator.isEmpty(data.theme)) {
         errors.theme = 'theme cannot be blank'
     }
