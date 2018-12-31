@@ -6,8 +6,8 @@ module.exports = function validateThemeItemInput(data) {
 
     data.text = validText(data.text) ? data.text : '';
     
-    if (!Validator.isLength(data.text, { max: 120 })) {
-        errors.text = 'Theme Text must be under 120 charachters'
+    if (!Validator.isLength(data.text, { max: 125 })) {
+        errors.text = 'Theme Text must be under 125 characters'
     }
 
     if (Validator.isEmpty(data.text)) {
