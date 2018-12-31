@@ -51,11 +51,39 @@ router.post('/item',
                     .then(theme => res.json(theme))
             })
             .catch(err => res.status(400).json(err))
-        
-
-        
     }
 )
+
+
+router.post('/items',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Theme
+            .findById( req.body.theme_id )
+            .then(theme => {
+                let items = req.body.items.split(",");
+                // return res.json(req.body.items)
+                items.forEach(item => {
+                    let themeItem = { text: item }
+                    
+                    const { isValid, errors } = validateThemeItemInput(themeItem);
+
+                    if (!isValid) {
+                        return res.status(401).json(errors);
+                    }
+
+                    theme.themeItems.push(themeItem)
+                });
+
+                return theme
+                    .save()
+                    .then(theme => res.json({theme}))
+                    .catch(err => res.status(400).json(err))
+            })
+            .catch(err => res.status(402).json(err))
+    }
+)
+
 
 
 module.exports = router;
