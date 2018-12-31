@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
-const Board = require('../../models/Board')
-const validateBoardInput = require('../../validation/theme')
+const Board = require('../../models/board')
+const validateBoardInput = require('../../validation/board')
 
 
 router.post('/',
