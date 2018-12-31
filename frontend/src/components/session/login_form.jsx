@@ -14,12 +14,14 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+
   }
 
   // Once the user has been authenticated, redirect to the BizZam page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/bizzams');
+      this.props.history.push('/');
     }
 
     // Set or clear errors
@@ -42,8 +44,21 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user);
+    this.props.login(user)
+    .then(() => {
+      this.props.history.push('/');
+    });
   }
+
+  demoLogin() {
+    let userInfo = {
+      username: 'test7',
+      password: '123456',
+    };
+    this.props.login(userInfo).then((user) => {
+      this.props.history.push('/');
+    });
+  };
 
   // Render the session errors if there are any
   renderErrors() {
@@ -74,6 +89,8 @@ class LoginForm extends React.Component {
 
 					<br />
           <input type="submit" value="Submit" className="form-btn"/>
+          <a type="text" onClick={this.demoLogin} className='form-btn' value='Sign in as a guest'>Sign in as a guest</a>
+
 					{this.renderErrors()}
 				</div>
 			</form>
