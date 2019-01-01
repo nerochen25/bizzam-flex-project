@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { logout } from '../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

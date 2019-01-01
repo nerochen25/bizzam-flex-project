@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
   // Once the user has been authenticated, redirect to the BizZam page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/');
+      this.props.history.push('/profile');
     }
 
     // Set or clear errors
@@ -44,10 +44,7 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user)
-    .then(() => {
-      this.props.history.push('/bizzams');
-    });
+    this.props.login(user);
   }
 
   demoLogin() {
@@ -55,10 +52,8 @@ class LoginForm extends React.Component {
       username: 'test7',
       password: '123456',
     };
-    this.props.login(userInfo)
-    .then(() => {
-      this.props.history.push('/bizzams');
-    });
+    this.props.login(userInfo);
+  
   };
 
   // Render the session errors if there are any
@@ -76,8 +71,8 @@ class LoginForm extends React.Component {
 
   render() {
     return <div className="login-form-container">
-			<form onSubmit={this.handleSubmit} className="loginup-form">
-				<div>
+			<form onSubmit={this.handleSubmit} className="login-form">
+				<div className="log-in">
           <label className="labels">
               USERNAME
               <input type="text" value={this.state.username} onChange={this.update('username')} placeholder="Username" className="input-fields input-field-1"/>
@@ -89,8 +84,8 @@ class LoginForm extends React.Component {
 					</label>
 
 					<br />
-          <input type="submit" value="Submit" className="form-btn"/>
-          <button onClick={this.demoLogin} className='form-btn' value='Sign in as a guest'>Sign in as a guest</button>
+          <input type="submit" value="Login" className="form-btn login-btn"/>
+          <button onClick={this.demoLogin} className='form-btn login-btn demo-btn' value='Sign in as a guest'>Demo Login</button>
 
 					{this.renderErrors()}
 				</div>
