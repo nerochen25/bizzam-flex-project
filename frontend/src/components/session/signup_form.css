@@ -72,3 +72,15 @@
     margin-top: 36px;
 }
 
+.form-errors{
+    margin-left: 33px;
+}
+
+.form-errors li{
+    margin-bottom: 7px;
+    list-style-type: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
