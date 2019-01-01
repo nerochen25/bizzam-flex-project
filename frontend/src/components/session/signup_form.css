@@ -13,9 +13,6 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     padding: 10px 100px 10px 10px;
-    /*width: 50%;
-    *//*margin-left: -5%;
-    */
 }
 
 .labels {
@@ -35,6 +32,7 @@
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
+    font-size: 16px;
 }
 
 .input-field-1 {
@@ -42,8 +40,7 @@
 }
 
 .form-btn {
-    margin-left: 70px;
-    margin-bottom: 20px;
+    margin: 5px 0 20px 70px;
     border: 2px ridge #0C2EB7;
     color: #ff9900;
     background-color: #0C2EB7;

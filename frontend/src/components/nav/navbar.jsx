@@ -26,7 +26,8 @@ class NavBar extends React.Component {
             </div>
         );
       } else {
-        return <div className="navbar">
+        return (
+            <div className="navbar">
 				<Link to={'/signup'} className="links1">
 					Signup
 				</Link>
@@ -34,17 +35,18 @@ class NavBar extends React.Component {
 				<Link to={'/login'} className="links1">
 					Login
 				</Link>
-			</div>;
+            </div>
+        );
       }
   }
 
   render() {
       return <div>
-          <h1 className="project-title rotate-scale-up">
-					<span className="blue">Biz</span>
-                    Z
-                    <span className="orange">am</span>
-				</h1>
+                <Link to='/' className="main-page-link">
+                    <h1 className="project-title bounce-top">
+                        <span className="blue">Biz</span>Z<span className="orange">am</span>
+                    </h1>
+                </Link>
 				{this.getLinks()}
 			</div>;
   }
