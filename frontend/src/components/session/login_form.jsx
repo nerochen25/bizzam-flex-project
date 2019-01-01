@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
 
     this.props.login(user)
     .then(() => {
-      this.props.history.push('/');
+      this.props.history.push('/bizzams');
     });
   }
 
@@ -55,8 +55,9 @@ class LoginForm extends React.Component {
       username: 'test7',
       password: '123456',
     };
-    this.props.login(userInfo).then((user) => {
-      this.props.history.push('/');
+    this.props.login(userInfo)
+    .then(() => {
+      this.props.history.push('/bizzams');
     });
   };
 
@@ -89,7 +90,7 @@ class LoginForm extends React.Component {
 
 					<br />
           <input type="submit" value="Submit" className="form-btn"/>
-          <a type="text" onClick={this.demoLogin} className='form-btn' value='Sign in as a guest'>Sign in as a guest</a>
+          <button onClick={this.demoLogin} className='form-btn' value='Sign in as a guest'>Sign in as a guest</button>
 
 					{this.renderErrors()}
 				</div>
