@@ -34,9 +34,6 @@ module.exports = function hasWon(data) {
     if (data[2].checked && data[4].checked && data[6].checked) {
         won = true
     }
-
-
-
     //  // 5 x 5 board
     //  const won = false
     //  // horizontal row checks
@@ -80,7 +77,7 @@ module.exports = function hasWon(data) {
     //  if (data[4].checked && data[8].checked && data[12].checked && data[16].checked && data[20].checked) {
     //      won = true
     //  }
-    
+
     return  {
         won
     };
