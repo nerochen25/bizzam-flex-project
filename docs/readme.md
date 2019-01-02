@@ -43,8 +43,9 @@ BizZam is primarily built with the MERN stack, a combination of following four t
 * Implement user authorization (Nero and Sai) and database backend (Craig and Trevor)
 
 ### Group Members & Work Breakdown
-### Craig Jewett, Nero Chen, Sai Lakshmi Pattabiraman and Trevor Shepard
-##### January 2
+#### Craig Jewett, Nero Chen, Sai Lakshmi Pattabiraman and Trevor Shepard
+
+#### January 2
 
 * Build the skeleton for the game, board and theme (Nero and Sai).
 * Work on the backend (Craig and Trevor).
