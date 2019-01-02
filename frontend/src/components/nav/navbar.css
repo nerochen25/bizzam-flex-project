@@ -33,6 +33,10 @@
     right: 30px;
 }
 
+.loggedIn-navbar {
+    display: flex;
+}
+
 .bounce-top {
     -webkit-animation: bounce-top 0.9s both;
     animation: bounce-top 0.9s both;
