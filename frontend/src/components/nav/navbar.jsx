@@ -47,7 +47,8 @@ class NavBar extends React.Component {
                         <span className="blue">Biz</span>Z<span className="orange">am</span>
                     </h1>
                 </Link>
-				{this.getLinks()}
+                {this.getLinks()}
+                
 			</div>;
   }
 }
