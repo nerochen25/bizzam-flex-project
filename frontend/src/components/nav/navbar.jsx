@@ -49,7 +49,8 @@ class NavBar extends React.Component {
                     </h1>
                 </Link>
                 {this.getLinks()}
-                
+                <h2>Welcome to Bizzam, {this.props.username}</h2>
+                Num of wins, num of losses
 			</div>;
   }
 }
