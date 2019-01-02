@@ -1,5 +1,5 @@
 
-
+// refer to squares validation
 
 
 
