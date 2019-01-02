@@ -53,8 +53,7 @@ class LoginForm extends React.Component {
       password: '123456',
     };
     this.props.login(userInfo);
-  
-  };
+  }
 
   // Render the session errors if there are any
   renderErrors() {

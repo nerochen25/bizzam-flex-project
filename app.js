@@ -3,10 +3,12 @@ const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
+const themes= require('./routes/api/theme')
 const User = require('./models/User');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
+
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -29,6 +31,7 @@ mongoose
 
 
 app.use("/api/users", users);
+app.use("/api/themes", themes);
 
 
 const port = process.env.PORT || 5000;
