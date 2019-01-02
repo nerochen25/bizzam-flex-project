@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './board.css';
 
 class Board extends React.Component {
 	constructor(props) {
@@ -16,7 +17,10 @@ class Board extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Hello I am board!</h1>
+				<h1 className="board-title">Board</h1>
+                <div>
+                    
+                </div>
 			</div>
 		);
 	}
