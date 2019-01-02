@@ -4,8 +4,7 @@
     margin-top: 10%;
 }
 
-.signup-form,
-.loginup-form {
+.signup-form, .login-form {
     border: 2px ridge #ff9900;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -13,9 +12,7 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     padding: 10px 100px 10px 10px;
-    /*width: 50%;
-    *//*margin-left: -5%;
-    */
+    box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.1);
 }
 
 .labels {
@@ -35,6 +32,7 @@
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
+    font-size: 16px;
 }
 
 .input-field-1 {
@@ -42,8 +40,7 @@
 }
 
 .form-btn {
-    margin-left: 70px;
-    margin-bottom: 20px;
+    margin: 5px 0 20px 70px;
     border: 2px ridge #0C2EB7;
     color: #ff9900;
     background-color: #0C2EB7;
@@ -62,3 +59,28 @@
     color:  #ff9900;
     background-color: white;
 }
+
+.demo-btn {
+    margin-left: 17%;
+}
+
+.login-btn{
+    margin-top: 40px;
+}
+
+.log-in{
+    margin-top: 36px;
+}
+
+.form-errors{
+    margin-left: 33px;
+}
+
+.form-errors li{
+    margin-bottom: 7px;
+    list-style-type: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+

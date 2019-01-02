@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './signup_form.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -38,15 +37,12 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history)
-    .then(() => {
-      this.props.history.push('/bizzams');
-    });
+    this.props.signup(user, this.props.history); 
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="form-errors">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}

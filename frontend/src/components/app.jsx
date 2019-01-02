@@ -9,12 +9,12 @@ import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 
 const App = () => (
-  <div>
+  <div className="splash">
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <ProtectedRoute path="/profile" component={ProfileContainer} />
+      <AuthRoute  path="/login" component={LoginFormContainer} />
+      <AuthRoute  path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={MainPage} />
     </Switch>
   </div>
