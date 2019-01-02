@@ -6,13 +6,13 @@ BizZam is an online platform for playing user created bingo boards!
 
 [BizZam Live](Coming soon) 
 
-## Background and Overview
+### Background and Overview
 
 In BizZam, boards can be anything users wants to play, such as office bizzingo, lecture bizzingo, or even scavenger hunt bizzingo! 
 
 BizZam is primarily built with the MERN stack, a combination of following four technologies: MongoDB, Express, React, and Node.
 
-## Functionality & MVP
+### Functionality & MVP
 
 - [ ] User authorization: sign up and log in.
 - [ ] Generate a board according to the admin's choice of categories.
@@ -43,7 +43,7 @@ BizZam is primarily built with the MERN stack, a combination of following four t
 * Implement user authorization (Nero and Sai) and database backend (Craig and Trevor)
 
 ### Group Members & Work Breakdown
-    ### Craig Jewett, Nero Chen, Sai Lakshmi Pattabiraman and Trevor Shepard
+### Craig Jewett, Nero Chen, Sai Lakshmi Pattabiraman and Trevor Shepard
 ##### January 2
 
 * Build the skeleton for the game, board and theme (Nero and Sai).
