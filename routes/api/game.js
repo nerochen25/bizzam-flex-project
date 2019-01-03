@@ -9,6 +9,10 @@ router.post('/',
     (req, res) => {
         const { isValid, errors } = validateGameInput(req.body)
 
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
         const newGame = new Game(req.body)
 
         newGame
