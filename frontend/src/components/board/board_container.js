@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Board from './board.jsx';
+import {fetchBoards} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
+    
     return {
         loggedIn: state.session.isAuthenticated
     };
@@ -10,6 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchBoards: () =>dispatch(fetchBoards()), 
         logout: () => dispatch(logout())
     };
 };
