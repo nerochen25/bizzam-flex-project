@@ -36,12 +36,14 @@ const generateBoard = (themeID) => {
         .then(theme => {
             let possibleItems = shuffle(theme.themeItems)
             squares = possibleItems.slice(0,9)
-            squares.map((item, index) => {
+            squares = squares.map((item, index) => {
+                console.log(index)
                 return {
                     text: item.text,
                     position: index
                 }
             })
+            
             return squares
         });
     
@@ -88,6 +90,26 @@ router.get('/',
         Board
             .findById(req.body.id)
             .then(board => res.json(board))
+            .catch(err => res.status(400).json(err))
+    }
+)
+
+
+// Requires id (Schema.Type.ObjectID, ref: "Board"), position
+router.post('/square',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Board
+            .findById(req.body.id)
+            .then(board => {
+                board.squares[position].checked = !(board.squares[position].checked)
+                board
+                    .save()
+                    .then(board => {
+                        return res.json(board)
+                    })
+                    
+            })
             .catch(err => res.status(400).json(err))
     }
 )
