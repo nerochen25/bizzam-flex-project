@@ -19,7 +19,6 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div>
-                <h2 className="welcome-message">Welcome to Bizzam, {this.props.username}</h2>
                 <div className='loggedIn-navbar'>
                     <Link to={'/bizzams'}>All BizZams</Link>
                     <Link to={'/profile'}>Profile</Link>
