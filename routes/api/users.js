@@ -51,6 +51,7 @@ router.post("/register", (req, res) => {
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
                   success: true,
+                  user_id: user.id,
                   token: "Bearer " + token
                 });
               });
@@ -86,6 +87,7 @@ router.post("/login", (req, res) => {
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
             success: true,
+            user_id: user.id,
             token: "Bearer " + token
           });
         });
