@@ -15,7 +15,10 @@ module.exports = function validateBoardInput(data) {
                 errors.game = "User is already part of game"
             }
         }
-        .catch(err => errors.theme = "There is no theme ID found"));
+        
+        )
+        .catch(err => errors.theme = "There is no theme ID found")
+        
 
     Theme.findById( data.theme_id)
         .then(theme => {

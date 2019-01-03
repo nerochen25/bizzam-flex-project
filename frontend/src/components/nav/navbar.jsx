@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-// import './navbar.css'
+import { Link } from 'react-router-dom';
+import './navbar.css';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -18,31 +18,40 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div>
+            <div className='loggedIn-navbar'>
                 <Link to={'/bizzams'}>All BizZams</Link>
                 <Link to={'/profile'}>Profile</Link>
                 <Link to={'/new_bizzam'}>Write a BizZam</Link>
+                <Link to={'/board'}>Board</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );
       } else {
         return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <br />
-                <Link to={'/login'}>Login</Link>
+            <div className="navbar">
+				<Link to={'/signup'} className="links1">
+					Signup
+				</Link>
+				<br />
+				<Link to={'/login'} className="links1">
+					Login
+				</Link>
             </div>
         );
       }
   }
 
   render() {
-      return (
-        <div>
-            <h1>BizZam NavBar</h1>
-            { this.getLinks() }
-        </div>
-      );
+      return <div>
+                <Link to='/' className="main-page-link">
+                    <h1 className="project-title bounce-top">
+                        <span className="blue">Biz</span>Z<span className="orange">am</span>
+                    </h1>
+                </Link>
+                {this.getLinks()}
+                <h2>Welcome to Bizzam, {this.props.username}</h2>
+                
+			</div>;
   }
 }
 

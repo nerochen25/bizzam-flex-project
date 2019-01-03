@@ -7,8 +7,10 @@ const validateGameInput = require('../../validation/game')
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { isValid, errors } = validateGameInput(req.body)
 
+
+        const { isValid, errors } = validateGameInput(req.body)
+        console.log(isValid)
         if (!isValid) {
             return res.status(400).json(errors);
         }
