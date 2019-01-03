@@ -1,4 +1,4 @@
-const Game = require()
+const Game = require('../models/Game');
 const User = require('../models/User');
 const Validator = require('validator');
 
@@ -6,10 +6,7 @@ module.exports = function validateBoardInput(data) {
     let errors = {};
 
     User.findById( data.user_id )
-    
         .catch( err => errors.user = "User Id does not exist");
-
-
 
     Game.findById( data.theme_id )
         .populate( 'boards' )
@@ -17,10 +14,8 @@ module.exports = function validateBoardInput(data) {
             if (game.board.userID === user_id){
                 errors.game = "User is already part of game"
             }
-          });
         }
-        .catch(err => errors.theme = "There is no theme ID found")
-
+        .catch(err => errors.theme = "There is no theme ID found"));
 
     Theme.findById( data.theme_id)
         .then(theme => {
