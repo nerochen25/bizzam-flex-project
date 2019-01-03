@@ -80,7 +80,7 @@ router.post('/items',
                     .then(theme => res.json({theme}))
                     .catch(err => res.status(400).json(err))
             })
-            .catch(err => res.status(402).json(err))
+            .catch(err => res.status(400).json(err))
     }
 )
 
