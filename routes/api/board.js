@@ -5,6 +5,7 @@ const Board = require('../../models/Board');
 const Theme = require('../../models/Theme')
 const Game = require('../../models/Game')
 const validateBoardInput = require('../../validation/board');
+const hasWon = require('../../validation/has_won')
 
 
 
@@ -36,13 +37,14 @@ const generateBoard = (themeID) => {
         .then(theme => {
             let possibleItems = shuffle(theme.themeItems)
             squares = possibleItems.slice(0,9)
-            squares.map((item, index) => {
+            squares = squares.map((item, index) => {
                 return {
                     text: item.text,
                     position: index
                 }
             })
-            return squares
+            
+            return squares;
         });
     
     }
@@ -50,6 +52,7 @@ const generateBoard = (themeID) => {
 
 
 
+// Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -77,11 +80,45 @@ router.post('/',
                         })
                     })
             })
-
     }
 );
 
+// Requires id (Schema.Type.ObjectID, ref: "Board")
+router.get('/', 
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Board
+            .findById(req.body.id)
+            .then(board => res.json(board))
+            .catch(err => res.status(400).json(err))
+    }
+)
 
+
+// Requires id (Schema.Type.ObjectID, ref: "Board"), position
+router.post('/square',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        
+        Board
+            .findById(req.body.id)
+            .then(board => {
+                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked)
+                
+                board
+                    .save()
+                    .then(board => {
+                        
+                        return res.json({
+                            board: board,
+                            won: hasWon(board.squares)
+                        });
+                    });
+                    
+            })
+            .catch(err => res.status(400).json(err))
+    }
+);
 
 
 
