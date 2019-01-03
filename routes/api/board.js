@@ -37,14 +37,13 @@ const generateBoard = (themeID) => {
             let possibleItems = shuffle(theme.themeItems)
             squares = possibleItems.slice(0,9)
             squares = squares.map((item, index) => {
-                console.log(index)
                 return {
                     text: item.text,
                     position: index
                 }
             })
             
-            return squares
+            return squares;
         });
     
     }
@@ -99,20 +98,24 @@ router.get('/',
 router.post('/square',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        
         Board
             .findById(req.body.id)
             .then(board => {
-                board.squares[position].checked = !(board.squares[position].checked)
+                debugger
+                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked)
+                
                 board
                     .save()
                     .then(board => {
+                        
                         return res.json(board)
                     })
                     
             })
             .catch(err => res.status(400).json(err))
     }
-)
+);
 
 
 
