@@ -18,12 +18,15 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div className='loggedIn-navbar'>
-                <Link to={'/bizzams'}>All BizZams</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_bizzam'}>Write a BizZam</Link>
-                <Link to={'/board'}>Board</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+            <div>
+                <h2 className="welcome-message">Welcome to Bizzam, {this.props.username}</h2>
+                <div className='loggedIn-navbar'>
+                    <Link to={'/bizzams'}>All BizZams</Link>
+                    <Link to={'/profile'}>Profile</Link>
+                    <Link to={'/new_bizzam'}>Write a BizZam</Link>
+                    <Link to={'/board'}>Board</Link>
+                    <button onClick={this.logoutUser}>Logout</button>
+                </div>
             </div>
         );
       } else {
@@ -48,9 +51,7 @@ class NavBar extends React.Component {
                         <span className="blue">Biz</span>Z<span className="orange">am</span>
                     </h1>
                 </Link>
-                {this.getLinks()}
-                <h2>Welcome to Bizzam, {this.props.username}</h2>
-                
+                {this.getLinks()}                
 			</div>;
   }
 }

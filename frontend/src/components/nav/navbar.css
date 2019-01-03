@@ -39,6 +39,10 @@
     font-size: 20px;
 }
 
+.welcome-message {
+    text-align: center;
+}
+
 
 .bounce-top {
     -webkit-animation: bounce-top 0.9s both;
@@ -181,3 +185,8 @@
 .navbar .links1:hover {
     color: #ff9900;
 }
+
+/* .user-profile-container {
+    display: flex;
+    justify-content: center;
+} */
