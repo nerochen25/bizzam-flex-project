@@ -81,7 +81,5 @@ module.exports = function hasWon(data) {
     //      won = true
     //  }
     
-    return  {
-        won
-    };
+    return won;
 };
