@@ -12,12 +12,9 @@ class Profile extends React.Component {
     
     render() {
         return (
-            <div>
-                <h2>All of This User's BizZams</h2>
-                <form action="">
+            <div className="user-profile-container">
                 Username:<input type='text' value={this.props.username} onChange={this.update('username')}/>
-                <input type="submit" value="Submit Change"/>
-                </form>
+                <button>Submit</button>
             </div>
             );
         }
