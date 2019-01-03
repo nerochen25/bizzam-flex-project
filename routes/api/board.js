@@ -5,6 +5,7 @@ const Board = require('../../models/Board');
 const Theme = require('../../models/Theme')
 const Game = require('../../models/Game')
 const validateBoardInput = require('../../validation/board');
+const hasWon = require('../../validation/has_won')
 
 
 
@@ -102,15 +103,17 @@ router.post('/square',
         Board
             .findById(req.body.id)
             .then(board => {
-                debugger
                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked)
                 
                 board
                     .save()
                     .then(board => {
                         
-                        return res.json(board)
-                    })
+                        return res.json({
+                            board: board,
+                            won: hasWon(board.squares)
+                        });
+                    });
                     
             })
             .catch(err => res.status(400).json(err))
