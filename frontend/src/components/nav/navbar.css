@@ -35,7 +35,10 @@
 
 .loggedIn-navbar {
     display: flex;
+    justify-content: space-around;
+    font-size: 20px;
 }
+
 
 .bounce-top {
     -webkit-animation: bounce-top 0.9s both;
