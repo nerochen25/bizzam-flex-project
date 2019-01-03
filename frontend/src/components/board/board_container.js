@@ -4,7 +4,7 @@ import Board from './board.jsx';
 import {fetchBoards} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
-    debugger
+    
     return {
         loggedIn: state.session.isAuthenticated
     };

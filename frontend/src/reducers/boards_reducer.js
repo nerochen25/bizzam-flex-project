@@ -2,7 +2,7 @@ import { RECEIVE_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
 
   
 const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
-    debugger
+    
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch(action.type) {
