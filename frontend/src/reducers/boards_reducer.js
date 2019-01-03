@@ -1,19 +1,23 @@
 import { RECEIVE_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
+
   
-  const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+    
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch(action.type) {
-      case RECEIVE_BOARDS:
-        newState.all = action.boards.data;
-        return newState;
+        case RECEIVE_BOARDS:
+        // newState.all = action.boards.data;
+        return {
+            boards: action.boards.data
+        };
         
-      case RECEIVE_NEW_BOARD:
+        case RECEIVE_NEW_BOARD:
         newState.new = action.board.data
         return newState;
-      default:
+        default:
         return state;
     }
-  };
-  
-  export default BoardsReducer;
+};
+
+export default BoardsReducer;
