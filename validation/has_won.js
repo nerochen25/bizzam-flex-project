@@ -1,7 +1,7 @@
 module.exports = function hasWon(data) {
     
     // 3 x 3 board
-    const won = false
+    let won = false
     // first row
     if (data[0].checked && data[1].checked && data[2].checked) {
         won = true
