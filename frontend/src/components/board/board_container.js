@@ -3,6 +3,7 @@ import { logout } from '../../actions/session_actions';
 import Board from './board.jsx';
 
 const mapStateToProps = state => {
+    debugger
     return {
         loggedIn: state.session.isAuthenticated
     };

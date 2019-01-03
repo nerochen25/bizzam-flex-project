@@ -31,8 +31,8 @@ export const fetchBoards = () => dispatch => (
 //     .catch(err => console.log(err))
 // );
 
-export const createBoard = data => dispatch => (
-  creareBoard(data)
+export const postBoard = data => dispatch => (
+  createBoard(data)
     .then(board => dispatch(receiveNewBoard(board)))
     .catch(err => console.log(err))
 );
