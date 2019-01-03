@@ -50,6 +50,7 @@ const generateBoard = (themeID) => {
 
 
 
+// Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -77,11 +78,19 @@ router.post('/',
                         })
                     })
             })
-
     }
 );
 
-
+// Requires id (Schema.Type.ObjectID, ref: "Board")
+router.get('/', 
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Board
+            .findById(req.body.id)
+            .then(board => res.json(board))
+            .catch(err => res.status(400).json(err))
+    }
+)
 
 
 
