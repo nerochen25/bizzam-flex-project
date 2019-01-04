@@ -193,3 +193,27 @@
     padding-top: 25px;
     font-family: 'Raleway', sans-serif;
 }
+
+.home-navbar {
+    display: flex;
+    flex-direction: row;
+    padding-left: 170px;
+    padding-right: 170px;
+
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+}
+
+.logged-in-navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+}
