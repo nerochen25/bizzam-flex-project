@@ -120,6 +120,15 @@ router.post('/square',
     }
 );
 
+// Requires id (Schema.Type.ObjectID, ref: "User")
+router.get('/index',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Board
+            .find({userID: req.body.id})
+            .then(boards => res.json(boards))
+    }
+)
 
 
 module.exports = router;
