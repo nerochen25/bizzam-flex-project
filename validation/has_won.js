@@ -6,10 +6,6 @@ module.exports = function hasWon(data) {
     if (data[0].checked && data[1].checked && data[2].checked) {
         won = true
     }
-    // first column
-    if (data[0].checked && data[3].checked && data[6].checked) {
-        won = true
-    }
     // second row
     if (data[3].checked && data[4].checked && data[5].checked) {
         won = true
@@ -17,6 +13,11 @@ module.exports = function hasWon(data) {
     // third row
     if (data[6].checked && data[7].checked && data[8].checked) {
         won = true
+    }
+
+    // first column
+    if (data[0].checked && data[3].checked && data[6].checked) {
+       won = true
     }
     // second column
     if (data[1].checked && data[4].checked && data[7].checked) {
@@ -26,6 +27,7 @@ module.exports = function hasWon(data) {
     if (data[2].checked && data[5].checked && data[8].checked) {
         won = true
     }
+
     // diagonal top left
     if (data[0].checked && data[4].checked && data[8].checked) {
         won = true
@@ -34,9 +36,6 @@ module.exports = function hasWon(data) {
     if (data[2].checked && data[4].checked && data[6].checked) {
         won = true
     }
-
-
-
     //  // 5 x 5 board
     //  const won = false
     //  // horizontal row checks
