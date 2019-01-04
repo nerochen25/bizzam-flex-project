@@ -20,10 +20,10 @@ class NavBar extends React.Component {
         return (
             <div>
                 <div className='loggedIn-navbar'>
-                    <Link to={'/bizzams'}>All BizZams</Link>
+                    <Link to={'/bizzams'}>Game</Link>
                     <Link to={'/profile'}>Profile</Link>
                     <Link to={'/new_bizzam'}>Write a BizZam</Link>
-                    <Link to={'/board'}>Board</Link>
+                    <Link to={'/board'}>board</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             </div>

@@ -4,63 +4,74 @@ import './board.css';
 
 class Board extends React.Component {
 	constructor(props) {
-        super(props);
-        
-        this.state = {
-            row: 0,
-            column: 0,
-            createBoard: false
-        };
+		super(props);
 
-        this.logoutUser = this.logoutUser.bind(this);
-        this.updateRow = this.updateRow.bind(this);
-        this.handleClick = this.handleClick.bind(this);
-        this.populateSquares = this.populateSquares.bind(this);
+		this.state = {
+			row: 0,
+			column: 0,
+			createBoard: false,
+			boards: [],
+		};
+
+		this.logoutUser = this.logoutUser.bind(this);
+		this.updateRow = this.updateRow.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+		// this.populateSquares = this.populateSquares.bind(this);
+	}
+
+	componentWillMount() {
+		this.props.fetchUserBoards(this.props.currentUser.id);
+	}
+
+	componentWillReceiveProps(newState) {
+		this.setState({ boards: newState.boards });
 	}
 
 	logoutUser(e) {
 		e.preventDefault();
 		this.props.logout();
-    }
-    
-    updateRow(){
-        return e => this.setState({
-            row: e.currentTarget.value
-        });
-    }
+	}
 
-    updateColumn() {
-        return e => this.setState({
-            column: e.currentTarget.value
-        });
-    }
+	updateRow() {
+		return e =>
+			this.setState({
+				row: e.currentTarget.value,
+			});
+	}
 
-    handleClick(){
-        // console.log(this.state.boardLength);
-        if (this.state.row === this.state.column) {
-            this.setState({
-                createBoard: true
-            });
-        } else {
-            alert("Row and column length should be the same.");
-        }
-    }
+	updateColumn() {
+		return e =>
+			this.setState({
+				column: e.currentTarget.value,
+			});
+	}
 
-    populateSquares(){
-        for(let i=0; i < this.state.row; i++){
-            
-        }
-    }
-    
+	handleClick() {
+		// console.log(this.state.boardLength);
+		if (this.state.row === this.state.column) {
+			this.setState({
+				createBoard: true,
+			});
+		} else {
+			alert('Row and column length should be the same.');
+		}
+	}
+
+	// populateSquares(){
+	//     for(let i=0; i < this.state.row; i++){
+
+	//     }
+	// }
 
 	render() {
-		return (<div>
+		return <div>
 				<div className="board">
 					<h1 className="board-title">Board</h1>
+					{/* <h4>All of {this.props.currentUser.username}'s board</h4> */}
+					{this.state.boards.map(board => <p>hi</p>)}
 
-					{ this.state.createBoard ? 
-                        ( <div className="grid-container">
-                            {this.populateSquares()}
+					{this.state.createBoard ? <div className="grid-container">
+							{/* {this.populateSquares()} */}
 							<div className="grid-item" />
 							<div className="grid-item" />
 							<div className="grid-item" />
@@ -70,10 +81,10 @@ class Board extends React.Component {
 							<div className="grid-item" />
 							<div className="grid-item" />
 							<div className="grid-item" />
-						</div>  ) : <form onSubmit={this.handleClick} className="board-form">
+						</div> : <form onSubmit={this.handleClick} className="board-form">
 							<label>
-                            <span className="board-labels">Enter row length:</span>
-                                
+								<span className="board-labels">Enter row length:</span>
+
 								<input type="number" onChange={this.updateRow()} className="board-inputs row-input" />
 							</label>
 							<br />
@@ -81,12 +92,11 @@ class Board extends React.Component {
 								Enter column length:
 								<input type="number" onChange={this.updateColumn()} className="board-inputs" />
 							</label>
-                            <br/>
+							<br />
 							<input type="submit" value="Create the board" className="board-btn" />
 						</form>}
 				</div>
-            </div>
-        );
+			</div>;
 	}
 }
 

@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Board from './board.jsx';
-import {fetchBoards} from '../../actions/board_actions';
+import {fetchBoards, fetchUserBoards} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
     
     return {
-        loggedIn: state.session.isAuthenticated
+        loggedIn: state.session.isAuthenticated,
+        boards: Object.values(state.boards.user),
+        currentUser: state.session.user,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBoards: () =>dispatch(fetchBoards()), 
+        fetchUserBoards: id => dispatch(fetchUserBoards(id)),
+        fetchBoards: () => dispatch(fetchBoards()),
         logout: () => dispatch(logout())
     };
 };
