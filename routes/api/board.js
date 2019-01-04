@@ -47,12 +47,9 @@ const generateBoard = (themeID) => {
 // Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        // TODO- Comment in when board validations is working
-        const { isValid, errors } = validateBoardInput(req.body);
-
-        console.log(errors)
-        console.log(isValid)
+    async (req, res) => {
+        
+        const { isValid, errors } = await validateBoardInput(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
