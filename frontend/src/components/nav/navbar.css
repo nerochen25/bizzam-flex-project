@@ -5,7 +5,7 @@
 .project-title {
     font-size: 54px;
     font-weight: 700;
-    background: linear-gradient(330deg, #ff9900 0%, #0C2EB7 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
+    background: linear-gradient(330deg, #ff9900 0%, #0c2eb7bf 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -174,7 +174,7 @@
     width: 100px;
     display: flex;
     justify-content: space-between;
-    color: #0C2EB7;
+    color: #0c2eb7bf;
     padding: 8px;
     margin-right: 20px;
     text-decoration: none;
@@ -191,5 +191,55 @@
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-navbar {
+    display: flex;
+    flex-direction: row;
+    padding-left: 170px;
+    padding-right: 170px;
+
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+}
+
+.logged-in-navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    width: 900px;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logged-in-navbar a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #0c2eb7bf;
+}
+
+.logout-btn {
+    border: 2px solid #0c2eb7bf;
+    border-radius: 4px;
+    color: #0c2eb7bf;
+}
+
+.logged-in-navbar :hover{
+    color: #ff9900;
+    font-size: 120%;
+}
+
+.logout-btn :hover{
+    color: #ff9900;
+    font-size: 110%;
 }

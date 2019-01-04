@@ -18,23 +18,27 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div>
-                <div className='loggedIn-navbar'>
-                    <Link to={'/bizzams'}>All BizZams</Link>
-                    <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/new_bizzam'}>Write a BizZam</Link>
-                    <Link to={'/board'}>Board</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+            
+                <div className='logged-in-navbar'>
+                    <Link className="links1" to={'/bizzams'}>All BizZams</Link>
+                    <br />
+                    <Link className="links1" to={'/profile'}>Profile</Link>
+                    <br />
+                    <Link className="links1" to={'/new_bizzam'}>Write a BizZam</Link>
+                    <br />
+                    <Link className="links1" to={'/board'}>Board</Link>
+                    <br />
+                    <button className='logout-btn' onClick={this.logoutUser}>Logout</button>
                 </div>
-            </div>
+            
         );
       } else {
         return (
             <div className="navbar">
 				<Link to={'/signup'} className="links1">
 					Signup
-				</Link>
-				<br />
+				</Link>                
+                <br />
 				<Link to={'/login'} className="links1">
 					Login
 				</Link>
@@ -44,12 +48,14 @@ class NavBar extends React.Component {
   }
 
   render() {
-      return <div>
-                <Link to='/' className="main-page-link">
-                    <h1 className="project-title bounce-top">
-                        <span className="blue">Biz</span>Z<span className="orange">am</span>
-                    </h1>
-                </Link>
+      return <div className='home-navbar'>
+                <div>
+                    <Link to='/' className="main-page-link">
+                        <h1 className="project-title bounce-top">
+                            <span className="blue">Biz</span>Z<span className="orange">am</span>
+                        </h1>
+                    </Link>
+                </div>
                 {this.getLinks()}                
 			</div>;
   }
