@@ -4,6 +4,8 @@ const passport = require('passport');
 const Game = require('../../models/Game');
 const validateGameInput = require('../../validation/game')
 
+
+
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
