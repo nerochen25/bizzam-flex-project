@@ -21,8 +21,6 @@ function shuffle(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-    
-   
     return array;
   }
 
@@ -52,6 +50,9 @@ router.post('/',
     (req, res) => {
         // TODO- Comment in when board validations is working
         const { isValid, errors } = validateBoardInput(req.body);
+
+        console.log(errors)
+        console.log(isValid)
 
         if (!isValid) {
             return res.status(400).json(errors);
