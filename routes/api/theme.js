@@ -28,6 +28,24 @@ router.post('/',
     }
 )
 
+
+// Retrieves all playable themes
+router.get('/',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        let themes = await Themes.find().reduce((validThemes, theme) =>{
+            if (theme.themeItems.length >= 9) {
+                validThemes.push(theme)
+            }
+            return validThemes
+        },
+        [])
+
+        return res.json(themes)
+
+    }
+)
+
 // Requires text (String), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/item',
     passport.authenticate('jwt', { session: false }),
