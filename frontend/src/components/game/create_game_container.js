@@ -3,7 +3,6 @@ import { postGame } from '../../actions/game_actions';
 import CreateGame from './create_game';
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         currentUser: state.session.user,
         newGame: state.games.new
