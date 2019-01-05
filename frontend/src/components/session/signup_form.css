@@ -18,9 +18,8 @@
 .labels {
     margin-left: 70px;
     color: #0C2EB7;
-    font-family: 'Antic Slab',
-    Monaco,
-    monospace
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .input-fields{
@@ -33,10 +32,14 @@
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
     font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+
 }
+
 
 .input-field-1 {
     margin-left: 116px;
+    
 }
 
 .form-btn {
@@ -52,7 +55,9 @@
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
-    cursor: pointer;
+    cursor: pointer;    
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .form-btn:hover {
@@ -84,3 +89,7 @@
     line-height: 1.4;
 }
 
+
+.login-btn {
+    font-family: 'Poppins', sans-serif;
+}
