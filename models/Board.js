@@ -6,8 +6,7 @@ const Schema = mongoose.Schema;
 const subSquares = {
     text: String, // Generated from squares on board creation
     checked: { type: Boolean, default: false },
-    position: Number,
-    game: { type: Schema.Types.ObjectId, ref: 'Game' }
+    position: Number
 
     // getter attribute for uploading/storing proof for adventure mode
     // proof: {
@@ -17,9 +16,9 @@ const subSquares = {
 }
 
 const boardSchema = Schema({
-    userID: Number,
+    userID: { type: Schema.Types.ObjectId, ref: 'User'},
     squares: [ subSquares ]
 })
 
 
-module.exports = Game = mongoose.model('Board', boardSchema)
+module.exports = Board = mongoose.model('Board', boardSchema)

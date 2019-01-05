@@ -5,11 +5,16 @@ class Profile extends React.Component {
     componentWillMount() {
         console.log(this.props.currentUser.id)
     } 
+
+    update(field) {
+        return e => this.setState({ [field]: e.target.value });
+    };
     
     render() {
         return (
-            <div>
-                <h2>All of This User's BizZams</h2>
+            <div className="user-profile-container">
+                Username:<input type='text' value={this.props.username} onChange={this.update('username')}/>
+                <button>Submit</button>
             </div>
             );
         }
