@@ -135,9 +135,3 @@ router.get('/index',
 
 module.exports = router;
 
-<<<<<<< HEAD
-
-
-module.exports = router;
-=======
->>>>>>> db
