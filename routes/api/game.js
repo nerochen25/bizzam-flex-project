@@ -4,10 +4,18 @@ const passport = require('passport');
 const Game = require('../../models/Game');
 const validateGameInput = require('../../validation/game')
 
+
+
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+
+
         const { isValid, errors } = validateGameInput(req.body)
+        console.log(isValid)
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
 
         const newGame = new Game(req.body)
 

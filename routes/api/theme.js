@@ -5,6 +5,8 @@ const Theme = require('../../models/Theme')
 const validateThemeInput = require('../../validation/theme')
 const validateThemeItemInput = require('../../validation/theme_items')
 
+
+// Requires name (String), description (String)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -27,6 +29,30 @@ router.post('/',
 )
 
 
+// Retrieves all playable themes
+router.get('/',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Theme.find()
+        .then(themes => {
+            let validThemes = themes.reduce((validThemes, theme) =>{
+                if (theme.themeItems.length >= 9) {
+                    validThemes.push(theme)
+                }
+                return validThemes
+            },
+            [])
+            
+            return res.json(validThemes)
+
+        })
+        
+
+        
+    }
+)
+
+// Requires text (String), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/item',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -54,7 +80,7 @@ router.post('/item',
     }
 )
 
-
+// Requires text (String- comma seperated), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/items',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
