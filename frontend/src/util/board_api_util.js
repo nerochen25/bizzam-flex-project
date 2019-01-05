@@ -15,13 +15,7 @@ export const getBoardById = id => {
   return axios.get('/api/boards/', {id: id});
 };
 
-// //Fetch User boards
-// export const getUserBoards = id => {
-//   return axios.get(`/api/boards/${id}`);
-// };
+export const toggleSquare = (id, position) => {
+  return axios.post('/api/boards/square', {id, position})
+}
 
-
-
-
-// edit
-// delete

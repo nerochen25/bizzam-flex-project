@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
+import { fetchBoards, selectSquare, fetchBoard } from './actions/board_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -41,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render our root component and pass in the store as a prop
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchBoards = fetchBoards;
+    window.selectSquare = selectSquare;
+    window.fetchBoard = fetchBoard;
     const root = document.getElementById('root');
   
     ReactDOM.render(<Root store={store} />, root);

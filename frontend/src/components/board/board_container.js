@@ -4,7 +4,6 @@ import BoardIndex from './board_index.jsx';
 import {fetchBoards, fetchBoard} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
-    console.log("state", state);
     return {
         loggedIn: state.session.isAuthenticated,
         boards: Object.values(state.boards.all),
