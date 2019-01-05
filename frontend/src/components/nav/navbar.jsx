@@ -23,7 +23,7 @@ class NavBar extends React.Component {
                     <Link to={'/bizzams'}>Game</Link>
                     <Link to={'/profile'}>Profile</Link>
                     <Link to={'/new_bizzam'}>Write a BizZam</Link>
-                    <Link to={'/board'}>board</Link>
+                    <Link to={'/board'}>Board</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             </div>

@@ -1,4 +1,7 @@
-import { RECEIVE_BOARDS, RECEIVE_NEW_BOARD, RECEIVE_USER_BOARDS } from '../actions/board_actions';
+import { 
+        RECEIVE_BOARDS, 
+        RECEIVE_BOARD
+        } from '../actions/board_actions';
 
   
 const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
@@ -7,17 +10,11 @@ const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) =>
 
     switch(action.type) {
         case RECEIVE_BOARDS:
-       
-        newState.all = action.boards.data;
-        return newState;
-
-        case RECEIVE_USER_BOARDS:
-            // console.log('>>>>>>>>>> inside the receive_user_boards >>>>>>>>>');
-            newState.user = action.boards.data;
+            newState.all = action.boards.data;
+            // console.log('newstate in board reducer >>>>>', newState);
             return newState;
         
-        case RECEIVE_NEW_BOARD:
-            // console.log('>>>>>>>>>> inside the receive_new_board >>>>>>>>>');
+        case RECEIVE_BOARD:
             newState.new = action.board.data;
             return newState;
 
@@ -27,3 +24,9 @@ const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) =>
 };
 
 export default BoardsReducer;
+
+
+// case RECEIVE_USER_BOARDS:
+//     // console.log('>>>>>>>>>> inside the receive_user_boards >>>>>>>>>');
+//     newState.user = action.boards.data;
+//     return newState;
