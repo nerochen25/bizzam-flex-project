@@ -10,7 +10,7 @@ class Theme extends React.Component {
             formThemeTitle: '',
             formThemeBody: '',
             formThemeItem: '',
-            formThemeItems: [],
+            formThemeItems: 'happy happy',
             themeCreated: false
         };
 
@@ -54,13 +54,19 @@ class Theme extends React.Component {
     }
 
     handleClickAdd(){
-            // this.setState({
-            //    formThemeItems: this.state.formThemeItems.concat(formThemeItem)
-            // });        
+            this.setState({
+                formThemeItems: "push item to the array"
+
+            });      
+            console.log("form theme items is :", this.state.formThemeItems)  
     }
 
     handleSubmit(e) {
         e.preventDefault();
+
+        this.setState({
+            themeCreated: true
+        })
     
         let makeTheme = {
           name: this.state.formThemeTitle,
