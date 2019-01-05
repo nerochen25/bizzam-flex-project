@@ -7,7 +7,9 @@ const validateThemeItemInput = require('../../validation/theme_items')
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),
+    
     (req, res) => {
+        console.log(req.body)
         const { isValid, errors } = validateThemeInput(req.body);
 
         if (!isValid) {

@@ -13,9 +13,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        postTheme: () => dispatch(postTheme()),
-        postThemeItem: () => dispatch(postThemeItem()),
-        postThemeItems: () => dispatch(postThemeItems()),
+        postTheme: (data) => dispatch(postTheme(data)),
+        postThemeItem: (data) => dispatch(postThemeItem(data)),
+        postThemeItems: (data) => dispatch(postThemeItems(data)),
     };
 };
 
