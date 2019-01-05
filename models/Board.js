@@ -16,7 +16,7 @@ const subSquares = {
 }
 
 const boardSchema = Schema({
-    userID: { type: Schema.Types.ObjectId, ref: 'User'},
+    userID: String,
     squares: [ subSquares ]
 })
 
