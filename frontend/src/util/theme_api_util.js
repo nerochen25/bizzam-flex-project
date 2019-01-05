@@ -6,11 +6,11 @@ export const createTheme = data => {
 
 export const createThemeItem = data => {
   return axios.post('/api/themes/item', data)
-}
+};
 
 export const createThemeItems = data => {
   return axios.post('/api/themes/items', data)
-}
+};
 
 
 // delete a theme
