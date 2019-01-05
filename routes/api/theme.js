@@ -33,16 +33,22 @@ router.post('/',
 router.get('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        let themes = await Themes.find().reduce((validThemes, theme) =>{
-            if (theme.themeItems.length >= 9) {
-                validThemes.push(theme)
-            }
-            return validThemes
-        },
-        [])
+        Theme.find()
+        .then(themes => {
+            let validThemes = themes.reduce((validThemes, theme) =>{
+                if (theme.themeItems.length >= 9) {
+                    validThemes.push(theme)
+                }
+                return validThemes
+            },
+            [])
+            
+            return res.json(validThemes)
 
-        return res.json(themes)
+        })
+        
 
+        
     }
 )
 
