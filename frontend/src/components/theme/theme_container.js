@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
 import Theme from './theme.jsx';
-import {postTheme} from '../../actions/board_actions';
+import {postTheme, postThemeItem, postThemeItems} from '../../actions/theme_actions';
 
 
 const mapStateToProps = state => {

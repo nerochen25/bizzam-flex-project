@@ -7,20 +7,22 @@ class Theme extends React.Component {
         super(props);
         
         this.state = {
-            formThemeTitle: "",
-            formThemeBody: "",
-            formThemeItem: "",
+            formThemeTitle: '',
+            formThemeBody: '',
+            formThemeItem: '',
             formThemeItems: [],
             themeCreated: false
         };
 
         // this.logoutUser = this.logoutUser.bind(this);
-        this.updateTheme = this.updateTheme.bind(this);
+        
         this.updateThemeBody = this.updateThemeBody.bind(this);
+        this.updateThemeTitle = this.updateThemeTitle.bind(this);
         this.updateThemeItem = this.updateThemeItem.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleClickAdd = this.handleClickAdd.bind(this);
-        // this.populateSquares = this.populateSquares.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
     
     updateThemeTitle(){
@@ -42,7 +44,7 @@ class Theme extends React.Component {
     }
 
     handleClick(){
-        if (1===1) {
+        if (1===0) {
             this.setState({
                 themeCreated: true
             });
@@ -52,9 +54,9 @@ class Theme extends React.Component {
     }
 
     handleClickAdd(){
-            this.setState({
-                formThemeItems: this.state.formThemeItems.concat(formThemeItem)
-            });        
+            // this.setState({
+            //    formThemeItems: this.state.formThemeItems.concat(formThemeItem)
+            // });        
     }
 
     handleSubmit(e) {
@@ -66,22 +68,24 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
+        console.log("END OF HANDLESUBMIT")
+        console.log("makeTheme is :", makeTheme)
       }
 
     handleDBSubmit(e) {
-        e.preventDefault();
-        if (formThemeItems.length < 9) {
-            alert("Not enough theme items, at least 9 are required");
-        } else {
+        // e.preventDefault();
+        // if (formThemeItems.length < 9) {
+        //     alert("Not enough theme items, at least 9 are required");
+        // } else {
             
-        }
+        // }
     
-        let makeTheme = {
-          name: this.state.formThemeTitle,
-          description: this.state.formThemeBody
-        };
+        // let makeTheme = {
+        //   name: this.state.formThemeTitle,
+        //   description: this.state.formThemeBody
+        // };
     
-        this.props.postTheme(makeTheme);
+        // this.props.postTheme(makeTheme);
       }
 
     // postThemeItems(){
@@ -94,7 +98,7 @@ class Theme extends React.Component {
 	render() {
 		return (<div>
                     <div className="theme">
-                        <h1 className="theme-title">Board</h1>
+                        <h1 className="theme-title">Create Your Theme</h1>
 
                         { this.state.themeCreated ? 
                             ( 
