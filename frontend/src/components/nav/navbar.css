@@ -3,7 +3,7 @@
 }
 
 .project-title {
-    font-size: 54px;
+    font-size: 70px;
     font-weight: 700;
     background: linear-gradient(330deg, #ff9900 0%, #0c2eb7bf 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
     -webkit-background-clip: text;
@@ -17,13 +17,14 @@
 
 .blue {
     /* color: #0C2EB7; */
-    font-size: 42px;
+    font-size: 60px;
 }
 
 .orange {
     /* color: #ff9900; */
-    font-size: 42px;
+    font-size: 60px;
 }
+
 
 .navbar {
     display: flex;
@@ -174,11 +175,11 @@
     width: 100px;
     display: flex;
     justify-content: space-between;
-    color: #0c2eb7bf;
+    color: #23273ebf;
     padding: 8px;
     margin-right: 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -206,15 +207,18 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 60px;
+    top: 72px;
     right: 100px;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .logged-in-navbar {
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 100px;
     width: 900px;
     height: 10%;
@@ -223,15 +227,17 @@
 }
 
 .logged-in-navbar a{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    color: #0c2eb7bf;
+    color: #23273ebf;
 }
 
 .logout-btn {
-    border: 2px solid #0c2eb7bf;
+    border: 2px solid #ff9900;
     border-radius: 4px;
-    color: #0c2eb7bf;
+    font-size: 20px;
+    font-weight: 500;
+    color: #23273ebf;
 }
 
 .logged-in-navbar :hover{
