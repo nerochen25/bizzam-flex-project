@@ -193,6 +193,7 @@
     justify-content: center;
     padding-top: 25px;
     font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .home-navbar {
@@ -212,6 +213,8 @@
     height: 10%;
     justify-content: space-around;
     align-items: center;
+    top: 60px;
+    right: 100px;
 }
 
 .logged-in-navbar {
@@ -253,4 +256,6 @@
 #current-user-name {
     color: #0000ffab;
     margin-right: -25px;
+    top: 60px;
+    right: 100px;
 }
