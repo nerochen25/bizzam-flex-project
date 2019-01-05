@@ -249,3 +249,8 @@
     color: #ff9900;
     font-size: 110%;
 }
+
+#current-user-name {
+    color: #0000ffab;
+    margin-right: -45px;
+}
