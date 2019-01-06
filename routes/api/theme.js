@@ -145,7 +145,7 @@ router.post('/items',
 
                 return theme
                     .save()
-                    .then(theme => res.json({theme}))
+                    .then(theme => res.json(theme))
                     .catch(err => res.status(400).json(err));
             })
             .catch(err => res.status(400).json(err));

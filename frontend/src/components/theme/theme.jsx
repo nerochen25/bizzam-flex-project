@@ -60,11 +60,19 @@ class Theme extends React.Component {
                     formThemeItems
                 };
             }, 
-            () => console.log("form theme items is :", this.state.formThemeItems.join(','))  
-            );
+            () => console.log("form theme items is :", this.state.formThemeItems)  
+        );
 
-        
+        // this.props.postThemeItems({
+            
+        // });
     }
+
+    // component(){
+    //     console.log(this.state.formThemeItems);
+        
+        
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -74,7 +82,6 @@ class Theme extends React.Component {
         });
     
         let makeTheme = {
-           
             name: this.state.formThemeTitle,
             description: this.state.formThemeBody
         };
@@ -85,9 +92,12 @@ class Theme extends React.Component {
 
     handleDBSubmit(e) {
         e.preventDefault();
-        console.log("ttt", this.props.themes[0].name);
+        console.log("ttt", this.props.themes[0]._id);
         
-        this.props.postThemeItems({name: this.props.themes[0].name, description: this.props.themes[0].description});
+        this.props.postThemeItems({ 
+            theme_id: this.props.themes[0]._id,
+            items: this.state.formThemeItems.join(',')
+        });
     }
         // e.preventDefault();
         // if (formThemeItems.length < 9) {
@@ -114,70 +124,70 @@ class Theme extends React.Component {
 	render() {
         console.log('themes inside props ===== ', this.props.themes);
 		return (
-                    <div className="theme">
-                        <h1 className="theme-title">Create Your Theme</h1>
-                        <div className="theme-grid">
-                            <div className="theme-grid-1">
-                                { this.state.themeCreated ? 
-                                    ( 
-                                    // generates a list of current theme items
-                                    // has a textbox for adding to current theme items
-                                    // has a second form for attempted saving to the DB 
-                                    <div className="theme-container">
-                                        {/* {this.postThemeItems()} */}
-                                        <form onSubmit={this.handleClickAdd} className="theme-form">
-                                            <div className="theme-item" />
-                                            <label className="theme-labels">
-                                                Your Bazzam item goes here (i.e. "high-five a kitten")
-                                                <br />
-                                                <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
-                                            </label>
+                <div className="theme">
+                    <h1 className="theme-title">Create Your Bizzam</h1>
+                    <div className="theme-grid">
+                        <div className="theme-grid-1">
+                            { this.state.themeCreated ? 
+                                ( 
+                                // generates a list of current theme items
+                                // has a textbox for adding to current theme items
+                                // has a second form for attempted saving to the DB 
+                                <div className="theme-container">
+                                    {/* {this.postThemeItems()} */}
+                                    <form onSubmit={this.handleClickAdd} className="theme-form">
+                                        <div className="theme-item" />
+                                        <label className="theme-labels">
+                                            Your Bizzam item goes here (i.e. "high-five a kitten")
                                             <br />
-                                            <input type="submit" value="Create this item" className="theme-btn" />
-                                            <br/>
-                                            {/* <input type="submit" value="Save this Bizzam" className="theme-btn" /> */}
-                                        </form>
-                                    </div>  
-                                        ) :
-                                        // this form generates a theme object
-                                        <form onSubmit={this.handleSubmit} className="theme-form">
-                                            <div>
-                                                <label className="theme-labels">
-                                                    <span >Enter a Theme title</span>
-                                                    <input type="text" onChange={this.updateThemeTitle()} className="theme-input theme-input-1" />
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <label className="theme-labels">
-                                                    <span>Enter a Theme description</span>
-                                                    <input type="text" onChange={this.updateThemeBody()} className="theme-input" />
-                                                </label>
-                                            </div>
-                                            <input type="submit" value="Create your Theme" className="theme-btn" />
-                                        </form>
-                                        
-
-                                }
-                            </div>
-                            <div className="theme-grid-2">
-                                
-                                
-                                <p><span className="theme-span">Theme title</span>{this.state.formThemeTitle}</p>
-                                <p><span className="theme-span">Theme description</span>{this.state.formThemeBody}</p>
-                                <p><span className="theme-span">Theme Items</span>{this.state.formThemeItems.join(',')}</p>
-                                <form onSubmit={this.handleDBSubmit} className="theme-form">
-                                            {/* <div className="theme-item" />
+                                            <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
+                                        </label>
+                                        <br />
+                                        <input type="submit" value="Add Bizzam item" className="theme-btn" />
+                                        <br/>
+                                        {/* <input type="submit" value="Save this Bizzam" className="theme-btn" /> */}
+                                    </form>
+                                </div>  
+                                    ) :
+                                    // this form generates a theme object
+                                    <form onSubmit={this.handleSubmit} className="theme-form">
+                                        <div>
                                             <label className="theme-labels">
-                                                Click here to Save
-                                                <br/>
-                                                <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
+                                                <span >Enter a Theme title</span>
+                                                <input type="text" onChange={this.updateThemeTitle()} className="theme-input theme-input-1" />
                                             </label>
-                                            <br /> */}
-                                            <input type="submit" value="Save this Bizzam" className="theme-btn" />
-                                </form>
-                            </div>
+                                        </div>
+                                        <div>
+                                            <label className="theme-labels">
+                                                <span>Enter a Theme description</span>
+                                                <input type="text" onChange={this.updateThemeBody()} className="theme-input" />
+                                            </label>
+                                        </div>
+                                        <input type="submit" value="Create Theme" className="theme-btn" />
+                                    </form>
+                                    
+
+                            }
+                        </div>
+                        <div className="theme-grid-2">
+                            
+                            
+                            <p><span className="theme-span">Theme title</span>{this.state.formThemeTitle}</p>
+                            <p><span className="theme-span">Theme description</span>{this.state.formThemeBody}</p>
+                            <p><span className="theme-span">Theme Items</span>{this.state.formThemeItems.join(', ')}</p>
+                            <form onSubmit={this.handleDBSubmit} className="theme-form">
+                                        {/* <div className="theme-item" />
+                                        <label className="theme-labels">
+                                            Click here to Save
+                                            <br/>
+                                            <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
+                                        </label>
+                                        <br /> */}
+                                        <input type="submit" value="Save Bizzam" className="theme-btn" />
+                            </form>
                         </div>
                     </div>
+                </div>
         );
     }
 }
