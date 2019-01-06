@@ -82,12 +82,31 @@ router.post('/',
 router.get('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Board
-            .findById(req.body.id)
-            .then(board => res.json(board))
-            .catch(err => res.status(400).json(err))
+        if(req.body.id) {
+            Board
+                .findById(req.body.id)
+                .then(board => {
+                    let response = {}
+                    response[board.id] = board
+                    return res.json(response)
+                })
+                .catch(err => res.status(400).json(err));
+        } else {
+            Board
+                .find({})
+                .then(boards => {
+                    return res.json(boards.reduce((response, board) =>{
+                        response[board.id] = board
+                        return response
+                    },
+                    {})
+                    )
+                })
+                .catch(err => res.status(400).json(err));
+        }
+        
     }
-)
+);
 
 
 // Requires id (Schema.Type.ObjectID, ref: "Board"), position
@@ -98,7 +117,7 @@ router.post('/square',
         Board
             .findById(req.body.id)
             .then(board => {
-                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked)
+                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
                 
                 board
                     .save()
@@ -111,7 +130,7 @@ router.post('/square',
                     });
                     
             })
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.status(400).json(err));
     }
 );
 

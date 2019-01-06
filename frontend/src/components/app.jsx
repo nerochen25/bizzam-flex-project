@@ -10,6 +10,7 @@ import ProfileContainer from './profile/profile_container';
 import BoardContainer from './board/board_container';
 import CreateGameContainer from './game/create_game_container';
 
+
 const App = () => (
   <div className="splash">
     <NavBarContainer />
