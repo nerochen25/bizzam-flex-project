@@ -3,7 +3,6 @@ import BoardIndexItem from './board_index_item';
 
 const BoardIndex = ({boards, selectBoard, dummy}) => {
     let display 
-    console.log(dummy)
     if (boards) {
         display = Object.values(boards).map(board => {
             
