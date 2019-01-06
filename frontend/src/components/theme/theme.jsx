@@ -10,19 +10,20 @@ class Theme extends React.Component {
             formThemeTitle: '',
             formThemeBody: '',
             formThemeItem: '',
-            formThemeItems: 'happy happy',
+            formThemeItems: [],
             themeCreated: false
         };
 
-        // this.logoutUser = this.logoutUser.bind(this);
-        
         this.updateThemeBody = this.updateThemeBody.bind(this);
         this.updateThemeTitle = this.updateThemeTitle.bind(this);
         this.updateThemeItem = this.updateThemeItem.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleClickAdd = this.handleClickAdd.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        
+        this.handleSubmit = this.handleSubmit.bind(this);   
+    }
+
+    componentWillReceiveProps() {
+
     }
     
     updateThemeTitle(){
@@ -54,11 +55,14 @@ class Theme extends React.Component {
     }
 
     handleClickAdd(){
-            this.setState({
-                formThemeItems: "push item to the array"
+            this.setState( state => {
+                    const formThemeItems =  [...state.formThemeItems, state.formThemeItem];
+                    return  {
+                        formThemeItems
+                    };
+                });
 
-            });      
-            console.log("form theme items is :", this.state.formThemeItems)  
+            console.log("form theme items is :", this.state.formThemeItems);  
     }
 
     handleSubmit(e) {
@@ -66,7 +70,7 @@ class Theme extends React.Component {
 
         this.setState({
             themeCreated: true
-        })
+        });
     
         let makeTheme = {
           name: this.state.formThemeTitle,
@@ -74,8 +78,7 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
-        console.log("END OF HANDLESUBMIT")
-        console.log("makeTheme is :", makeTheme)
+        console.log("makeTheme is :", makeTheme);
       }
 
     handleDBSubmit(e) {
@@ -102,58 +105,70 @@ class Theme extends React.Component {
     
 
 	render() {
-		return (<div>
+		return (
                     <div className="theme">
                         <h1 className="theme-title">Create Your Theme</h1>
+                        <div className="theme-grid">
+                            <div className="theme-grid-1">
+                                { this.state.themeCreated ? 
+                                    ( 
+                                    // generates a list of current theme items
+                                    // has a textbox for adding to current theme items
+                                    // has a second form for attempted saving to the DB 
+                                    <div className="theme-container">
+                                        {/* {this.postThemeItems()} */}
+                                        <form onSubmit={this.handleClickAdd} className="theme-form">
+                                            <div className="theme-item" />
+                                            <label className="theme-labels">
+                                                Your Bazzam item goes here (i.e. "high-five a kitten")
+                                                <br />
+                                                <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
+                                            </label>
+                                            <br />
+                                            <input type="submit" value="Create this item" className="theme-btn" />
+                                            <br/>
+                                            {/* <input type="submit" value="Save this Bizzam" className="theme-btn" /> */}
+                                        </form>
+                                    </div>  
+                                        ) :
+                                        // this form generates a theme object
+                                        <form onSubmit={this.handleSubmit} className="theme-form">
+                                            <div>
+                                                <label className="theme-labels">
+                                                    <span >Enter a Theme title</span>
+                                                    <input type="text" onChange={this.updateThemeTitle()} className="theme-input theme-input-1" />
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label className="theme-labels">
+                                                    <span>Enter a Theme description</span>
+                                                    <input type="text" onChange={this.updateThemeBody()} className="theme-input" />
+                                                </label>
+                                            </div>
+                                            <input type="submit" value="Create your Theme" className="theme-btn" />
+                                        </form>
+                                        
 
-                        { this.state.themeCreated ? 
-                            ( 
-                            // generates a list of current theme items
-                            // has a textbox for adding to current theme items
-                            // has a second form for attempted saving to the DB 
-                            <div className="theme-container">
-                                {/* {this.postThemeItems()} */}
-                                <form onSubmit={this.handleClickAdd} className="theme-form">
-                                    <div className="theme-item" />
-                                      <label className="theme-labels">
-								         Your Bazzam item goes here (i.e. "high-five a kitten")
-								         <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
-							         </label>
-                                     <input type="submit" value="Create this item" className="theme-btn" />
-                                </form>
-                            
-                            
+                                }
+                            </div>
+                            <div className="theme-grid-2">
+                                <p><span>Theme title</span>{this.state.formThemeTitle}</p>
+                                <p><span>Theme description</span>{this.state.formThemeBody}</p>
                                 <form onSubmit={this.handleDBSubmit} className="theme-form">
-                                    <div className="theme-item" />
-                                      <label className="theme-labels">
-								         Click here to Save
-								         <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
-							         </label>
-                                     <input type="submit" value="Save this Bizzam" className="theme-btn" />
+                                            {/* <div className="theme-item" />
+                                            <label className="theme-labels">
+                                                Click here to Save
+                                                <br/>
+                                                <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
+                                            </label>
+                                            <br /> */}
+                                            <input type="submit" value="Save this Bizzam" className="theme-btn" />
                                 </form>
+                            </div>
+                        </div>
 
 
-                            </div>  
-                               
-                                ) :
-                                // this form generates a theme object
-                                <form onSubmit={this.handleSubmit} className="theme-form">
-                                    <label>
-                                        <span className="theme-labels">Enter a Theme title</span>
-                                        <input type="text" onChange={this.updateThemeTitle()} className="theme-input" />
-							        </label>
-                                    <label>
-                                        <span className="theme-labels">Enter a Theme description</span>
-                                        <input type="text" onChange={this.updateThemeBody()} className="theme-input" />
-							        </label>
-                                    <input type="submit" value="Create your Theme" className="theme-btn" />
-                                </form>
-                                
-
-                        }
                     </div>
-				
-            </div>
         );
     }
 }

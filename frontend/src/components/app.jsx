@@ -12,7 +12,6 @@ import ThemeContainer from './theme/theme_container';
 
 
 const App = () => (
-<<<<<<< HEAD
   <div className="splash">
     <NavBarContainer />
     <Switch>
@@ -24,29 +23,6 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
     </Switch>
   </div>
-||||||| merged common ancestors
-  <div className="splash">
-    <NavBarContainer />
-    <Switch>
-      <ProtectedRoute path="/board" component={BoardContainer} />
-      <ProtectedRoute path="/profile" component={ProfileContainer} />
-      <AuthRoute  path="/login" component={LoginFormContainer} />
-      <AuthRoute  path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/" component={MainPage} />
-    </Switch>
-  </div>
-=======
-	<div className="splash">
-		<NavBarContainer />
-		<Switch>
-			<ProtectedRoute path="/board" component={BoardContainer} />
-			<ProtectedRoute path="/profile" component={ProfileContainer} />
-			<AuthRoute path="/login" component={LoginFormContainer} />
-			<AuthRoute path="/signup" component={SignupFormContainer} />
-			<AuthRoute exact path="/" component={MainPage} />
-		</Switch>
-	</div>
->>>>>>> master
 );
 
 export default App;
