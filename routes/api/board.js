@@ -60,7 +60,8 @@ router.post('/',
             .then(squares => {
                 const newBoard = new Board({
                     userID: req.body.user_id,
-                    squares: squares
+                    squares: squares,
+                    gameID: req.body.game_id
                 });
 
                 newBoard
