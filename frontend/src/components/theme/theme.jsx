@@ -11,7 +11,8 @@ class Theme extends React.Component {
             formThemeBody: '',
             formThemeItem: '',
             formThemeItems: [],
-            themeCreated: false
+            themeCreated: false, 
+            showThemes: false
         };
 
         this.updateThemeBody = this.updateThemeBody.bind(this);
@@ -21,6 +22,7 @@ class Theme extends React.Component {
         this.handleClickAdd = this.handleClickAdd.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.handleDBSubmit = this.handleDBSubmit.bind(this);  
+        this.showAllThemes = this.showAllThemes.bind(this);
     }
 
     updateThemeTitle(){
@@ -53,7 +55,7 @@ class Theme extends React.Component {
 
     handleClickAdd(){
         this.setState( state => {
-                const formThemeItems =  [...state.formThemeItems, state.formThemeItem];
+                let formThemeItems =  [...state.formThemeItems, state.formThemeItem];
                 return  {
                     formThemeItems
                 };
@@ -88,10 +90,20 @@ class Theme extends React.Component {
             items: this.state.formThemeItems.join(',')
         });
     }
+
+    showAllThemes() {
+        this.setState({
+            showThemes: true
+        });
+        // this.props.getThemes();
+    }
     
 
 	render() {
         // console.log('themes inside props ===== ', this.props.themes);
+
+        
+
 		return <div className="theme">
 				<h1 className="theme-title">Create Your Own Bizzam</h1>
 				<div className="theme-grid">
@@ -100,9 +112,12 @@ class Theme extends React.Component {
                         <nav>
                             <ul>
                                 <li><button>New Theme</button></li>
-                                <li><button>All Themes</button></li>
+                                <li><button onClick={this.showAllThemes}>All Themes</button></li>
                             </ul>
                         </nav>
+                        
+                        <p></p>
+
 
 						{this.state.themeCreated ? // generates a list of current theme items
 							// has a textbox for adding to current theme items

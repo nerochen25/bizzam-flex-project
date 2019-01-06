@@ -30,7 +30,7 @@ router.post('/',
 );
 
 
-// Retrieves all playable themes
+// Retrieves all playable themes and all themes.
 router.get('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {

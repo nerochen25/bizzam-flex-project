@@ -9,5 +9,24 @@ class Theme extends React.Component {
     }
     
     render() {
+        <div>
+            <HashRouter>
+                <Switch>
+                    <Route
+                        path='/board/index'
+                        component={() => <BoardIndex
+                            boards={this.props.boards}
+                            selectBoard={this.selectBoard}
+                        />}
 
+                    />
+                    <Route
+                        path='/board/play'
+                        component={() => <BoardShowContainer
+                            id={this.state.board_id}
+                        />}
+                    />
+                </Switch>
+            </HashRouter>
+        </div>
     }

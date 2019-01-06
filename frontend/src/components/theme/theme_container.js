@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
-import Theme from './theme_index.jsx';
-import {postTheme, postThemeItem, postThemeItems} from '../../actions/theme_actions';
+import Theme from './theme.jsx';
+import {postTheme, postThemeItem, postThemeItems, getThemes, getPlayableThemes} from '../../actions/theme_actions';
 
 
 const mapStateToProps = state => {
@@ -19,6 +19,8 @@ const mapDispatchToProps = dispatch => {
         postTheme: data => dispatch(postTheme(data)),
         postThemeItem: data => dispatch(postThemeItem(data)),
         postThemeItems: data => dispatch(postThemeItems(data)),
+        getThemes: () => dispatch(getThemes()),
+        getPlayableThemes: data => dispatch(getPlayableThemes(data))
     };
 };
 

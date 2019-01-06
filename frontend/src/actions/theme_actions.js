@@ -1,4 +1,4 @@
-import { createTheme, createThemeItem, createThemeItems, getAllPlayableThemes } from '../util/theme_api_util';
+import { createTheme, createThemeItem, createThemeItems, getAllPlayableThemes, getAllThemes } from '../util/theme_api_util';
 
 export const RECEIVE_NEW_THEME = "RECEIVE_NEW_THEME";
 export const RECEIVE_NEW_THEME_ITEM = "RECEIVE_NEW_THEME_ITEM";
@@ -25,11 +25,17 @@ export const receiveThemes = themes => ({
   themes
 });
 
-export const getALLThemes = data => dispatch => (
+export const getAllPlayThemes = data => dispatch => (
   getAllPlayableThemes(data)
     .then(themes => dispatch(receiveThemes(themes)))
     .catch(err => console.log(err))
 );
+
+export const getThemes = () => dispatch => {
+  getAllThemes()
+    .then(themes => dispatch(receiveThemes(themes)))
+    .catch(err => console.log(err));
+};
 
 export const postTheme = data => dispatch => (
   createTheme(data)
