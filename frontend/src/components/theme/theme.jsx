@@ -125,7 +125,7 @@ class Theme extends React.Component {
         console.log('themes inside props ===== ', this.props.themes);
 		return (
                 <div className="theme">
-                    <h1 className="theme-title">Create Your Bizzam</h1>
+                    <h1 className="theme-title">Create Your Own Bizzam</h1>
                     <div className="theme-grid">
                         <div className="theme-grid-1">
                             { this.state.themeCreated ? 
