@@ -19,12 +19,11 @@ class Theme extends React.Component {
         this.updateThemeItem = this.updateThemeItem.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleClickAdd = this.handleClickAdd.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);   
+        this.handleSubmit = this.handleSubmit.bind(this); 
+        this.handleDBSubmit = this.handleDBSubmit.bind(this);  
     }
 
-    componentWillReceiveProps() {
-
-    }
+    
     
     updateThemeTitle(){
         return e => this.setState({
@@ -55,14 +54,16 @@ class Theme extends React.Component {
     }
 
     handleClickAdd(){
-            this.setState( state => {
-                    const formThemeItems =  [...state.formThemeItems, state.formThemeItem];
-                    return  {
-                        formThemeItems
-                    };
-                });
+        this.setState( state => {
+                const formThemeItems =  [...state.formThemeItems, state.formThemeItem];
+                return  {
+                    formThemeItems
+                };
+            }, 
+            () => console.log("form theme items is :", this.state.formThemeItems.join(','))  
+            );
 
-            console.log("form theme items is :", this.state.formThemeItems);  
+        
     }
 
     handleSubmit(e) {
@@ -73,8 +74,9 @@ class Theme extends React.Component {
         });
     
         let makeTheme = {
-          name: this.state.formThemeTitle,
-          description: this.state.formThemeBody
+           
+            name: this.state.formThemeTitle,
+            description: this.state.formThemeBody
         };
     
         this.props.postTheme(makeTheme);
@@ -82,6 +84,11 @@ class Theme extends React.Component {
       }
 
     handleDBSubmit(e) {
+        e.preventDefault();
+        console.log("ttt", this.props.themes[0].name);
+        
+        this.props.postThemeItems({name: this.props.themes[0].name, description: this.props.themes[0].description});
+    }
         // e.preventDefault();
         // if (formThemeItems.length < 9) {
         //     alert("Not enough theme items, at least 9 are required");
@@ -95,7 +102,7 @@ class Theme extends React.Component {
         // };
     
         // this.props.postTheme(makeTheme);
-      }
+    // }
 
     // postThemeItems(){
     //     for(let i=0; i < this.state.formThemeItems.length - 1; i++){
@@ -105,6 +112,7 @@ class Theme extends React.Component {
     
 
 	render() {
+        console.log('themes inside props ===== ', this.props.themes);
 		return (
                     <div className="theme">
                         <h1 className="theme-title">Create Your Theme</h1>
@@ -152,8 +160,11 @@ class Theme extends React.Component {
                                 }
                             </div>
                             <div className="theme-grid-2">
-                                <p><span>Theme title</span>{this.state.formThemeTitle}</p>
-                                <p><span>Theme description</span>{this.state.formThemeBody}</p>
+                                
+                                
+                                <p><span className="theme-span">Theme title</span>{this.state.formThemeTitle}</p>
+                                <p><span className="theme-span">Theme description</span>{this.state.formThemeBody}</p>
+                                <p><span className="theme-span">Theme Items</span>{this.state.formThemeItems.join(',')}</p>
                                 <form onSubmit={this.handleDBSubmit} className="theme-form">
                                             {/* <div className="theme-item" />
                                             <label className="theme-labels">
@@ -166,8 +177,6 @@ class Theme extends React.Component {
                                 </form>
                             </div>
                         </div>
-
-
                     </div>
         );
     }

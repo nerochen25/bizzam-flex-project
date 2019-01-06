@@ -43,3 +43,18 @@
 .theme-labels {
     margin-bottom: 40px;
 }
+
+.theme-span {
+    margin-right: 20px;
+}
+
+.theme-btn {
+    font-size: 16px;
+    border: 1px solid balck;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 5px 15px;
+}

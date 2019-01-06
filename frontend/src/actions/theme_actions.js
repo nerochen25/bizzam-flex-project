@@ -33,7 +33,7 @@ export const postThemeItem = data => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const postThemeItems = data => dispatch => (
+export const postThemeItems = (data) => dispatch => (
   createThemeItems(data)
     .then(themeItems => dispatch(receiveNewThemeItems(themeItems)))
     .catch(err => console.log(err))

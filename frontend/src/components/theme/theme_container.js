@@ -8,6 +8,9 @@ const mapStateToProps = state => {
     
     return {
         // loggedIn: state.session.isAuthenticated
+        themes: Object.values(state.entities.themes)
+        // formThemeTitle: state.entities.themes.newTheme.name,
+        // formThemeBody: state.entities.themes.newTheme.description
     };
 };
 
