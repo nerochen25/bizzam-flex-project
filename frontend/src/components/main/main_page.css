@@ -1,10 +1,12 @@
 
-.splash{
-    /* background: linear-gradient(to top, #66ccff 0%, #ff9933 100%);
-    margin-top: -36px; */
-}
+/* .splash{
+    background: linear-gradient(to top, #66ccff 0%, #ff9933 100%);
+    margin-top: -36px;
+} */
 .main-page{
-    margin-top: 20px;     
+    margin-top: 20px;    
+    font-family: 'Poppins', sans-serif;
+ 
 }
 
 .container{
@@ -21,7 +23,8 @@
 .what-bizzam h3{
     color: black;
     font-size: 24px;
-    font-family: 'Geneva, Tahoma, Verdana, sans-serif';
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Viga', sans-serif; */
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: .8px;
@@ -30,7 +33,8 @@
 .what-bizzam p {
     margin: 3% 20% 0 12%;
     /* text-align: center; */
-    font-family: 'Geneva, Tahoma, Verdana, sans-serif';
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Viga', sans-serif; */
     font-size: 20px;
     font-weight: 500;
     color: black;
@@ -55,7 +59,8 @@
 }
 
 .main-page-links span{
-    font-family: 'Geneva, Tahoma, Verdana, sans-serif';
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Viga', sans-serif; */
     font-size: 20px;
     font-weight: 500;
     color: black;
