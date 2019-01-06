@@ -1,0 +1,45 @@
+.theme-title {
+    font-size: 22px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.theme-form{
+    margin-top: 30px;
+    margin-left: 10%;
+    height: 300px;
+}
+
+.theme-form div {
+    margin-bottom: 35px;
+}
+
+.theme-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 50px auto;
+}
+
+.theme-grid-1 {
+    margin-left: 25%;
+}
+
+.theme-input{
+    margin-left: 30px;
+    font-size: 16px;
+    border: 1px solid blue;
+    padding: 5px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.theme-input-1{
+    margin-left: 84px;
+}
+
+.theme-labels {
+    margin-bottom: 40px;
+}

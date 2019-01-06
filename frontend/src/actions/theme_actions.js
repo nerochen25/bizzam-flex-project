@@ -4,7 +4,6 @@ export const RECEIVE_NEW_THEME = "RECEIVE_NEW_THEME";
 export const RECEIVE_NEW_THEME_ITEM = "RECEIVE_NEW_THEME_ITEM";
 export const RECEIVE_NEW_THEME_ITEMS = "RECEIVE_NEW_THEME_ITEMS";
 
-
 export const receiveNewTheme = theme => ({
   type: RECEIVE_NEW_THEME,
   theme
@@ -20,14 +19,13 @@ export const receiveNewThemeItems = themeItems => ({
   themeItems
 });
 
-
-
-
 export const postTheme = data => dispatch => (
   createTheme(data)
     .then(theme => dispatch(receiveNewTheme(theme)))
     .catch(err => console.log(err))
 );
+
+// export const fetchTheme = 
 
 export const postThemeItem = data => dispatch => (
   createThemeItem(data)
