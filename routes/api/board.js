@@ -113,7 +113,7 @@ router.get('/',
 router.post('/square',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        
+        debugger
         Board
             .findById(req.body.id)
             .then(board => {

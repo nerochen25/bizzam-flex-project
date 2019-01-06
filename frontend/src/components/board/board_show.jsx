@@ -1,15 +1,19 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
+import Square from './square'
+
 import './board.css';
 
-
+// props: :id, :selectSquare
 class BoardShow extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {}
+		this.handleClick = this.handleClick.bind(this)
     }
     
     componentDidMount(){
+		
         if (this.props.boards[this.props.id]) {
 			this.setState({
 				board: this.props.boards[this.props.id]
@@ -19,13 +23,26 @@ class BoardShow extends React.Component {
 		}
 	}
 	
-	componentDidUpdate() {
-		if (this.props.boards[this.props.id]) {
+	componentDidUpdate(oldProps) {
+		if (this.props.boards[this.props.id] !== oldProps.boards[this.props.id]) {
 			this.setState({
 				board: this.props.boards[this.props.id]
 			})
 		}
 	}
+
+	handleClick(id, position) {
+		return () => {
+			console.log(id, position)
+			this.props.selectSquare(id, position)
+			.then(() => {
+				
+				document.getElementById(`square-${position}`).className += ' selected'
+			})
+		}
+		
+	}
+	
 
 	render() {
 
@@ -33,14 +50,14 @@ class BoardShow extends React.Component {
 
 		if (this.state.board) {
 			squares = this.state.board.squares.map((square) => {
+				
 				return (
 					<Square
 						key={square.position}
+						position={square.position}
 						text={square.text}
 						checked={square.checked}
-						action={() => (
-							this.props.selectSquare(this.state.board.id, square.position)
-						)}
+						action={this.handleClick(this.state.board._id, square.position)}
 					/>
 				)
 			})

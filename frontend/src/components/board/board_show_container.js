@@ -4,7 +4,8 @@ import { fetchBoard, selectSquare } from '../../actions/board_actions'
 
 const mapStateToProps = (state) => ({
     loggedIn: state.session.isAuthenticated,
-    currentUser: state.session.user
+    currentUser: state.session.user,
+    boards: state.entities.boards
     // needs games / boards
 })
 

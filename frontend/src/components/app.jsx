@@ -14,7 +14,6 @@ const App = () => (
 	<div className="splash">
 		<NavBarContainer />
 		<Switch>
-			
 			<ProtectedRoute path="/board" component={BoardContainer} />
 			<ProtectedRoute path="/profile" component={ProfileContainer} />
 			<AuthRoute path="/login" component={LoginFormContainer} />
