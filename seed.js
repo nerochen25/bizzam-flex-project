@@ -27,29 +27,23 @@ async.series([
 //     });
 //   },
   
-  // Second function - connect to MongoDB using mongoose, which is an asynchronous call
+
   function(callback) {
     
-    // Open connection to MongoDB
     mongoose.connect(db, { useNewUrlParser: true });
     
-    // Need to listen to 'connected' event then execute callback method
-    // to call the next set of code in the async.serial array
     mongoose.connection.on('connected', function(){
       console.log('db connected via mongoose');
       
-      // Execute callback now we have a successful connection to the DB
-      // and move on to the third function below in async.series 
       callback(null, 'SUCCESS - Connected to mongodb');
     });
   },
-  
-  // Third function - use Mongoose to create a User model and save it to database
+
   function(callback) {
 
-    // BEGIN SEED DATABASE
+
     
-    // Use an array to store a list of User model objects to save to the database
+
     let themes = []
     let rawThemes = [
         {name: "Location Demo Theme 1", description: "I have seeded random theme items"},
@@ -146,7 +140,6 @@ async.series([
       themes.push(theme);
     }
     
-    console.log("Populating database with %s themes", themes.length);
 
     async.eachSeries(
       
@@ -168,7 +161,7 @@ async.series([
 
       function(err){
         
-        if (err) console.dir(err);
+        if (err) console.log(err);
         
         console.log("Finished aysnc.each in seeding db")
 
@@ -189,7 +182,7 @@ function(err, results){
   
   if(err) {
     console.log("Errors = ");
-    console.dir(errors)
+    console.log(errors)
   } else {
     console.log("Results = ");
     console.log(results);
