@@ -59,8 +59,8 @@ class Theme extends React.Component {
                 return  {
                     formThemeItems
                 };
-            }, 
-            () => console.log("form theme items is :", this.state.formThemeItems)  
+            }
+            // () => console.log("form theme items is :", this.state.formThemeItems)  
         );
 
         // this.props.postThemeItems({
@@ -87,12 +87,12 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
-        console.log("makeTheme is :", makeTheme);
+        // console.log("makeTheme is :", makeTheme);
       }
 
     handleDBSubmit(e) {
         e.preventDefault();
-        console.log("ttt", this.props.themes[0]._id);
+        // console.log("ttt", this.props.themes[0]._id);
         
         this.props.postThemeItems({ 
             theme_id: this.props.themes[0]._id,
@@ -122,7 +122,7 @@ class Theme extends React.Component {
     
 
 	render() {
-        console.log('themes inside props ===== ', this.props.themes);
+        // console.log('themes inside props ===== ', this.props.themes);
 		return <div className="theme">
 				<h1 className="theme-title">Create Your Own Bizzam</h1>
 				<div className="theme-grid">
