@@ -232,24 +232,27 @@
     font-size: 20px;
     font-weight: 500;
     color: #23273ebf;
+    transition: all 0.25s ease-in-out !important;
 }
 
 .logout-btn {
-    border: 2px solid #ff9900;
+    border: 2px solid #ff99008c;
     border-radius: 4px;
     font-size: 20px;
     font-weight: 500;
-    color: #23273ebf;
+    color: #ff99008c;
+    transition: all 0.25s ease-in-out !important;
 }
 
 .logged-in-navbar :hover{
-    color: #ff9900;
+    color: #ff99008c;
     font-size: 130%;
 }
 
-.logout-btn :hover{
-    color: #ff9900;
-    font-size: 110%;
+.logout-btn:hover{
+    color: #0000ffab;
+    font-size: 130%;
+    border-color: #0000ffab;
 }
 
 #current-user-name {

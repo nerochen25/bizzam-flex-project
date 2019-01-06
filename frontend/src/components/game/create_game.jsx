@@ -9,24 +9,35 @@ class CreateGame extends React.Component {
   
         this.state = {
             gameType: "",
-            newGame: ""
+            boards: [],
+            //hard-coding themeId for now, still waiting for theme component to pass theme_id over
+            themeId: '5c2e9b3a2506593d64be02ef',
+            winnerId: null,
+            errors: {}
         }
   
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     } 
 
     componentWillReceiveProps(nextProps) {
-        this.setState({newGame: nextProps.newGame.gameType});
+        this.setState({errors: nextProps.errors});
     }
+
+    componentDidMount() {
+        this.props.fetchBoards();
+    }
+
   
     handleSubmit(e) {
       e.preventDefault();
       let game = {
-        gameType: this.state.gameType
+        gameType: this.state.gameType,
+        theme: this.state.themeId
       };
   
       this.props.createGame(game); 
-      this.setState({gameType: ''})
+      this.setState({gameType: '', errors: {}})
     }
 
     updateGameType() {
@@ -35,25 +46,49 @@ class CreateGame extends React.Component {
         });
       }
 
-    updateNewGame() {
-    return e => this.setState({
-        newGame: e.currentTarget.value
-    });
+    updateThemeId() {
+        return e => this.setState({
+            themeId: e.currentTarget.value
+        });
     }
 
+    renderErrors() {
+        return (
+            <ul className="login-form-container">
+                {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                    {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
     render() {
+        const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
+            return (
+              <option className="game-type-option" key={idx}>{gameType}</option>
+            );
+          });
         return (
             <div className='create-game-div'>
-                <h1>CREATE GAME</h1>
-                <form onSubmit={this.handleSubmit}>
-                    Game type: {' '}
-                    <input type='text' value={this.state.gameType} onChange={this.updateGameType()} placeholder="Enter game type"/>
+                <div className="create-game-message">
+                <p>Let's create a board game now!</p>
+                </div>
+                <form onSubmit={this.handleSubmit} className='create-game-form'>
+                    Game type:
+                    <select className="game-type-select" onChange={this.updateGameType('gameType')} value={this.state.gameType}>
+                        <option className='default-game-type-select'>Select your game type</option>
+                        {gameTypeOptions}
+                    </select>
                     <br />
-                    Theme: {' '}
-                    <input type='text' value={this.state.newGame} onChange={this.updateNewGame()} placeholder="Enter theme"/>
                     <br />
-                    <input type='submit' value="Create Game"/>
+                    Theme:
+                    <input className="theme-input" type='text' onChange={this.updateThemeId('themeId')} value={this.state.themeId}/>
+                    <br />
+                    <br />
+                    <input className="create-game-btn" type='submit' value="Create Game"/>
                 </form>
+                {this.renderErrors()}
             </div>
         )
     }
