@@ -194,7 +194,9 @@
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Viga', sans-serif;
+
 }
 
 .home-navbar {
@@ -244,6 +246,7 @@
     font-weight: 500;
     color: #ff99008c;
     transition: all 0.25s ease-in-out !important;
+    font-family: 'Viga', sans-serif;
 }
 
 .logged-in-navbar :hover{

@@ -72,6 +72,7 @@
     text-align: center;
     text-decoration: none;
     align-items: flex-start;
+    font-family: 'Viga', sans-serif;
 }
 
 .create-game-btn:hover{

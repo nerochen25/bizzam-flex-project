@@ -18,7 +18,8 @@
 .labels {
     margin-left: 70px;
     color: #23273ebf;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Viga', sans-serif;
     font-size: 130%;
 }
 
@@ -32,38 +33,14 @@
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Viga', sans-serif;
 }
 
 
 .input-field-1 {
-    margin-left: 116px;
-    
+    margin-left: 137px;    
 }
-
-/* .form-btn {
-    margin: 5px 0 20px 70px;
-    border: 2px ridge #0C2EB7;
-    color: #ff9900;
-    background-color: #0C2EB7;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 5px 26px;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
-    cursor: pointer;    
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.form-btn:hover {
-    color:  #ff9900;
-    background-color: white;
-} */
 
 .form-btn {
     width: 24%;
@@ -86,6 +63,7 @@
     text-decoration: none;
     align-items: flex-start;
     margin-left: 70px;
+    font-family: 'Viga', sans-serif;
 }
 
 .form-btn:hover{
@@ -98,7 +76,9 @@
 
 .login-btn{
     margin-top: 40px;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Viga', sans-serif;
+
 }
 
 .log-in{
