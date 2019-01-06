@@ -18,13 +18,10 @@ const ThemesReducer = (state = {
             return newState;
         
         case RECEIVE_NEW_THEME_ITEM:
-            newState.newThemeItem = action.theme.data
+            newState.newThemeItem = action.theme.data;
             return newState;
-        
-        
-
         case RECEIVE_NEW_THEME_ITEMS:
-            newState.newThemeItems = action.theme.data
+            newState.newThemeItems = action.theme.data;
             return newState;
         default:
         return state;

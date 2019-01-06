@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
-const Theme = require('../../models/Theme')
-const validateThemeInput = require('../../validation/theme')
-const validateThemeItemInput = require('../../validation/theme_items')
+const Theme = require('../../models/Theme');
+const validateThemeInput = require('../../validation/theme');
+const validateThemeItemInput = require('../../validation/theme_items');
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),

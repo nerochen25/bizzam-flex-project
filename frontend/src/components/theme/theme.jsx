@@ -10,7 +10,7 @@ class Theme extends React.Component {
             formThemeTitle: '',
             formThemeBody: '',
             formThemeItem: '',
-            formThemeItems: 'happy happy',
+            formThemeItems: [],
             themeCreated: false
         };
 
@@ -55,10 +55,9 @@ class Theme extends React.Component {
 
     handleClickAdd(){
             this.setState({
-                formThemeItems: "push item to the array"
-
+                formThemeItems: [...this.state.formThemeItems, this.state.formThemeItem]
             });      
-            console.log("form theme items is :", this.state.formThemeItems)  
+            console.log("form theme items is :", this.state.formThemeItems);
     }
 
     handleSubmit(e) {
@@ -66,7 +65,7 @@ class Theme extends React.Component {
 
         this.setState({
             themeCreated: true
-        })
+        });
     
         let makeTheme = {
           name: this.state.formThemeTitle,
@@ -74,8 +73,8 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
-        console.log("END OF HANDLESUBMIT")
-        console.log("makeTheme is :", makeTheme)
+        console.log("END OF HANDLESUBMIT");
+        console.log("makeTheme is :", makeTheme);
       }
 
     handleDBSubmit(e) {
@@ -104,7 +103,7 @@ class Theme extends React.Component {
 	render() {
 		return (<div>
                     <div className="theme">
-                        <h1 className="theme-title">Create Your Theme</h1>
+                        <h1 className="theme-title">Create Your Bizzam</h1>
 
                         { this.state.themeCreated ? 
                             ( 
@@ -116,7 +115,7 @@ class Theme extends React.Component {
                                 <form onSubmit={this.handleClickAdd} className="theme-form">
                                     <div className="theme-item" />
                                       <label className="theme-labels">
-								         Your Bazzam item goes here (i.e. "high-five a kitten")
+								         Your Bizzam item goes here (i.e. "high-five a kitten")
 								         <input type="text" onChange={this.updateThemeItem()} className="theme-input-items" />
 							         </label>
                                      <input type="submit" value="Create this item" className="theme-btn" />
