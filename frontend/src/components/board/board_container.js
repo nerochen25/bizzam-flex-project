@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import BoardIndex from './board_index.jsx';
+import Board from './board.jsx';
 import {fetchBoards, fetchBoard} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Board);
