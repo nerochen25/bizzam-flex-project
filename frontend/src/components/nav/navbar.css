@@ -181,10 +181,12 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
+    transition: all 0.25s ease-in-out !important;
 }
 
 .navbar .links1:hover {
-    color: #ff9900;
+    color: #ff99008c;
+    font-size: 130%;
 }
 
 

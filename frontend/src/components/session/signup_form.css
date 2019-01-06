@@ -17,9 +17,9 @@
 
 .labels {
     margin-left: 70px;
-    color: #0C2EB7;
+    color: #23273ebf;
     font-family: 'Poppins', sans-serif;
-
+    font-size: 130%;
 }
 
 .input-fields{
@@ -42,7 +42,7 @@
     
 }
 
-.form-btn {
+/* .form-btn {
     margin: 5px 0 20px 70px;
     border: 2px ridge #0C2EB7;
     color: #ff9900;
@@ -63,6 +63,33 @@
 .form-btn:hover {
     color:  #ff9900;
     background-color: white;
+} */
+
+.form-btn {
+    width: 24%;
+    background-color: #ff99008c;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 2rem;
+    padding: 0 0.0rem;
+    font-size: 1.2rem;
+    border: none;
+    /* position: relative; */
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    align-items: flex-start;
+    margin-left: 70px;
+}
+
+.form-btn:hover{
+    background-color: #0000ffab;
 }
 
 .demo-btn {
@@ -71,6 +98,7 @@
 
 .login-btn{
     margin-top: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .log-in{
@@ -91,5 +119,28 @@
 
 
 .login-btn {
-    font-family: 'Poppins', sans-serif;
+    width: 24%;
+    background-color: #ff99008c;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 2rem;
+    padding: 0 0.0rem;
+    font-size: 1.2rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    align-items: flex-start;
+    margin-left: 60px;
+}
+
+.login-btn:hover{
+    background-color: #0000ffab;
 }
