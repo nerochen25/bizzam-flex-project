@@ -113,21 +113,18 @@ router.get('/',
 router.post('/square',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        debugger
         Board
             .findById(req.body.id)
             .then(board => {
                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
                 
+                if (hasWon(board.squares)) {
+                    board.won = true
+                }
+
                 board
                     .save()
-                    .then(board => {
-                        
-                        return res.json({
-                            board: board,
-                            won: hasWon(board.squares)
-                        });
-                    });
+                    .then(board => res.json(board));
                     
             })
             .catch(err => res.status(400).json(err));
