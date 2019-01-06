@@ -1,93 +1,83 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, HashRouter, Switch, Route } from 'react-router-dom';
 import './board.css';
+import BoardIndex from './board_index'
+import BoardShowContainer from './board_show_container'
+
 
 class Board extends React.Component {
 	constructor(props) {
-        super(props);
-        
-        this.state = {
-            row: 0,
-            column: 0,
-            createBoard: false
-        };
+		super(props);
 
-        this.logoutUser = this.logoutUser.bind(this);
-        this.updateRow = this.updateRow.bind(this);
-        this.handleClick = this.handleClick.bind(this);
-        this.populateSquares = this.populateSquares.bind(this);
+		this.state = {
+			board_id: null
+		};
+		
+		this.logoutUser = this.logoutUser.bind(this);
+		this.selectBoard = this.selectBoard.bind(this);
+	}
+
+	componentDidMount() {
+		this.props.fetchBoards();
+	}
+
+	componentDidUpdate(oldProps) {
+		if (oldProps.boards !== this.props.boards && !this.state.board_id) {
+			this.setState({
+				boardLoaded: true
+			},
+			() => {
+				this.props.history.push('/board/index')
+			})
+		}
+		
+	}
+
+	selectBoard(board_id){
+		return() => {
+			this.setState(
+				{board_id: board_id},
+				() => {
+					this.props.history.push('/board/play')
+				}
+			)
+		}
 	}
 
 	logoutUser(e) {
 		e.preventDefault();
 		this.props.logout();
-    }
-    
-    updateRow(){
-        return e => this.setState({
-            row: e.currentTarget.value
-        });
-    }
-
-    updateColumn() {
-        return e => this.setState({
-            column: e.currentTarget.value
-        });
-    }
-
-    handleClick(){
-        // console.log(this.state.boardLength);
-        if (this.state.row === this.state.column) {
-            this.setState({
-                createBoard: true
-            });
-        } else {
-            alert("Row and column length should be the same.");
-        }
-    }
-
-    populateSquares(){
-        for(let i=0; i < this.state.row; i++){
-            
-        }
-    }
-    
+	}
 
 	render() {
-		return (<div>
-				<div className="board">
-					<h1 className="board-title">Board</h1>
+		
 
-					{ this.state.createBoard ? 
-                        ( <div className="grid-container">
-                            {this.populateSquares()}
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-							<div className="grid-item" />
-						</div>  ) : <form onSubmit={this.handleClick} className="board-form">
-							<label>
-                            <span className="board-labels">Enter row length:</span>
-                                
-								<input type="number" onChange={this.updateRow()} className="board-inputs row-input" />
-							</label>
-							<br />
-							<label className="board-labels">
-								Enter column length:
-								<input type="number" onChange={this.updateColumn()} className="board-inputs" />
-							</label>
-                            <br/>
-							<input type="submit" value="Create the board" className="board-btn" />
-						</form>}
-				</div>
-            </div>
-        );
+		
+		
+		return (
+			<div>
+				<HashRouter>
+					<Switch>
+						<Route 
+							path='/board/index' 
+							component={() => <BoardIndex
+								boards={this.props.boards} 
+								selectBoard={this.selectBoard}
+							/>} 
+							
+						/>
+						<Route
+							path='/board/play'
+							component={() => <BoardShowContainer
+								id={this.state.board_id}
+							/>}
+						/>
+					</Switch>
+				</HashRouter>
+			</div>
+		);
 	}
 }
 
 export default withRouter(Board);
+
