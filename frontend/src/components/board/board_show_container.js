@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show'
-import { fetchBoard } from '../../actions/board_actions'
+import { fetchBoard, selectSquare } from '../../actions/board_actions'
 
 const mapStateToProps = (state) => ({
     loggedIn: state.session.isAuthenticated,
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchBoard: id => dispatch(fetchBoard(id)),
+    selectSquare: (id, position) => dispatch(selectSquare(id, position))
 })
 
 
