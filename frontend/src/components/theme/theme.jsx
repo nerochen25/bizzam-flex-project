@@ -63,16 +63,7 @@ class Theme extends React.Component {
             // () => console.log("form theme items is :", this.state.formThemeItems)  
         );
 
-        // this.props.postThemeItems({
-            
-        // });
     }
-
-    // component(){
-    //     console.log(this.state.formThemeItems);
-        
-        
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -87,38 +78,18 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
-        // console.log("makeTheme is :", makeTheme);
+        console.log("makeTheme is :", makeTheme);
       }
 
     handleDBSubmit(e) {
         e.preventDefault();
-        // console.log("ttt", this.props.themes[0]._id);
+        console.log("ttt", this.props.themes[0]._id);
         
         this.props.postThemeItems({ 
             theme_id: this.props.themes[0]._id,
             items: this.state.formThemeItems.join(',')
         });
     }
-        // e.preventDefault();
-        // if (formThemeItems.length < 9) {
-        //     alert("Not enough theme items, at least 9 are required");
-        // } else {
-            
-        // }
-    
-        // let makeTheme = {
-        //   name: this.state.formThemeTitle,
-        //   description: this.state.formThemeBody
-        // };
-    
-        // this.props.postTheme(makeTheme);
-    // }
-
-    // postThemeItems(){
-    //     for(let i=0; i < this.state.formThemeItems.length - 1; i++){
-    //         return <div>formThemeItems[i]</div>
-    //     }
-    // }
     
 
 	render() {
