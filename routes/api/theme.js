@@ -1,32 +1,33 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
-const Theme = require('../../models/Theme')
-const validateThemeInput = require('../../validation/theme')
-const validateThemeItemInput = require('../../validation/theme_items')
+const Theme = require('../../models/Theme');
+const validateThemeInput = require('../../validation/theme');
+const validateThemeItemInput = require('../../validation/theme_items');
 
 
 // Requires name (String), description (String)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
+    
     (req, res) => {
+        // console.log(req.body);
         const { isValid, errors } = validateThemeInput(req.body);
 
         if (!isValid) {
             return res.status(400).json(errors);
         }
 
-
         const newTheme = new Theme({
             name: req.body.name,
             description: req.body.description
-        })
+        });
 
         newTheme
             .save()
-            .then(theme => res.json(theme))
+            .then(theme => res.json(theme));
     }
-)
+);
 
 
 // Retrieves all playable themes
@@ -37,26 +38,67 @@ router.get('/',
         .then(themes => {
             let validThemes = themes.reduce((validThemes, theme) =>{
                 if (theme.themeItems.length >= 9) {
-                    validThemes.push(theme)
+                    validThemes.push(theme);
                 }
-                return validThemes
+                return validThemes;
             },
-            [])
+            []
+            );
             
-            return res.json(validThemes)
+            return res.json(validThemes);
 
-        })
+        });
         
 
         
     }
-)
+);
+
+//Route for posting the theme - 
+
+// router.post('/themed_items', 
+//      passport.authenticate('jwt', { session: false }),
+    
+//     (req, res) => {
+//         // console.log(req.body);
+//         const { isValid, errors } = validateThemeInput(req.body);
+            
+//             if (!isValid) {
+//                 return res.status(400).json(errors);
+//             }
+
+//             let items = req.body.items.split(',');
+//             let themeItems = [];
+//             items.forEach(item => {
+//                     let themeItem = { text: item };
+                    
+//                     const { isValid, errors } = validateThemeItemInput(themeItem);
+
+//                     if (!isValid) {
+//                         return res.status(401).json(errors);
+//                     }
+
+//                     themeItems.push(themeItem);
+//                 });
+            
+//             const newTheme = new Theme({
+//                 name: req.body.name,
+//                 description: req.body.description,
+//                 themeItems: themeItems
+//             });
+
+//             newTheme
+//                 .save()
+//                 .then(theme => res.json(theme))
+//                 .catch(err => res.status(400).json(err));
+// });
+
 
 // Requires text (String), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/item',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        
+
         Theme
             .findById( req.body.theme_id )
             .then(theme => {
@@ -68,17 +110,17 @@ router.post('/item',
 
                 let newThemeItem = {
                     text: req.body.text
-                }
+                };
 
-                theme.themeItems.push(newThemeItem)
+                theme.themeItems.push(newThemeItem);
 
                 theme
                     .save()
-                    .then(theme => res.json(theme))
+                    .then(theme => res.json(theme));
             })
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.status(400).json(err));
     }
-)
+);
 
 // Requires text (String- comma seperated), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/items',
@@ -90,7 +132,7 @@ router.post('/items',
                 let items = req.body.items.split(",");
                 // return res.json(req.body.items)
                 items.forEach(item => {
-                    let themeItem = { text: item }
+                    let themeItem = { text: item };
                     
                     const { isValid, errors } = validateThemeItemInput(themeItem);
 
@@ -98,17 +140,19 @@ router.post('/items',
                         return res.status(401).json(errors);
                     }
 
-                    theme.themeItems.push(themeItem)
+                    theme.themeItems.push(themeItem);
                 });
 
                 return theme
                     .save()
-                    .then(theme => res.json({theme}))
-                    .catch(err => res.status(400).json(err))
+                    .then(theme => res.json(theme))
+                    .catch(err => res.status(400).json(err));
             })
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.status(400).json(err));
     }
-)
+);
+
+
 
 
 
