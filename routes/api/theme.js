@@ -36,23 +36,34 @@ router.get('/',
     (req, res) => {
         Theme.find()
         .then(themes => {
+            if (req.query.includeAll === 'true') {
+                return res.json(themes);
+            }
             let validThemes = themes.reduce((validThemes, theme) =>{
                 if (theme.themeItems.length >= 9) {
                     validThemes.push(theme);
                 }
                 return validThemes;
             },
-            []
-            );
-            
+            []);
             return res.json(validThemes);
-
         });
-        
 
-        
     }
 );
+
+router.get('/:id',
+    passport.authenticate('jwt', { session: false }),
+     (req, res) => {
+         console.log("/:id route========> ", req.query);
+         Theme.findById(req.params.id)
+            .then(theme => {
+                return res.json(theme);
+            });
+    }
+
+);
+
 
 //Route for posting the theme - 
 

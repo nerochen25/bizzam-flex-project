@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
-import Theme from './theme.jsx';
+import Theme from './theme_index.jsx';
 import {postTheme, postThemeItem, postThemeItems} from '../../actions/theme_actions';
 
 

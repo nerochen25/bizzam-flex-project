@@ -23,8 +23,6 @@ class Theme extends React.Component {
         this.handleDBSubmit = this.handleDBSubmit.bind(this);  
     }
 
-    
-    
     updateThemeTitle(){
         return e => this.setState({
             formThemeTitle: e.currentTarget.value
@@ -78,7 +76,7 @@ class Theme extends React.Component {
         };
     
         this.props.postTheme(makeTheme);
-        console.log("makeTheme is :", makeTheme);
+        // console.log("makeTheme is :", makeTheme);
       }
 
     handleDBSubmit(e) {
@@ -98,6 +96,14 @@ class Theme extends React.Component {
 				<h1 className="theme-title">Create Your Own Bizzam</h1>
 				<div className="theme-grid">
 					<div className="theme-grid-1">
+
+                        <nav>
+                            <ul>
+                                <li><button>New Theme</button></li>
+                                <li><button>All Themes</button></li>
+                            </ul>
+                        </nav>
+
 						{this.state.themeCreated ? // generates a list of current theme items
 							// has a textbox for adding to current theme items
 							// has a second form for attempted saving to the DB
