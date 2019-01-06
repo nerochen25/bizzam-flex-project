@@ -9,7 +9,8 @@ class LoginForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      errors: {}
+      errors: {},
+      demo: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,7 +39,7 @@ class LoginForm extends React.Component {
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
-
+    
     let user = {
       username: this.state.username,
       password: this.state.password
@@ -52,21 +53,29 @@ class LoginForm extends React.Component {
       username: 'DemoUser',
       password: '123456',
     };
+    this.setState({demo: true});
     this.props.login(userInfo);
+    
   }
-
+  
   // Render the session errors if there are any
   renderErrors() {
-    return(
-      <ul className="form-errors">
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+      if (this.state.demo === false) {
+          return (
+            <ul className="form-errors">
+              {Object.keys(this.state.errors).map((error, i) => (
+                <li key={`error-${i}`}>
+                  {this.state.errors[error]}
+                </li>
+              ))}
+            </ul>
+          )
+      } else {
+        return (
+          <ul></ul>
+        )
+      }
+    }
 
   render() {
     return <div className="login-form-container">
@@ -84,7 +93,7 @@ class LoginForm extends React.Component {
 
 					<br />
           <input type="submit" value="Login" className="form-btn login-btn"/>
-          <button onClick={this.demoLogin} className='form-btn login-btn demo-btn' value='Sign in as a guest'>Demo Login</button>
+          <button type='demo-submit' id='demo-login-btn' onClick={this.demoLogin} className='form-btn login-btn demo-btn' value='Sign in as a guest'>Demo Login</button>
 
 					{this.renderErrors()}
 				</div>
