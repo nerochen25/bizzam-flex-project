@@ -1,28 +1,16 @@
 const db = require('./config/keys').mongoURI;
 const Theme = require('./models/Theme');
-
-// Import async.js - utility library for handlng asynchronous calls
 var async = require('async');
-
-// URL to connect to a local MongoDB with database test.
-// Change this to fit your running MongoDB instance
-const databaseURL = db;
-
-// Import native MongoDB client for Node.js
 const MongoClient = require('mongodb').MongoClient;
-
-// Import mongoose.js to define our schema and interact with MongoDB
 const mongoose = require('mongoose');
 
-// Define User schema model with 3 fields: user, email, password
 
-// Async series method to make sure asynchronous calls below run sequentially
 async.series([
   
   // First function - connect to MongoDB, then drop the database
 //   function(callback) {
     
-//     MongoClient.connect(databaseURL, function(err, db) {
+//     MongoClient.connect(db, function(err, db) {
       
 //       if(err) throw err;
       
@@ -43,7 +31,7 @@ async.series([
   function(callback) {
     
     // Open connection to MongoDB
-    mongoose.connect(databaseURL);
+    mongoose.connect(db, { useNewUrlParser: true });
     
     // Need to listen to 'connected' event then execute callback method
     // to call the next set of code in the async.serial array
@@ -62,21 +50,99 @@ async.series([
     // BEGIN SEED DATABASE
     
     // Use an array to store a list of User model objects to save to the database
-    let themes
-    let rawThemes = [];
-    let rawThemeItems = [];
+    let themes = []
+    let rawThemes = [
+        {name: "Location Demo Theme 1", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 2", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 3", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 4", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 5", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 6", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 7", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 8", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 9", description: "I have seeded random theme items"},
+        {name: "Location Demo Theme 10", description: "I have seeded random theme items"}
+    ];
+    let rawThemeItems = [
+        {text:'Coffeeshop'},
+        {text:'Hardware store'},
+        {text:'Best Friends house'},
+        {text:'Grocery store'},
+        {text:'Department store'},
+        {text:'Mall'},
+        {text:'Pizza Shop'},
+        {text:'Cemetary'},
+        {text:'Local Park'},
+        {text:'School'},
+        {text:'Library'},
+        {text:'LAN Party'},
+        {text:'Pub'},
+        {text:'Beach'},
+        {text:'Kitchen'},
+        {text:'Bathroom'},
+        {text:'Living Room'},
+        {text:'Backyard'},
+        {text:'Sports game'},
+        {text:'Play'},
+        {text:'Movies'},
+        {text:'Elevator'},
+        {text:'Stairs'},
+        {text:'Boat'},
+        {text:'Escalator'},
+        {text:'Bridge'},
+        {text:'Church'},
+        {text:'Castle'},
+        {text:'Hospital'},
+        {text:'Museum'},
+        {text:'Zoo'},
+        {text:'Tree'},
+        {text:'Taxi'},
+        {text:'Airport'},
+        {text:'Bed'},
+        {text:'Bus stop'},
+        {text:'Parking lot'},
+        {text:'Train station'},
+        {text:'Laundry Mat'},
+        {text:'Gym'},
+        {text:'Nail salon'},
+        {text:'Thrift Shop'},
+        {text:'Animal shelter'},
+        {text:'Ferry Boat'},
+        {text:'Tent'},
+        {text:'Hot tub'},
+        {text:'Pool'},
+        {text:'Haunted house'},
+        {text:'Butcher'},
+        {text:'Bakery'}
+
+    ];
+
+    // Fisher-Yates shuffle
+    function shuffle (array) {
+        var i = 0
+          , j = 0
+          , temp = null
+      
+        for (i = array.length - 1; i > 0; i -= 1) {
+          j = Math.floor(Math.random() * (i + 1))
+          temp = array[i]
+          array[i] = array[j]
+          array[j] = temp
+        }
+        return array
+      }
+    
     
     for (i = 0; i < rawThemes.length; i++) {
-        for (i = 0; i < rawThemeItems.length; i++) {
-        rawSubThemeItems = rawThemeItems.slice(0,9)
+        let shuffledItems = shuffle(rawThemeItems)
+        rawSubThemeItems = shuffledItems.slice(0, 9)
 
       let theme = new Theme({
         name: rawThemes[i].name,
         description: rawThemes[i].description,
-        themeItems: [rawSubThemeItems]
+        themeItems: rawSubThemeItems
       });
 
-      // Add newly create User model to 'users' array
       themes.push(theme);
     }
     
@@ -84,59 +150,39 @@ async.series([
 
     async.eachSeries(
       
-      // 1st parameter is the 'users' array to iterate over 
       themes, 
         
-      // 2nd parameter is a function takes each user in the 'users' array 
-      // as an argument and a callback function that needs to be executed 
-      // when the asynchronous call complete. 
-      
-      // Note there is another 'callback' method here called 'userSavedCallBack'.
-      // 'userSavedCallBack' needs to be called to inform async.eachSeries to 
-      // move on to the next user object in the 'users' array. Do not mistakenly
-      // call 'callback' defined in line 130.
       function(theme, themeSavedCallBack){
 
-        // There is no need to make a call to create the 'test' database.
-        // Saving a model will automatically create the database
         theme.save(function(err) {
 
           if(err) {
-            // Send JSON response to console for errors
-            console.dir(err);
+            console.log(err);
           }
-          
-          // Print out which user we are saving
-        //   console.log("Saving user #%s out of %s", user.name, testUserCount);
-          
-          // Call 'userSavedCallBack' and NOT 'callback' to ensure that the next
-          // 'user' item in the 'users' array gets called to be saved to the database
+
           themeSavedCallBack();
         });
 
       },
       
-      // 3rd parameter is a function to call when all users in 'users' array have 
-      // completed their asynchronous user.save function
+
       function(err){
         
         if (err) console.dir(err);
         
         console.log("Finished aysnc.each in seeding db")
 
-        // Execute callback function from line 130 to signal to async.series that
-        // all asynchronous calls are now done
         callback(null, 'SUCCESS - Seed database');
 
       }
     );
 
-    // END SEED DATABASE
+
 
   }
 ],
 
-// This function executes when everything above is done
+
 function(err, results){
 
   console.log("\n\n--- Database seed program completed ---");
