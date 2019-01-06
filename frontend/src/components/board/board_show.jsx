@@ -22,6 +22,10 @@ class BoardShow extends React.Component {
 			this.props.fetchBoard(this.props.id)
 		}
 	}
+
+	componentWillReceiveProps() {
+
+	}
 	
 	componentDidUpdate(oldProps) {
 		if (this.props.boards[this.props.id] !== oldProps.boards[this.props.id]) {
@@ -33,12 +37,7 @@ class BoardShow extends React.Component {
 
 	handleClick(id, position) {
 		return () => {
-			console.log(id, position)
 			this.props.selectSquare(id, position)
-			.then(() => {
-				
-				document.getElementById(`square-${position}`).className += ' selected'
-			})
 		}
 		
 	}
