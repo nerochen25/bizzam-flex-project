@@ -85,12 +85,23 @@ router.get('/',
         if(req.body.id) {
             Board
                 .findById(req.body.id)
-                .then(board => res.json(board))
+                .then(board => {
+                    let response = {}
+                    response[board.id] = board
+                    return res.json(response)
+                })
                 .catch(err => res.status(400).json(err));
         } else {
             Board
                 .find({})
-                .then(boards => res.json(boards))
+                .then(boards => {
+                    return res.json(boards.reduce((response, board) =>{
+                        response[board.id] = board
+                        return response
+                    },
+                    {})
+                    )
+                })
                 .catch(err => res.status(400).json(err));
         }
         
