@@ -6,7 +6,7 @@ import {fetchBoards, fetchBoard} from '../../actions/board_actions';
 const mapStateToProps = state => {
     return {
         loggedIn: state.session.isAuthenticated,
-        boards: Object.values(state.boards.all),
+        boards: state.entities.boards,
         currentUser: state.session.user,
     };
 };

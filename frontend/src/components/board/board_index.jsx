@@ -14,13 +14,16 @@ class BoardIndex extends React.Component {
 		this.logoutUser = this.logoutUser.bind(this);
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		this.props.fetchBoards();
 	}
 
-	componentWillReceiveProps(newState) {
-		console.log("inside components: ", newState);
-		this.setState({ boards: newState.boards });
+	componentDidUpdate(oldProps) {
+		if (oldProps.boards !== this.props.boards) {
+			this.setState({
+				boardLoaded: true
+			})
+		}
 		
 	}
 
@@ -30,18 +33,21 @@ class BoardIndex extends React.Component {
 	}
 
 	render() {
+		let boards 
+		if (this.props.boards) {
+			boards = Object.values(this.props.boards).map(board => {
+				return (
+					<BoardIndexItem
+						key={board._id}
+						id={board._id}
+						board={board}
+						fetchboard={this.props.fetchboard}
+					/>
+				)
+			})
+		}
 
-		console.log('boards', this.state);
-		let boards = this.props.boards.map(board => {
-			return (
-				<BoardIndexItem
-					key={board._id}
-					id={board._id}
-					board={board}
-					fetchboard={this.props.fetchboard}
-				/>
-			)
-		});
+		
 
 		return (
 			<div>
