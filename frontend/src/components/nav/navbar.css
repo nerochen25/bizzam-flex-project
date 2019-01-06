@@ -3,9 +3,9 @@
 }
 
 .project-title {
-    font-size: 54px;
+    font-size: 70px;
     font-weight: 700;
-    background: linear-gradient(330deg, #ff9900 0%, #0C2EB7 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
+    background: linear-gradient(330deg, #ff9900 0%, #0c2eb7bf 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -17,13 +17,14 @@
 
 .blue {
     /* color: #0C2EB7; */
-    font-size: 42px;
+    font-size: 60px;
 }
 
 .orange {
     /* color: #ff9900; */
-    font-size: 42px;
+    font-size: 60px;
 }
+
 
 .navbar {
     display: flex;
@@ -174,16 +175,18 @@
     width: 100px;
     display: flex;
     justify-content: space-between;
-    color: #0C2EB7;
+    color: #23273ebf;
     padding: 8px;
     margin-right: 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
+    transition: all 0.25s ease-in-out !important;
 }
 
 .navbar .links1:hover {
-    color: #ff9900;
+    color: #ff99008c;
+    font-size: 130%;
 }
 
 
@@ -191,5 +194,75 @@
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Viga', sans-serif;
+
+}
+
+.home-navbar {
+    display: flex;
+    flex-direction: row;
+    padding-left: 170px;
+    padding-right: 170px;
+
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 72px;
+    right: 100px;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+    top: 60px;
+    right: 100px;
+}
+
+.logged-in-navbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 1200px;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logged-in-navbar a{
+    font-size: 20px;
+    font-weight: 500;
+    color: #23273ebf;
+    transition: all 0.25s ease-in-out !important;
+}
+
+.logout-btn {
+    border: 2px solid #ff99008c;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ff99008c;
+    transition: all 0.25s ease-in-out !important;
+    font-family: 'Viga', sans-serif;
+}
+
+.logged-in-navbar :hover{
+    color: #ff99008c;
+    font-size: 130%;
+}
+
+.logout-btn:hover{
+    color: #0000ffab;
+    font-size: 130%;
+    border-color: #0000ffab;
+}
+
+#current-user-name {
+    color: #0000ffab;
+    margin-right: -25px;
+    top: 60px;
+    right: 100px;
 }

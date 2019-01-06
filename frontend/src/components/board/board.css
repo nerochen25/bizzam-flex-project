@@ -24,6 +24,10 @@
     text-align: center;
 }
 
+.selected {
+    background-color: #ff8000;
+}
+
 .board-form{
     margin-top: 50px;
     font-size: 16px;

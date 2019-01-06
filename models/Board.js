@@ -17,6 +17,7 @@ const subSquares = {
 
 const boardSchema = Schema({
     userID: String,
+    won: { type: Boolean, default: false},
     squares: [ subSquares ]
 })
 
