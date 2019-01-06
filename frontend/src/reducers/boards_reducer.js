@@ -1,23 +1,24 @@
-import { RECEIVE_BOARDS, RECEIVE_NEW_BOARD } from '../actions/board_actions';
+import { 
+        RECEIVE_BOARDS, 
+        RECEIVE_BOARD
+        } from '../actions/board_actions';
 
   
-const BoardsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
-    
+const BoardsReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state);
+
     switch(action.type) {
         case RECEIVE_BOARDS:
-        console.log('inside the board reducer');
-
-        newState.all = action.boards.data;
-        return newState;
+            return action.boards;
         
-        case RECEIVE_NEW_BOARD:
-        newState.new = action.board.data
-        return newState;
+        case RECEIVE_BOARD:
+            return Object.assign({}, state, action.board);
+
         default:
-        return state;
+            return state;
     }
 };
 
 export default BoardsReducer;
+
+

@@ -3,19 +3,20 @@
     text-align: center;
     font-size: 16px;
     height: 500px;
+    margin-top: 60px;
 }
 
 .grid-container {
     display: grid;
     grid-column-gap: 0px;
     grid-template-columns: auto auto auto;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     margin: 5% auto;
 }
 
 .grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-color: rgba(255, 255, 255, 0.8);
     background-color: #0080ff;
     border: 1px solid #ff8000;
     padding: 20px;
@@ -66,4 +67,4 @@
     margin-top: 30px;
     margin-left: 10px;
     text-align: center;
-}
+} 

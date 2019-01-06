@@ -2,13 +2,10 @@ const express = require("express");
 const router = express.Router();
 const passport = require('passport');
 const Board = require('../../models/Board');
-const Theme = require('../../models/Theme')
-const Game = require('../../models/Game')
+const Theme = require('../../models/Theme');
+const Game = require('../../models/Game');
 const validateBoardInput = require('../../validation/board');
 const hasWon = require('../../validation/has_won')
-
-
-
 
 // taken from https://stackoverflow.com/a/2450976/10846883
 function shuffle(array) {
@@ -25,8 +22,6 @@ function shuffle(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-    
-   
     return array;
   }
 
@@ -50,18 +45,16 @@ const generateBoard = (themeID) => {
     }
 
 
-
-
 // Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
 router.post('/',
     passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        // TODO- Comment in when board validations is working
-        // const { isValid, errors } = validateBoardInput(req.body);
+    async (req, res) => {
+        
+        const { isValid, errors } = await validateBoardInput(req.body);
 
-        // if (!isValid) {
-        //     return res.status(400).json(errors);
-        // }
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
 
         generateBoard(req.body.theme_id)
             .then(squares => {
@@ -69,6 +62,7 @@ router.post('/',
                     userID: req.body.user_id,
                     squares: squares
                 });
+
                 newBoard
                     .save()
                     .then(board => {
@@ -79,20 +73,40 @@ router.post('/',
                             .then(() => res.json(board))
                         })
                     })
-            })
+            }).catch(err => res.status(400).json('theme_id is invalid'))
     }
 );
+
 
 // Requires id (Schema.Type.ObjectID, ref: "Board")
 router.get('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Board
-            .findById(req.body.id)
-            .then(board => res.json(board))
-            .catch(err => res.status(400).json(err))
+        if(req.body.id) {
+            Board
+                .findById(req.body.id)
+                .then(board => {
+                    let response = {}
+                    response[board.id] = board
+                    return res.json(response)
+                })
+                .catch(err => res.status(400).json(err));
+        } else {
+            Board
+                .find({})
+                .then(boards => {
+                    return res.json(boards.reduce((response, board) =>{
+                        response[board.id] = board
+                        return response
+                    },
+                    {})
+                    )
+                })
+                .catch(err => res.status(400).json(err));
+        }
+        
     }
-)
+);
 
 
 // Requires id (Schema.Type.ObjectID, ref: "Board"), position
@@ -103,7 +117,7 @@ router.post('/square',
         Board
             .findById(req.body.id)
             .then(board => {
-                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked)
+                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
                 
                 board
                     .save()
@@ -116,10 +130,19 @@ router.post('/square',
                     });
                     
             })
-            .catch(err => res.status(400).json(err))
+            .catch(err => res.status(400).json(err));
     }
 );
 
-
+// Requires id (Schema.Type.ObjectID, ref: "User")
+router.get('/index',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Board
+            .find({userID: req.body.id})
+            .then(boards => res.json(boards))
+    }
+)
 
 module.exports = router;
+

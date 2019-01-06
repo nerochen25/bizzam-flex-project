@@ -9,17 +9,19 @@ import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import BoardContainer from './board/board_container';
 
+
 const App = () => (
-  <div className="splash">
-    <NavBarContainer />
-    <Switch>
-      <ProtectedRoute path="/board" component={BoardContainer} />
-      <ProtectedRoute path="/profile" component={ProfileContainer} />
-      <AuthRoute  path="/login" component={LoginFormContainer} />
-      <AuthRoute  path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/" component={MainPage} />
-    </Switch>
-  </div>
+	<div className="splash">
+		<NavBarContainer />
+		<Switch>
+			
+			<ProtectedRoute path="/board" component={BoardContainer} />
+			<ProtectedRoute path="/profile" component={ProfileContainer} />
+			<AuthRoute path="/login" component={LoginFormContainer} />
+			<AuthRoute path="/signup" component={SignupFormContainer} />
+			<AuthRoute exact path="/" component={MainPage} />
+		</Switch>
+	</div>
 );
 
 export default App;
