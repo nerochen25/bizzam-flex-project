@@ -18,4 +18,6 @@
 
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
+    flex-wrap: wrap;
+    width: 1300px;
 }

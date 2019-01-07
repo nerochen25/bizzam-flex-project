@@ -76,7 +76,7 @@ class CreateGame extends React.Component {
                 return (
                 
                     <input  
-                        className="create-game-btn"
+                        className="themes-options-btn"
                         key={idx} 
                         type='submit' 
                         onClick={this.updateThemeId('themeId')} 
