@@ -17,11 +17,27 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-
-        const newTheme = new Theme({
+        let theme = {
             name: req.body.name,
-            description: req.body.description
-        });
+            description: req.body.description,
+        };
+        if(req.body.items) {
+            theme.themeItems = req.body.items.split(",").map(item => {
+                let themeItem = {
+                    text: item
+                };
+
+                const {isValid, errors} = validateThemeItemInput(themeItem);
+
+                if (!isValid) {
+                    return res.status(401).json(errors);
+                }
+
+                return themeItem;
+            });            
+        }
+
+        const newTheme = new Theme(theme);
 
         newTheme
             .save()
