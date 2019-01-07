@@ -54,45 +54,6 @@ router.get('/',
     }
 );
 
-//Route for posting the theme - 
-
-// router.post('/themed_items', 
-//      passport.authenticate('jwt', { session: false }),
-    
-//     (req, res) => {
-//         // console.log(req.body);
-//         const { isValid, errors } = validateThemeInput(req.body);
-            
-//             if (!isValid) {
-//                 return res.status(400).json(errors);
-//             }
-
-//             let items = req.body.items.split(',');
-//             let themeItems = [];
-//             items.forEach(item => {
-//                     let themeItem = { text: item };
-                    
-//                     const { isValid, errors } = validateThemeItemInput(themeItem);
-
-//                     if (!isValid) {
-//                         return res.status(401).json(errors);
-//                     }
-
-//                     themeItems.push(themeItem);
-//                 });
-            
-//             const newTheme = new Theme({
-//                 name: req.body.name,
-//                 description: req.body.description,
-//                 themeItems: themeItems
-//             });
-
-//             newTheme
-//                 .save()
-//                 .then(theme => res.json(theme))
-//                 .catch(err => res.status(400).json(err));
-// });
-
 
 // Requires text (String), theme_id (Schema.Type.ObjectID, ref: "Theme")
 router.post('/item',
