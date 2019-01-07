@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Board from './board.jsx';
-import {fetchBoards, fetchBoard} from '../../actions/board_actions';
+import { fetchBoard, fetchUserBoards} from '../../actions/board_actions';
 
 const mapStateToProps = state => {
     return {
@@ -13,9 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // fetchUserBoards: id => dispatch(fetchUserBoards(id)),
-        fetchBoards: () => dispatch(fetchBoards()),
         fetchBoard: id => dispatch(fetchBoard(id)),
+        fetchUserBoards: id => dispatch(fetchUserBoards(id)),
         logout: () => dispatch(logout())
     };
 };

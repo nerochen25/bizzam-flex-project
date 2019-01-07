@@ -60,7 +60,8 @@ router.post('/',
             .then(squares => {
                 const newBoard = new Board({
                     userID: req.body.user_id,
-                    squares: squares
+                    squares: squares,
+                    gameID: req.body.game_id
                 });
 
                 newBoard
@@ -109,35 +110,54 @@ router.get('/',
 );
 
 
-// Requires id (Schema.Type.ObjectID, ref: "Board"), position
-router.post('/square',
+
+router.post('/square', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Board
-            .findById(req.body.id)
-            .then(board => {
+       return new Promise(async (resolve, reject) => {
+           let board
+           try{
+                board = await Board.findById(req.body.id)
                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
-                
-                if (hasWon(board.squares)) {
+                game = await Game.findById(board.gameID)
+                console.log(game.winnerID)
+                if ((game.winnerID) && game.winnerID !== board.userID) {
+                    board.gameOn = false
+                } else if (hasWon(board.squares)) {
                     board.won = true
+                    game.winnerID = board.userID
+                    await game.save()
                 }
+                await board.save()
 
-                board
-                    .save()
-                    .then(board => res.json(board));
-                    
-            })
-            .catch(err => res.status(400).json(err));
+                resolve(res.json(board))
+           } catch(err) {
+               console.log(err)
+               resolve(res.status(400).json(err))
+           }
+       })
     }
-);
+)
+
+
+
+
 
 // Requires id (Schema.Type.ObjectID, ref: "User")
-router.get('/index',
+router.get('/user',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        
         Board
-            .find({userID: req.body.id})
-            .then(boards => res.json(boards))
+            .find({userID: req.query.id})
+            .then(boards => {
+                return res.json(boards.reduce((response, board) =>{
+                    response[board.id] = board
+                    return response
+                },
+                {})
+                )
+            })
     }
 )
 

@@ -8,5 +8,5 @@ export default combineReducers({
     boards: BoardsReducer,
     games: GamesReducer,
     themes: ThemeReducer
-
+    
 })
