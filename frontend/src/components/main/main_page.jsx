@@ -10,15 +10,17 @@ class MainPage extends React.Component {
 				<section className="what-bizzam">
 					<h3>What is BizZam?</h3>
 					<p>
-						BizZam is an online platform for playing user created bingo boards! Boards can be anything
-						users wants to play, such as office bizzingo, lecture bizzingo, or even scavenger hunt
-						bizzingo!
+						BizZam is an online platform for playing user created bingo boards! 
+						Make your own Bizzam board modes such as 'scavenger hunt' Bazzam , 'travel' Bazzam, or even 'team-building Bazzam!
 					</p>
 				</section>
 
 				<section className="what-bizzam">
-					<h3>How to play Bizzam</h3>
-					<p>To fill...</p>
+					<h3>Playing Bazzam is easy as one, two, three!</h3>
+					<p>Step 1: Make your theme.</p>
+					<p>Step 2: Make your list of Todos. </p>
+					<p>Step 3: Invite your friends.</p>
+					<p>The first player to complete a row wins!</p>
 				</section>
 
 				<section className="what-bizzam">
@@ -37,8 +39,9 @@ class MainPage extends React.Component {
 			</div>
       <footer className="main-footer">
 					<div>
-					  <p className="footer-msg">	Thank you so much for playing BizZam. To know what is going on behind the curtains, feel free to click this button.
-            </p>
+					  <p className="footer-msg">	Thank you so much for playing BizZam! </p>
+					  <p className="footer-msg">	For a behind the scenes look at Bizzam check out our Github link below. </p>
+
 						<p className="github-link">
 							<a href="https://github.com/nerochen25/bizzam-flex-project" target="_blank" rel="noopener noreferrer">GitHub</a>
 						</p>
@@ -50,7 +53,8 @@ class MainPage extends React.Component {
 							<a href="https://www.linkedin.com/in/craig-jewett-14064843/" target="_blank" rel="noopener noreferrer">Craig Jewett</a>
 							<a href="https://www.linkedin.com/in/nerochen25/" target="_blank" rel="noopener noreferrer">Nero Chen</a>
 							<a href="https://www.linkedin.com/in/saipat/" target="_blank" rel="noopener noreferrer">Sai Lakshmi Pattabiraman</a>
-							Trevor Shepard (need your linkedIn profile name)
+							<a href="https://www.linkedin.com/in/trevor-shepard-3a9b92a2/" target="_blank" rel="noopener noreferrer">Trevor Shepard</a>
+						
 						</div>
 					</div>
 				</footer>

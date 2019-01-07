@@ -1,6 +1,8 @@
 .main-page-link{
     text-decoration: none;
+    
 }
+
 
 .project-title {
     font-size: 70px;
@@ -11,8 +13,8 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
     color: #ff9900;
-    margin-top: 40px;
-    position: relative;
+    margin-top: 40px; 
+
 }
 
 .blue {
@@ -172,7 +174,7 @@
 
 
 .navbar .links1 {
-    width: 100px;
+    width: 5%;
     display: flex;
     justify-content: space-between;
     color: #23273ebf;
@@ -194,17 +196,17 @@
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Viga', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Viga', sans-serif; */
 
 }
 
 .home-navbar {
+    width: 200px;
     display: flex;
     flex-direction: row;
-    padding-left: 170px;
-    padding-right: 170px;
-
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .navbar {
@@ -224,9 +226,10 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 60px;
-    right: 100px;
-    width: 900px;
+    top: 50px;
+    right: 50px;
+    /* width: 1200px; */
+    width: 70%;
     height: 10%;
     justify-content: space-around;
     align-items: center;
@@ -240,6 +243,7 @@
 }
 
 .logout-btn {
+    margin-left: 20px;
     border: 2px solid #ff99008c;
     border-radius: 4px;
     font-size: 17px;
