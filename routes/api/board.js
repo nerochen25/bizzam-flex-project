@@ -112,32 +112,61 @@ router.get('/',
 
 
 // Requires id (Schema.Type.ObjectID, ref: "Board"), position
-router.post('/square',
+// router.post('/square',
+//     passport.authenticate('jwt', { session: false }),
+//     (req, res) => {
+//         console.log('its me')
+//         Board
+//             .findById(req.body.id)
+//             .then(board => {
+
+                
+
+//                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
+                
+//                 if (hasWon(board.squares)) {
+                    
+//                     board.won = true
+                    
+//                 }
+//                 board
+//                     .save()
+//                     .then(board => res.json(board));    
+                    
+//             })
+//             .catch(err => res.status(400).json(err));
+//     }
+// );
+
+
+
+router.post('/square', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        console.log('its me')
-        Board
-            .findById(req.body.id)
-            .then(board => {
+       return new Promise(async (resolve, reject) => {
+           let board
+           try{
+               board = await Board.findById(req.body.id)
 
-                
+               board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
 
-                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
-                
-                if (hasWon(board.squares)) {
-                    
+               if (hasWon(board.squares)) {
                     board.won = true
-                    
                 }
 
-                board
-                    .save()
-                    .then(board => res.json(board));
-                    
-            })
-            .catch(err => res.status(400).json(err));
+                await board.save()
+
+               resolve(res.json(board))
+           } catch(err) {
+               resolve(res.status(400).json(err))
+           }
+       })
     }
-);
+)
+
+
+
+
 
 // Requires id (Schema.Type.ObjectID, ref: "User")
 router.get('/user',
