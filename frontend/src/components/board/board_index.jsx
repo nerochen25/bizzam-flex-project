@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+
 import BoardIndexItem from './board_index_item';
 
 const BoardIndex = ({boards, selectBoard, dummy}) => {
@@ -19,10 +21,10 @@ const BoardIndex = ({boards, selectBoard, dummy}) => {
     
     return(
         <div>
-            {display}
             <div>
-                
+                <Link to='/board/join'> Join a New Game</Link>
             </div>
+            {display}
         </div>
     )
 }

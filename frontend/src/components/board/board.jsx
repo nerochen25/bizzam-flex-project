@@ -3,6 +3,7 @@ import { withRouter, HashRouter, Switch, Route } from 'react-router-dom';
 import './board.css';
 import BoardIndex from './board_index'
 import BoardShowContainer from './board_show_container'
+import JoinGame from './join_game_container'
 
 
 class Board extends React.Component {
@@ -72,6 +73,12 @@ class Board extends React.Component {
 								id={this.state.board_id}
 							/>}
 						/>
+						<Route
+							path='/board/join'
+							component={JoinGame}
+						/>
+
+
 					</Switch>
 				</HashRouter>
 			</div>
