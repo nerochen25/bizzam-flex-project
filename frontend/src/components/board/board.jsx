@@ -18,7 +18,7 @@ class Board extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchBoards();
+		this.props.fetchUserBoards(this.props.currentUser.id);
 	}
 
 	componentDidUpdate(oldProps) {

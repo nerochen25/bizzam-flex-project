@@ -47,26 +47,35 @@ class BoardShow extends React.Component {
 
 		let squares
 
+		let won
+
 		if (this.state.board) {
-			squares = this.state.board.squares.map((square) => {
+
+			if (this.state.board.won) {
+				won = <div>
+					Congradulations You Have Won!
+				</div>
+			} else {
+				squares = this.state.board.squares.map((square) => {
 				
-				return (
-					<Square
-						key={square.position}
-						position={square.position}
-						text={square.text}
-						checked={square.checked}
-						action={this.handleClick(this.state.board._id, square.position)}
-					/>
-				)
-			})
+					return (
+						<Square
+							key={square.position}
+							position={square.position}
+							text={square.text}
+							checked={square.checked}
+							action={this.handleClick(this.state.board._id, square.position)}
+						/>
+					)
+				})
+			}	
 		}
 
 		return (
 			<div className="board">
 				<h1 className="board-title">Board</h1>
 				<div className="grid-container">
-					{squares}
+					{won ? won : squares}
 				</div>
 			</div>
 		);

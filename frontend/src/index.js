@@ -8,7 +8,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
-import { fetchBoards, selectSquare, fetchBoard } from './actions/board_actions'
+import { fetchBoards, selectSquare, fetchBoard, fetchUserBoards } from './actions/board_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchBoards = fetchBoards;
     window.selectSquare = selectSquare;
     window.fetchBoard = fetchBoard;
+    window.fetchUserBoards = fetchUserBoards;
     const root = document.getElementById('root');
   
     ReactDOM.render(<Root store={store} />, root);

@@ -1,4 +1,4 @@
-import { getBoards, createBoard, getBoardById, toggleSquare } from '../util/board_api_util';
+import { getBoards, createBoard, getBoardById, toggleSquare, getUserBoards } from '../util/board_api_util';
 
 export const RECEIVE_BOARDS = "RECEIVE_BOARDS";
 export const RECEIVE_USER_BOARDS = "RECEIVE_USER_BOARDS";
@@ -19,30 +19,39 @@ export const receiveBoard = board => ({
   board
 });
 
+// fetch all boards from database
 export const fetchBoards = () => dispatch => (
   getBoards()
     .then(boards => dispatch(receiveBoards(boards)))
     .catch(err => console.log(err))
 );
 
+export const fetchUserBoards = id => dispatch => (
+  getUserBoards(id)
+    .then(boards => dispatch(receiveBoards(boards)))
+    .catch(err => console.log(err))
+)
+
+// fetch single board by ID
 export const fetchBoard = id => dispatch => (
   getBoardById(id)
     .then(board => dispatch(receiveBoard(board)))
     .catch(err => console.log(err))
 );
 
+// create a board
 export const postBoard = data => dispatch => (
   createBoard(data)
     .then(board => dispatch(receiveBoard(board)))
     .catch(err => console.log(err))
 );
 
+// toggle a square
 export const selectSquare = (id, position) => dispatch => (
   toggleSquare(id, position)
     .then(board => dispatch(receiveBoard(board)))
     .catch(err => console.log(err))
 )
-
 
 
 
