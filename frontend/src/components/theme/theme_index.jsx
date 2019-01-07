@@ -11,30 +11,27 @@ class ThemeIndex extends React.Component {
         this.state = {
             showThemes: false
         };
-
     }
 
     componentDidMount() {
         this.props.getThemes();
     }
 
-
     render() {
         let allThemes;
 
         if (this.props.themes) {
             allThemes = this.props.themes.map(theme => (
-                <li><Link to={`/theme/${theme._id}/edit`}>{theme.name}</Link></li>
+                <li><Link to={`/theme/${theme._id}/edit`} className="allThemes-link">{theme.name}</Link></li>
             ));
         }
-
 
         return (
             <div className="theme">
                 <ThemeMenuContainer />
 
                 <h1 className="theme-title">All Bizzams</h1>
-                <ul>
+                <ul className="allThemes">
                     {allThemes}
                 </ul>
             </div>

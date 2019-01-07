@@ -138,3 +138,26 @@
     margin-left: 64px;
     overflow: scroll;
 }
+
+.theme ul{ 
+    margin-top: 76px;
+    margin-left: 17%;
+    width: 30em;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 30%;
+    grid-row-gap: 2%;
+}
+
+.theme ul li {
+    list-style-type: none;
+}
+
+.theme ul li a{
+    text-decoration: none;
+    color: blue;
+}
+.theme ul li a:hover {
+    color: #ff9900;
+}
+
