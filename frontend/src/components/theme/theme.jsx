@@ -75,7 +75,6 @@ class Theme extends React.Component {
 						<div>
 							<label className="theme-labels item-label">
 								<span>Bizzam Items</span>
-								<br />
 								<input type="text" value={this.state.items} onChange={this.updateItems()} className="theme-input item-input" placeholder="Enter items separated by comma." />
 							</label>
 						</div>
