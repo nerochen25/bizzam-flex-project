@@ -8,6 +8,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import BoardContainer from './board/board_container';
+import ThemeMenuContainer from './theme/theme_menu_container';
+import ThemeIndexContainer from './theme/theme_index_container';
 import ThemeContainer from './theme/theme_container';
 import CreateGameContainer from './game/create_game_container';
 
@@ -20,6 +22,9 @@ const App = () => (
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
       <ProtectedRoute path="/theme" component={ThemeContainer} />
+      <ProtectedRoute path="/theme" component={ThemeMenuContainer} />
+      <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />
+      <ProtectedRoute path='/newTheme' component={ThemeContainer} />
       <AuthRoute  path="/login" component={LoginFormContainer} />
       <AuthRoute  path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={MainPage} />
