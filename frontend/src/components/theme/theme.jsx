@@ -61,14 +61,14 @@ class Theme extends React.Component {
 						<div>
 							<label className="theme-labels">
 								<span>Theme title</span>
-								<input type="text" value={this.state.name} onChange={this.updateName()} className="theme-input theme-input-1" />
+								<input type="text" value={this.state.name} onChange={this.updateName()} className="theme-input theme-input-1" placeholder="Enter theme title"/>
 							</label>
 						</div>
 
 						<div>
 							<label className="theme-labels">
 								<span>Theme description</span>
-								<input type="text" value={this.state.description} onChange={this.updateDescription()} className="theme-input" />
+								<input type="text" value={this.state.description} onChange={this.updateDescription()} className="theme-input" placeholder="Enter theme description" />
 							</label>
 						</div>
 
