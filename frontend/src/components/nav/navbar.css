@@ -236,7 +236,7 @@
 }
 
 .logged-in-navbar a{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     color: #23273ebf;
     transition: all 0.25s ease-in-out !important;
@@ -246,7 +246,7 @@
     margin-left: 20px;
     border: 2px solid #ff99008c;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     color: #ff99008c;
     transition: all 0.25s ease-in-out !important;

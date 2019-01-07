@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 26px;
     padding-top: 40px;
 }
 
@@ -80,11 +80,37 @@
 }
 
 .create-game-message {
-    font-size: 25px;
+    font-size: 23px;
     border-bottom: 0.5px solid #23273ebf;
 }
 
 .create-game-message p{
     margin-bottom: 10px;
+    font-size: 80%;
 }
 
+
+
+.themes-options-btn {
+    /* width: 50px; */
+    background-color: #ff99008c;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 2rem;
+    padding: 0 7rem;
+    font-size: 1rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    align-items: flex-start;
+    font-family: 'Viga', sans-serif;
+    margin: 15px;
+}
