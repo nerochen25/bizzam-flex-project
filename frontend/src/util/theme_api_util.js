@@ -21,5 +21,9 @@ export const getAllPlayableThemes = () => {
   return axios.get('/api/themes');
 };
 
+export const getThemeById = id => {
+  return axios.get(`/api/themes/${id}`);
+};
+
 // delete a theme
 // delete a theme item

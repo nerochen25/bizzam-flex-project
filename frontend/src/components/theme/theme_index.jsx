@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './theme.css';
 import ThemeMenuContainer from './theme_menu_container';
+import { Link } from 'react-router-dom';
 
 class ThemeIndex extends React.Component {
     constructor(props) {
@@ -25,8 +26,8 @@ class ThemeIndex extends React.Component {
 
         if (this.props.themes) {
             allThemes = this.props.themes.map(theme => (
-                <li>{theme.name}</li>
-            ))
+                <li><Link to={`/theme/${theme._id}/edit`}>{theme.name}</Link></li>
+            ));
         }
 
 

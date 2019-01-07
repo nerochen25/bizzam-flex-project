@@ -4,7 +4,7 @@ import {postTheme, postThemeItem, postThemeItems} from '../../actions/theme_acti
 
 const mapStateToProps = state => {    
     return {        
-        newTheme: state.entities.themes.newTheme
+        theme: {name: '', description: '', themeItems: []}
     };
 };
 
