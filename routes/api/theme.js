@@ -75,9 +75,7 @@ router.get('/',
     }
 );
 
-
-// Requires text (String), theme_id (Schema.Type.ObjectID, ref: "Theme")
-router.post('/item',
+router.get('/:id',
     passport.authenticate('jwt', { session: false }),
      (req, res) => {
          Theme.findById(req.params.id)
