@@ -73,15 +73,16 @@ class CreateGame extends React.Component {
             
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
-                <Link to='/pin-page' className="create-game-btn">
+                
                     <input  
+                        className="create-game-btn"
                         key={idx} 
                         type='submit' 
                         onClick={this.updateThemeId('themeId')} 
                         value={theme.name} 
                         name={theme._id}
                     /> 
-                </Link>   
+                 
                 )
             })
         }
@@ -107,7 +108,9 @@ class CreateGame extends React.Component {
                     {themesOptions}
                     <br />
                     <br />
+                    <Link to='/pin-page'>
                     <input className="create-game-btn" type='submit' value="Go to pin"/>
+                    </Link>
                 </form>
                 <br />
                 Theme ID: {" "}
