@@ -34,7 +34,7 @@ router.post('/',
                 const newGame = new Game(req.body)
 
                 newGame.pin = pin;
-                newGame.creator_id = req.body.creator_id;
+                newGame.creatorID = req.body.creator_id;
 
                 await newGame.save()
 
@@ -46,7 +46,18 @@ router.post('/',
     }
 )
 
-
+router.get('/user',
+    passport.authenticate('jwt', { session: false }),
+    async (req, res) => {
+        let games = await Game.find({creatorID: req.query.creator_id})
+        let result = games.reduce((acc, game) => {
+            acc[game.id] = game
+            return acc
+        },
+        {}) 
+        return (res.json(result))
+    }
+)
 
 
 
