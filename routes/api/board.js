@@ -83,6 +83,7 @@ router.post('/',
 router.get('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        console.log('no me')
         if(req.body.id) {
             Board
                 .findById(req.body.id)
@@ -114,13 +115,19 @@ router.get('/',
 router.post('/square',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        console.log('its me')
         Board
             .findById(req.body.id)
             .then(board => {
+
+                
+
                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
                 
                 if (hasWon(board.squares)) {
+                    
                     board.won = true
+                    
                 }
 
                 board
@@ -133,12 +140,20 @@ router.post('/square',
 );
 
 // Requires id (Schema.Type.ObjectID, ref: "User")
-router.get('/index',
+router.get('/user',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        console.log(req.body)
         Board
-            .find({userID: req.body.id})
-            .then(boards => res.json(boards))
+            .find({userID: req.query.id})
+            .then(boards => {
+                return res.json(boards.reduce((response, board) =>{
+                    response[board.id] = board
+                    return response
+                },
+                {})
+                )
+            })
     }
 )
 

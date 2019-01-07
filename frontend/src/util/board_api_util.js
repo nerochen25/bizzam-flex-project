@@ -5,6 +5,11 @@ export const getBoards = () => {
   return axios.get('/api/boards/');
 };
 
+// Fetch all boards by user
+export const getUserBoards = id => {
+  return axios.get(`/api/boards/user?id=${id}`)
+}
+
 //Create a board
 export const createBoard = data => {
   return axios.post('/api/boards/', data);
