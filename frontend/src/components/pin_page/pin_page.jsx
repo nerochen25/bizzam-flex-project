@@ -1,15 +1,16 @@
 import React from 'react';
 
-const pinPage = (props) => {
-    return (
-        <div>
-            PIN PAGE
-            <br />
-            <br />
-            Enter pin: {' '}
-            <input type="text"/>
-        </div>
-    )
+
+class PinPage extends React.Component {
+
+    render() {
+        return (
+            <div>
+                PIN PAGEEEEEEE
+            </div>
+        )
+    }
 }
 
-export default pinPage;
+
+export default PinPage;

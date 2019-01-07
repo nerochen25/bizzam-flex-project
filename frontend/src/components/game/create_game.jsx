@@ -1,6 +1,7 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
 import './create_game.css';
+import { Link } from 'react-router-dom'
 
 
 class CreateGame extends React.Component {
@@ -49,7 +50,7 @@ class CreateGame extends React.Component {
 
     updateThemeId() {
         return e => this.setState({
-            themeId: e.currentTarget.value
+            themeId: e.currentTarget.name
         });
     }
 
@@ -72,7 +73,15 @@ class CreateGame extends React.Component {
             
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
-                 <input className="create-game-btn" type='submit' key={idx} onClick={this.updateThemeId('themeId')} value={theme._id}/>
+                <Link to='/pin-page' className="create-game-btn">
+                    <input  
+                        key={idx} 
+                        type='submit' 
+                        onClick={this.updateThemeId('themeId')} 
+                        value={theme.name} 
+                        name={theme._id}
+                    /> 
+                </Link>   
                 )
             })
         }
@@ -95,9 +104,7 @@ class CreateGame extends React.Component {
                     <br />
                     <br />
                     Theme:
-                    
                     {themesOptions}
-                    
                     <br />
                     <br />
                     <input className="create-game-btn" type='submit' value="Go to pin"/>
@@ -137,3 +144,5 @@ export default CreateGame;
 //     <option className='default-game-type-select'>Select your theme</option>
 //     {themesOptions}
 // </select>
+
+///* <input className="create-game-btn" type='submit' value="Go to pin"/> */
