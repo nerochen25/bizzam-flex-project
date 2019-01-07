@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './theme.css';
+import ThemeMenuContainer from './theme_menu_container';
 
 class Theme extends React.Component {
 	constructor(props) {
@@ -11,8 +12,7 @@ class Theme extends React.Component {
             formThemeBody: '',
             formThemeItem: '',
             formThemeItems: [],
-            themeCreated: false, 
-            showThemes: false
+            themeCreated: false
         };
 
         this.updateThemeBody = this.updateThemeBody.bind(this);
@@ -22,7 +22,6 @@ class Theme extends React.Component {
         this.handleClickAdd = this.handleClickAdd.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.handleDBSubmit = this.handleDBSubmit.bind(this);  
-        this.showAllThemes = this.showAllThemes.bind(this);
     }
 
     updateThemeTitle(){
@@ -83,41 +82,22 @@ class Theme extends React.Component {
 
     handleDBSubmit(e) {
         e.preventDefault();
-        console.log("ttt", this.props.themes[0]._id);
+        console.log('ttt', this.props.newTheme._id);
         
         this.props.postThemeItems({ 
-            theme_id: this.props.themes[0]._id,
+            theme_id: this.props.newTheme._id,
             items: this.state.formThemeItems.join(',')
         });
     }
 
-    showAllThemes() {
-        this.setState({
-            showThemes: true
-        });
-        // this.props.getThemes();
-    }
-    
-
 	render() {
-        // console.log('themes inside props ===== ', this.props.themes);
-
-        
+        console.log('this.props.newTheme', this.props.newTheme);
 
 		return <div className="theme">
+                <ThemeMenuContainer />
 				<h1 className="theme-title">Create Your Own Bizzam</h1>
 				<div className="theme-grid">
 					<div className="theme-grid-1">
-
-                        <nav>
-                            <ul>
-                                <li><button>New Theme</button></li>
-                                <li><button onClick={this.showAllThemes}>All Themes</button></li>
-                            </ul>
-                        </nav>
-                        
-                        <p></p>
-
 
 						{this.state.themeCreated ? // generates a list of current theme items
 							// has a textbox for adding to current theme items
