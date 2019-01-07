@@ -26,6 +26,10 @@
     text-decoration: none;
 }
 
+.links:hover {
+    color: blue;
+}
+
 .theme-form{
     margin-top: 53px;
     margin-left: 41%;
