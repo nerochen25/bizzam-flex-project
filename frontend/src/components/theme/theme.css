@@ -2,13 +2,18 @@
     font-size: 22px;
     margin-top: 60px;
     text-align: center;
-    font-family: Bungee Shade;
+    font-family: 'Viga', sans-serif;
+    letter-spacing: 1.2px;
+    color: #23273ebf;
 }
 
 .theme-form{
     margin-top: 30px;
     margin-left: 10%;
     height: 300px;
+    font-family: 'Viga', sans-serif;
+    letter-spacing: 1px;
+    color: black;
 }
 
 .theme-form div {
@@ -43,7 +48,7 @@
 
 .theme-input{
     margin-left: 30px;
-    font-size: 18px;
+    font-size: 42%;
     border: 1px solid blue;
     padding: 5px 10px;
     border-radius: 3px;
@@ -52,10 +57,13 @@
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     font-family: Bungee Shade;
+    background-image: none;
+    color: black;
+
 }
 
 .theme-input-1{
-    margin-left: 84px;
+    margin-left: 88px;
 }
 
 .theme-labels {

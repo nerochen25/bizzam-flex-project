@@ -44,7 +44,7 @@ class Theme extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+
         this.props.postTheme(this.state);
         this.props.history.push('/allThemes');
       }    
@@ -53,8 +53,9 @@ class Theme extends React.Component {
 
 		return <div className="theme">
 				<ThemeMenuContainer />
+                				
+                <h1 className="theme-title">{ this.props.formType} Bizzam</h1>
 
-				<h1 className="theme-title">Create Your Own Bizzam</h1>
 				<div className="theme-grid">
 					<form onSubmit={this.handleSubmit} className="theme-form">
 						<div>

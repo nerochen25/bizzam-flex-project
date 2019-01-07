@@ -20,8 +20,6 @@ class ThemeIndex extends React.Component {
 
 
     render() {
-        console.log("this.props.themes", this.props.themes);
-
         let allThemes;
 
         if (this.props.themes) {

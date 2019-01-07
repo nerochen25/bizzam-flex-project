@@ -3,11 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import './theme.css';
 
 class ThemeMenu extends React.Component {
-    // constructor(props){
-    //     super(props);
 
-    //     this
-    // }
     render(){
         return (
             <div>

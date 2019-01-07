@@ -4,7 +4,8 @@ import {postTheme} from '../../actions/theme_actions';
 
 const mapStateToProps = state => {    
     return {        
-        theme: {name: '', description: '', themeItems: []}
+        theme: {name: '', description: '', themeItems: []}, 
+        formType: 'Create'
     };
 };
 

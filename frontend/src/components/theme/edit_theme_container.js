@@ -5,7 +5,8 @@ import {postTheme, readThemeById} from '../../actions/theme_actions';
 
 const mapStateToProps = state => {    
     return {        
-        theme: state.entities.themes.newTheme
+        theme: state.entities.themes.newTheme,
+        formType: 'Edit'
     };
 };
 
@@ -17,14 +18,14 @@ const mapDispatchToProps = dispatch => {
 };
 
 class EditThemeForm extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.getThemeById(this.props.match.params.themeId);
   }
 
   render() {
-    const { theme, postTheme } = this.props;    
-    return theme ? (
-      <Theme theme={theme} postTheme={postTheme} />
+    const { theme, postTheme, formType } = this.props;    
+    return theme && theme._id === this.props.match.params.themeId ? (
+      <Theme theme={theme} postTheme={postTheme} formType={formType} />
     ) : <div/>;
   }
 }
