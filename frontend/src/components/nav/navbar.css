@@ -224,16 +224,16 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 50px;
+    top: 60px;
     right: 100px;
-    width: 1200px;
+    width: 900px;
     height: 10%;
     justify-content: space-around;
     align-items: center;
 }
 
 .logged-in-navbar a{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     color: #23273ebf;
     transition: all 0.25s ease-in-out !important;
@@ -242,7 +242,7 @@
 .logout-btn {
     border: 2px solid #ff99008c;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     color: #ff99008c;
     transition: all 0.25s ease-in-out !important;
