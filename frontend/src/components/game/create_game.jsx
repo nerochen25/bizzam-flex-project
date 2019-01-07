@@ -18,9 +18,7 @@ class CreateGame extends React.Component {
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
-        console.log(this.state.themeId);
-        
+        this.renderErrors = this.renderErrors.bind(this);        
     } 
 
     componentWillReceiveProps(nextProps) {
@@ -28,7 +26,7 @@ class CreateGame extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchThemes();
+        this.props.getThemes();
         this.props.fetchBoards();
     }
 
@@ -68,9 +66,12 @@ class CreateGame extends React.Component {
         )
     }
     render() {
+        
         let themesOptions;
-        if (this.props.themes.length > 4) {
-            themesOptions = this.props.themes.map((theme, idx) => {
+        if (this.props.themes[0].length > 1) {
+            console.log('inside if state');
+            
+            themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
                  <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
                 )
@@ -81,7 +82,7 @@ class CreateGame extends React.Component {
               <option className="game-type-option" key={idx} >{gameType}</option>
             );
           });
-
+        
         return (
             <div className='create-game-div'>
                 <div className="create-game-message">
