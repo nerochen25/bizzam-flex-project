@@ -5,7 +5,7 @@ class PinPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pin: this.props.pin,
+            pin: this.props.game,
         }
     }
     pinGenerator() {
@@ -13,7 +13,8 @@ class PinPage extends React.Component {
     }
 
     render() {
-        if (this.props.pin) {
+        debugger
+        if (this.props.game) {
             return (
                 <div className='pin-page-div'>
                     Remember this pin
@@ -25,6 +26,7 @@ class PinPage extends React.Component {
             return (
                 <div className='pin-page-div'>
                     create a game first
+                    
                 </div>
             )
         }
