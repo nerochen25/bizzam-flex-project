@@ -4,8 +4,10 @@ import {fetchBoards, fetchBoard} from '../../actions/board_actions';
 import {getThemes} from '../../actions/theme_actions';
 
 const mapStateToProps = (state) => {
+    let pin = state.entities.games.data;
     let themes = Object.values(state.entities.themes);
     return {
+        pin: pin,
         themes: themes,
         currentUser: state.session.user,
         gameType: '',
