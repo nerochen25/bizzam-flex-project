@@ -17,10 +17,9 @@ class Theme extends React.Component {
         this.updateThemeBody = this.updateThemeBody.bind(this);
         this.updateThemeTitle = this.updateThemeTitle.bind(this);
         this.updateThemeItem = this.updateThemeItem.bind(this);
-        // this.handleClick = this.handleClick.bind(this);
         this.handleClickAdd = this.handleClickAdd.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this); 
-        this.handleDBSubmit = this.handleDBSubmit.bind(this);  
+        // this.handleDBSubmit = this.handleDBSubmit.bind(this);  
     }
 
     updateThemeTitle(){
@@ -41,16 +40,6 @@ class Theme extends React.Component {
         });
     }
 
-    // handleClick(){
-    //     if (1===0) {
-    //         this.setState({
-    //             themeCreated: true
-    //         });
-    //     } else {
-    //         alert("Not enough theme items, at least 9 are required");
-    //     }
-    // }
-
     handleClickAdd(){
         this.setState( state => {
                 let formThemeItems =  [...state.formThemeItems, state.formThemeItem];
@@ -58,7 +47,6 @@ class Theme extends React.Component {
                     formThemeItems
                 };
             }
-            // () => console.log("form theme items is :", this.state.formThemeItems)  
         );
 
     }
@@ -77,20 +65,17 @@ class Theme extends React.Component {
     
         this.props.postTheme(makeTheme);
         this.props.history.push('/allThemes');
-        // console.log("makeTheme is :", makeTheme);
       }
 
-    handleDBSubmit(e) {
-        e.preventDefault();
-        console.log('ttt', this.props);
+    // handleDBSubmit(e) {
+    //     e.preventDefault();
+    //     console.log('ttt', this.props);
         
-        this.props.postThemeItems({ 
-            theme_id: this.props.newTheme._id,
-            items: this.state.formThemeItems.join(',')
-        });
-
-        
-    }
+    //     this.props.postThemeItems({ 
+    //         theme_id: this.props.newTheme._id,
+    //         items: this.state.formThemeItems.join(',')
+    //     });
+    // }
 
 	render() {
         console.log('this.props.newTheme', this.props.newTheme);
