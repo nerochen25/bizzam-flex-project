@@ -50,11 +50,11 @@
     letter-spacing: .8px;
 }
 
-.main-page-links{
+.main-page-link{
     display: flex;
     flex-direction: row;
-    margin-top: 28px;
-    margin-left: 12%;
+    /* margin-top: 28px; */
+    /* margin-left: 12%; */
 }
 
 .links1{
@@ -62,7 +62,7 @@
     font-size: 18px;
     font-weight: bold;
     text-transform: capitalize;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-top: 2px;
 }
 

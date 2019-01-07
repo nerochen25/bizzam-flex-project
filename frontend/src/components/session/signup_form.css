@@ -1,7 +1,8 @@
 .signup-form-container, .login-form-container {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 1%;
+    margin-bottom: 10%;
 }
 
 .signup-form, .login-form {

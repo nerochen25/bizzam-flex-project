@@ -21,17 +21,17 @@ class NavBar extends React.Component {
             
                 <div className='logged-in-navbar'>
                     <Link className="links1" to={'/bizzams'}>Game</Link>
-                    <br />
+                    {/* <br /> */}
                     <Link className="links1" to={'/profile'}>Profile</Link>
-                    <br />
+                    {/* <br /> */}
                     <Link className="links1" to={'/newTheme'}>Write a BizZam</Link>
-                    <br />
+                    {/* <br /> */}
                     <Link className="links1" to={'/create-game'}>Create Game</Link>
-                    <br />
+                    {/* <br /> */}
                     <Link className="links1" to={'/board'}>Board</Link>
-                    <br />
+                    {/* <br /> */}
                     <Link className="links1" id='current-user-name' to={'/profile'}>Welcome,{' '}{this.props.currentUser.username}</Link>
-                    <br />
+                    {/* <br /> */}
                     <button className='logout-btn' onClick={this.logoutUser}>Logout</button>
                 </div>
             
