@@ -8,7 +8,7 @@ class CreateGame extends React.Component {
         super(props);
         
         this.state = {
-            gameType: "",
+            gameType: "Classic",
             boards: [],
             themeId: 'no theme selected yet',
             winnerId: null,
@@ -38,7 +38,7 @@ class CreateGame extends React.Component {
       };
   
       this.props.createGame(game); 
-      this.setState({gameType: '', errors: {}})
+      this.setState({errors: {}})
     }
 
     updateGameType() {
@@ -76,11 +76,11 @@ class CreateGame extends React.Component {
                 )
             })
         }
-        const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
-            return (
-              <option className="game-type-option" key={idx} >{gameType}</option>
-            );
-          });
+        // const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
+        //     return (
+        //       <option className="game-type-option" key={idx} >{gameType}</option>
+        //     );
+        //   });
         
         return (
             <div className='create-game-div'>
@@ -90,8 +90,7 @@ class CreateGame extends React.Component {
                 <form onSubmit={this.handleSubmit} className='create-game-form'>
                     Game type:
                     <select className="game-type-select" onChange={this.updateGameType('gameType')} value={this.state.gameType}>
-                        <option className='default-game-type-select'>Select your game type</option>
-                        {gameTypeOptions}
+                        <option className='default-game-type-select'>Classic</option>
                     </select>
                     <br />
                     <br />
