@@ -17,11 +17,27 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-
-        const newTheme = new Theme({
+        let theme = {
             name: req.body.name,
-            description: req.body.description
-        });
+            description: req.body.description,
+        };
+        if(req.body.items) {
+            theme.themeItems = req.body.items.split(",").map(item => {
+                let themeItem = {
+                    text: item
+                };
+
+                const {isValid, errors} = validateThemeItemInput(themeItem);
+
+                if (!isValid) {
+                    return res.status(401).json(errors);
+                }
+
+                return themeItem;
+            });            
+        }
+
+        const newTheme = new Theme(theme);
 
         newTheme
             .save()
@@ -30,29 +46,40 @@ router.post('/',
 );
 
 
-// Retrieves all playable themes
+// Retrieves all playable themes and all themes.
 router.get('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         Theme.find()
         .then(themes => {
+            if (req.query.includeAll === 'true') {
+                return res.json(themes);
+            }
             let validThemes = themes.reduce((validThemes, theme) =>{
                 if (theme.themeItems.length >= 9) {
                     validThemes.push(theme);
                 }
                 return validThemes;
             },
-            []
-            );
-            
+            []);
             return res.json(validThemes);
-
         });
-        
 
-        
     }
 );
+
+router.get('/:id',
+    passport.authenticate('jwt', { session: false }),
+     (req, res) => {
+         console.log("/:id route========> ", req.query);
+         Theme.findById(req.params.id)
+            .then(theme => {
+                return res.json(theme);
+            });
+    }
+
+);
+
 
 //Route for posting the theme - 
 

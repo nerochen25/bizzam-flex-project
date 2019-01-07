@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const travel = require('./seed/travel');
 const teamBuilding = require('./seed/team_building');
 const food = require('./seed/food');
+const scavenger = require('./seed/scavenger_hunt')
 const shuffle = require('./seed/shuffle');
 
 
@@ -45,23 +46,6 @@ const shuffle = require('./seed/shuffle');
         function(callback) {
 
             let themes = []
-            
-
-            // // Fisher-Yates shuffle
-            // function shuffle (array) {
-            //     var i = 0
-            //     , j = 0
-            //     , temp = null
-            
-            //     for (i = array.length - 1; i > 0; i -= 1) {
-            //     j = Math.floor(Math.random() * (i + 1))
-            //     temp = array[i]
-            //     array[i] = array[j]
-            //     array[j] = temp
-            //     }
-            //     return array
-            // }
-            
             
             for (i = 0; i < themeSetItem.themes.length; i++) {
                 let shuffledItems = shuffle(themeSetItem.themeItems)
@@ -129,17 +113,22 @@ const shuffle = require('./seed/shuffle');
 
    
 // demo seed on item
-const oneItemSet = [travel]
-async.eachSeries(oneItemSet,
-    (item) => seedOneTheme(item)
-);
+// const oneItemSet = [travel]
+// async.eachSeries(oneItemSet,
+//     (item) => seedOneTheme(item)
+// );
 
-const oneItemSet2 = [teamBuilding]
-async.eachSeries(oneItemSet2,
-    (item) => seedOneTheme(item)
-);
+// const oneItemSet2 = [teamBuilding]
+// async.eachSeries(oneItemSet2,
+//     (item) => seedOneTheme(item)
+// );
 
-const oneItemSet3 = [food]
-async.eachSeries(oneItemSet3,
+// const oneItemSet3 = [food]
+// async.eachSeries(oneItemSet3,
+//     (item) => seedOneTheme(item)
+// );
+
+const oneItemSet4 = [scavenger]
+async.eachSeries(oneItemSet4,
     (item) => seedOneTheme(item)
 );

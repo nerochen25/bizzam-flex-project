@@ -12,10 +12,14 @@ export const createThemeItems = data => {
   return axios.post('/api/themes/items', data);
 };
 
-export const createThemeWithItems = data => {
-
+export const getAllThemes = () => {
+  console.log("inside Util");
+  return axios.get('/api/themes?includeAll=true');
 };
 
+export const getAllPlayableThemes = () => {
+  return axios.get('/api/themes');
+};
 
 // delete a theme
 // delete a theme item
