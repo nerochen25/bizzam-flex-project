@@ -2,6 +2,7 @@
     text-decoration: none;
 }
 
+
 .project-title {
     font-size: 70px;
     font-weight: 700;
@@ -13,6 +14,7 @@
     color: #ff9900;
     margin-top: 40px;
     position: relative;
+
 }
 
 .blue {
@@ -194,8 +196,8 @@
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Viga', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Viga', sans-serif; */
 
 }
 
@@ -204,7 +206,6 @@
     flex-direction: row;
     padding-left: 170px;
     padding-right: 170px;
-
 }
 
 .navbar {
