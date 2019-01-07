@@ -33,7 +33,8 @@ router.post('/',
 
                 const newGame = new Game(req.body)
 
-                newGame.pin = pin
+                newGame.pin = pin;
+                newGame.creator_id = req.body.creator_id;
 
                 await newGame.save()
 

@@ -8,6 +8,7 @@ const gameSchema = Schema({
     theme: String, // belongs to Theme
     winner_id: { type: Schema.Types.ObjectId, ref: 'User', default: null },
     gameType: String,
+    creator_id: String,
     pin: Number
 
 })
