@@ -24,11 +24,11 @@ export const recieveGames = games => ({
 
 export const postGame = data => dispatch => (
   createGame(data)
-    .then(game => dispatch(receiveNewGame(game)))
+    .then(response => dispatch(receiveNewGame(response.data)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
 export const fetchUserGames = id => dispatch => (
   getUsersGames(id)
-  .then(games => dispatch(recieveGames(games)))
+  .then(response => dispatch(recieveGames(response.data)))
 )
