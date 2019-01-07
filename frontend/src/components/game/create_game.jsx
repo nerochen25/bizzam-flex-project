@@ -106,7 +106,10 @@ class CreateGame extends React.Component {
                     <br />
                     <br />
                     Theme:
-                    {themesOptions}
+                    <div className="themes-options-div">
+                        {themesOptions}
+                    </div>
+                    
                     <br />
                     <br />
                     <Link to='/pin-page'>
