@@ -1,4 +1,4 @@
-import { createTheme, createThemeItem, createThemeItems, getAllPlayableThemes, getAllThemes, getThemeById } from '../util/theme_api_util';
+import { createTheme, getAllPlayableThemes, getAllThemes, getThemeById } from '../util/theme_api_util';
 
 export const RECEIVE_NEW_THEME = "RECEIVE_NEW_THEME";
 export const RECEIVE_NEW_THEME_ITEM = "RECEIVE_NEW_THEME_ITEM";

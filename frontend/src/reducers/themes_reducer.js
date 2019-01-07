@@ -1,6 +1,5 @@
-import { RECEIVE_NEW_THEME, RECEIVE_NEW_THEME_ITEM, RECEIVE_NEW_THEME_ITEMS, RECEIVE_THEMES  } from '../actions/theme_actions';
+import { RECEIVE_NEW_THEME, RECEIVE_THEMES  } from '../actions/theme_actions';
 
-  
 const ThemesReducer = (state = { all: [] }, action) => {
     
     Object.freeze(state);
