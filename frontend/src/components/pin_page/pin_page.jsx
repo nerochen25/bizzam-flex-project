@@ -1,5 +1,6 @@
 import React from 'react';
 import './pin_page.css';
+import { Link } from 'react-router-dom'
 
 class PinPage extends React.Component {
     constructor(props) {
@@ -13,7 +14,6 @@ class PinPage extends React.Component {
     }
 
     render() {
-        debugger
         if (this.props.game) {
             return (
                 <div className='pin-page-div'>
@@ -25,8 +25,7 @@ class PinPage extends React.Component {
         } else {
             return (
                 <div className='pin-page-div'>
-                    create a game first
-                    
+                    <Link to='/create-game'>You have to create a game first</Link>
                 </div>
             )
         }
