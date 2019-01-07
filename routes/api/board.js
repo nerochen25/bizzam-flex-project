@@ -83,7 +83,6 @@ router.post('/',
 router.get('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        console.log('no me')
         if(req.body.id) {
             Board
                 .findById(req.body.id)
@@ -111,34 +110,6 @@ router.get('/',
 );
 
 
-// Requires id (Schema.Type.ObjectID, ref: "Board"), position
-// router.post('/square',
-//     passport.authenticate('jwt', { session: false }),
-//     (req, res) => {
-//         console.log('its me')
-//         Board
-//             .findById(req.body.id)
-//             .then(board => {
-
-                
-
-//                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
-                
-//                 if (hasWon(board.squares)) {
-                    
-//                     board.won = true
-                    
-//                 }
-//                 board
-//                     .save()
-//                     .then(board => res.json(board));    
-                    
-//             })
-//             .catch(err => res.status(400).json(err));
-//     }
-// );
-
-
 
 router.post('/square', 
     passport.authenticate('jwt', { session: false }),
@@ -146,18 +117,22 @@ router.post('/square',
        return new Promise(async (resolve, reject) => {
            let board
            try{
-               board = await Board.findById(req.body.id)
-
-               board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
-
-               if (hasWon(board.squares)) {
+                board = await Board.findById(req.body.id)
+                board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
+                game = await Game.findById(board.gameID)
+                console.log(game.winnerID)
+                if ((game.winnerID) && game.winnerID !== board.userID) {
+                    board.gameOn = false
+                } else if (hasWon(board.squares)) {
                     board.won = true
+                    game.winnerID = board.userID
+                    await game.save()
                 }
-
                 await board.save()
 
-               resolve(res.json(board))
+                resolve(res.json(board))
            } catch(err) {
+               console.log(err)
                resolve(res.status(400).json(err))
            }
        })
@@ -172,7 +147,7 @@ router.post('/square',
 router.get('/user',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        console.log(req.body)
+        
         Board
             .find({userID: req.query.id})
             .then(boards => {
