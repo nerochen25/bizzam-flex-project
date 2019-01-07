@@ -45,38 +45,80 @@ const generateBoard = (themeID) => {
     }
 
 
-// Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
-router.post('/',
+router.post('/', 
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
+        let gameRequest = await Game.find({pin: req.body.pin})
+        let game = gameRequest[0]
         
-        const { isValid, errors } = await validateBoardInput(req.body);
+        
+        let theme = await Theme.findById(game.theme)
+
+
+        let valData = {
+            user_id: req.body.user_id,
+            game_id: game.id,
+            theme_id: theme.id
+        }
+
+        const { isValid, errors } = await validateBoardInput(valData);
 
         if (!isValid) {
             return res.status(400).json(errors);
         }
 
-        generateBoard(req.body.theme_id)
-            .then(squares => {
-                const newBoard = new Board({
-                    userID: req.body.user_id,
-                    squares: squares,
-                    gameID: req.body.game_id
-                });
+        let squares = await generateBoard(theme.id)
 
-                newBoard
-                    .save()
-                    .then(board => {
-                        Game.findById(req.body.game_id)
-                        .then(game => {
-                            game.boards.push(board)
-                            game.save()
-                            .then(() => res.json(board))
-                        })
-                    })
-            }).catch(err => res.status(400).json('theme_id is invalid'))
+        let newBoard = new Board({
+            userID: req.body.user_id,
+            squares: squares,
+            gameID: game.id
+        })
+
+        await newBoard.save()
+
+        game.boards.push(newBoard)
+
+        await game.save()
+
+        return res.json(newBoard)
     }
-);
+)
+
+
+
+// Requires user_id(Schema.Type.ObjectID), theme_id(Schema.Type.ObjectID), game_id(Schema.Type.ObjectID)
+// router.post('/',
+//     passport.authenticate('jwt', { session: false }),
+//     async (req, res) => {
+        
+//         const { isValid, errors } = await validateBoardInput(req.body);
+
+//         if (!isValid) {
+//             return res.status(400).json(errors);
+//         }
+
+//         generateBoard(req.body.theme_id)
+//             .then(squares => {
+//                 const newBoard = new Board({
+//                     userID: req.body.user_id,
+//                     squares: squares,
+//                     gameID: req.body.game_id
+//                 });
+
+//                 newBoard
+//                     .save()
+//                     .then(board => {
+//                         Game.findById(req.body.game_id)
+//                         .then(game => {
+//                             game.boards.push(board)
+//                             game.save()
+//                             .then(() => res.json(board))
+//                         })
+//                     })
+//             }).catch(err => res.status(400).json('theme_id is invalid'))
+//     }
+// );
 
 
 // Requires id (Schema.Type.ObjectID, ref: "Board")
