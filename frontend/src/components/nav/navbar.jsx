@@ -22,8 +22,6 @@ class NavBar extends React.Component {
                 <div className='logged-in-navbar'>
                     <Link className="links1" to={'/bizzams'}>Game</Link>
                     {/* <br /> */}
-                    <Link className="links1" to={'/profile'}>Profile</Link>
-                    {/* <br /> */}
                     <Link className="links1" to={'/newTheme'}>Write a BizZam</Link>
                     {/* <br /> */}
                     <Link className="links1" to={'/create-game'}>Create Game</Link>
