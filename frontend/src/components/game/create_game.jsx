@@ -72,7 +72,7 @@ class CreateGame extends React.Component {
             
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
-                 <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
+                 <input className="create-game-btn" type='submit' key={idx} onClick={this.updateThemeId('themeId')} value={theme._id}/>
                 )
             })
         }
@@ -95,13 +95,12 @@ class CreateGame extends React.Component {
                     <br />
                     <br />
                     Theme:
-                    <select className="game-type-select" onChange={this.updateThemeId('themeId')} value={this.state.themeId}>
-                        <option className='default-game-type-select'>Select your theme</option>
-                        {themesOptions}
-                    </select>
+                    
+                    {themesOptions}
+                    
                     <br />
                     <br />
-                    <input className="create-game-btn" type='submit' value="Create Game"/>
+                    <input className="create-game-btn" type='submit' value="Go to pin"/>
                 </form>
                 <br />
                 Theme ID: {" "}
@@ -113,3 +112,28 @@ class CreateGame extends React.Component {
 }
 
 export default CreateGame;
+
+
+
+// if (this.props.themes[0].length > 1) {
+//     console.log('inside if state');
+    
+//     themesOptions = this.props.themes[0].map((theme, idx) => {
+//         return (
+//          <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
+//         )
+//     })
+// }
+
+
+// const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
+        //     return (
+        //       <option className="game-type-option" key={idx} >{gameType}</option>
+        //     );
+        //   });
+
+// Theme:
+// <select className="game-type-select" onChange={this.updateThemeId('themeId')} value={this.state.themeId}>
+//     <option className='default-game-type-select'>Select your theme</option>
+//     {themesOptions}
+// </select>
