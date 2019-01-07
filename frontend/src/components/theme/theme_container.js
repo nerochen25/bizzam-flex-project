@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Theme from './theme';
-import {postTheme, postThemeItem, postThemeItems} from '../../actions/theme_actions';
+import {postTheme} from '../../actions/theme_actions';
 
 const mapStateToProps = state => {    
     return {        
@@ -10,9 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        postTheme: data => dispatch(postTheme(data)),
-        postThemeItem: data => dispatch(postThemeItem(data)),
-        postThemeItems: data => dispatch(postThemeItems(data))
+        postTheme: data => dispatch(postTheme(data))        
     };
 };
 

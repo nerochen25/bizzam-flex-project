@@ -22,8 +22,7 @@ class EditThemeForm extends React.Component {
   }
 
   render() {
-    const { theme, postTheme } = this.props;
-    console.log(">>>>>>>> Render", this.props);
+    const { theme, postTheme } = this.props;    
     return theme ? (
       <Theme theme={theme} postTheme={postTheme} />
     ) : <div/>;
