@@ -113,11 +113,19 @@
     color: blue;
 }
 
+.itemForm {
+    display: inline;
+}
+
 
 .theme-form .item-input {
     margin-top: 0px;
     margin-left: 72px;
-    padding: 10px 15%;
+    padding: 10px 1%;
+}
+
+.item-btn {
+    margin-left: 30px;
 }
 
 .item-label{
