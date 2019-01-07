@@ -205,8 +205,8 @@
     width: 200px;
     display: flex;
     flex-direction: row;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 120px;
+    padding-right: 50px;
 }
 
 .navbar {

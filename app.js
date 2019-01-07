@@ -10,7 +10,7 @@ const User = require('./models/User');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
-const io = require('socket.io')();
+
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -38,20 +38,6 @@ app.use("/api/games", games);
 app.use("/api/boards", boards);
 
 const port = process.env.PORT || 5000;
-
-//New WebSocket Code
-// const ioPort = 8000
-//   io.on('connection', (client) => {
-//     client.on('helloworld', (message) =>{
-//       console.log(`client is receiving message ${message}`)
-//       respondToMessage (() => {
-//         client.emit ('respond', message());
-
-//       }, message)
-//     })
-//   })
-//   io.listen(ioPort, () => console.log(`Websocket is listening on port ${ioPort}`));
-//End of WebSocket Code
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
