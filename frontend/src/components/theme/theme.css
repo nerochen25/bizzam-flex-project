@@ -150,7 +150,14 @@
     text-decoration: none;
     color: blue;
 }
+
 .theme ul li a:hover {
     color: #ff9900;
 }
+
+.theme-grid-2 .displayItems {
+    display: flex;
+    flex-direction: column;
+}
+
 
