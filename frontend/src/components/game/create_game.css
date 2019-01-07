@@ -114,3 +114,7 @@
     font-family: 'Viga', sans-serif;
     margin: 15px;
 }
+
+.themes-options-btn:hover{
+    background-color: #0000ffab;
+}
