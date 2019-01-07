@@ -6,9 +6,9 @@ class ThemeMenu extends React.Component {
 
     render(){
         return (
-            <div>
-                <Link to={'/allThemes'}>All Themes</Link>
-                <Link to={'/newTheme'}>Create A Theme</Link>
+            <div className="theme-links">
+                <Link to={'/allThemes'} className="links">All Themes</Link>
+                <Link to={'/newTheme'} className="links">Create A Theme</Link>
             </div>
             
         )

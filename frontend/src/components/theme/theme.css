@@ -1,10 +1,32 @@
 .theme-title {
     font-size: 22px;
-    margin-top: 60px;
+    margin-top: 80px;
     text-align: center;
     font-family: 'Viga', sans-serif;
-    letter-spacing: 1.2px;
+    font-weight: 500;
+    letter-spacing: 1px;
     color: #23273ebf;
+}
+
+.theme-links {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 1200px;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.links{
+    font-size: 22px;
+    font-weight: 500;
+    color: #23273ebf;
+    transition: all 0.25s ease-in-out !important;
+    text-decoration: none;
 }
 
 .theme-form{
