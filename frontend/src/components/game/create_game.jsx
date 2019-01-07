@@ -19,6 +19,8 @@ class CreateGame extends React.Component {
         
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        console.log(this.state.themeId);
+        
     } 
 
     componentWillReceiveProps(nextProps) {
@@ -70,13 +72,13 @@ class CreateGame extends React.Component {
         if (this.props.themes.length > 4) {
             themesOptions = this.props.themes.map((theme, idx) => {
                 return (
-                 <option className="game-type-option" key={idx}>{theme.name}</option>
+                 <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
                 )
             })
         }
         const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
             return (
-              <option className="game-type-option" key={idx}>{gameType}</option>
+              <option className="game-type-option" key={idx} >{gameType}</option>
             );
           });
 
@@ -102,6 +104,9 @@ class CreateGame extends React.Component {
                     <br />
                     <input className="create-game-btn" type='submit' value="Create Game"/>
                 </form>
+                <br />
+                Theme ID: {" "}
+                {this.state.themeId}
                 {this.renderErrors()}
             </div>
         )
