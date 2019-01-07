@@ -35,7 +35,8 @@ class CreateGame extends React.Component {
       e.preventDefault();
       let game = {
         gameType: this.state.gameType,
-        theme: this.state.themeId
+        theme: this.state.themeId,
+        creator_id: this.props.currentUser.id
       };
   
       this.props.createGame(game); 
