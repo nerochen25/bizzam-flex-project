@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                     <br />
                     <Link className="links1" to={'/profile'}>Profile</Link>
                     <br />
-                    <Link className="links1" to={'/theme'}>Write a BizZam</Link>
+                    <Link className="links1" to={'/newTheme'}>Write a BizZam</Link>
                     <br />
                     <Link className="links1" to={'/create-game'}>Create Game</Link>
                     <br />

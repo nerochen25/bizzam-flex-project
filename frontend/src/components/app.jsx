@@ -21,7 +21,6 @@ const App = () => (
       <ProtectedRoute path="/board" component={BoardContainer} />
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
-      <ProtectedRoute path="/theme" component={ThemeContainer} />
       <ProtectedRoute path="/theme" component={ThemeMenuContainer} />
       <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />
       <ProtectedRoute path='/newTheme' component={ThemeContainer} />
