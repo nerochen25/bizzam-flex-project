@@ -7,7 +7,6 @@ import {getThemes} from '../../actions/theme_actions';
 
 
 const mapStateToProps = (state) => {
-    
     let themes = Object.values(state.entities.themes);
     return {
         themes: themes,
@@ -24,8 +23,6 @@ const mapDispatchToProps = dispatch => {
         createGame: data => dispatch(postGame(data)),
         fetchBoards: () => dispatch(fetchBoards()),
         fetchBoard: id => dispatch(fetchBoard(id))
-        //fetchThemeItems?
-        //fetchThemes 
     };
 };
 

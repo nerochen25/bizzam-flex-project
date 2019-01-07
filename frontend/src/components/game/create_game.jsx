@@ -10,8 +10,7 @@ class CreateGame extends React.Component {
         this.state = {
             gameType: "",
             boards: [],
-            //hard-coding themeId for now, still waiting for theme component to pass theme_id over
-            themeId: '5c2e9b3a2506593d64be02ef',
+            themeId: 'no theme selected yet',
             winnerId: null,
             errors: {},
             themes: this.props.themes
@@ -115,8 +114,3 @@ class CreateGame extends React.Component {
 }
 
 export default CreateGame;
-
-/* <input className="theme-input" type='text' onChange={this.updateThemeId('themeId')} value={this.state.themeId}/>
-<br />
-<br />
-<input className="create-game-btn" type='submit' value="Create Game"/> */
