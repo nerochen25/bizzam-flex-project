@@ -39,7 +39,7 @@ export const fetchBoard = id => dispatch => (
     .catch(err => console.log(err))
 );
 
-// create a board
+// create a board data = { user_id, pin }
 export const postBoard = data => dispatch => (
   createBoard(data)
     .then(board => dispatch(receiveBoard(board)))
