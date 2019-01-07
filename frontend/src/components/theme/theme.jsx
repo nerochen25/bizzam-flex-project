@@ -75,10 +75,10 @@ class Theme extends React.Component {
     }
 
 	render() {
-        console.log('theme items -------> ', this.state.allItems);
+        // console.log('theme items -------> ', this.state.allItems);
 
         let displayItems = this.state.allItems.map( item => (
-            <li>{item}</li>
+            <li className="displayList">{item}</li>
         ));
 
 		return <div className="theme">
@@ -107,9 +107,9 @@ class Theme extends React.Component {
 								<label className="theme-labels item-label">
 									<span>Bizzam Item</span>
 
-									<input type="text" className="theme-input" placeholder="Enter an item" onChange={this.updateItem()} />
+									<input type="text" className="theme-input add-item" placeholder="Enter an item" onChange={this.updateItem()} />
 
-									<button onClick={this.itemListShow} className="theme-btn item-btn">
+									<button onClick={this.itemListShow} className="theme-btn item-btn add-btn">
 										Add Item
 									</button>
 									{/* <input
@@ -121,13 +121,13 @@ class Theme extends React.Component {
                                     /> */}
 								</label>
 							</div>
-							<p>{this.state.items}</p>
+							{/* <p>{this.state.items}</p> */}
 							<input type="submit" value="Save Bizzam" className="theme-btn" />
 						</form>
 					</div>
 
 					<div className="theme-grid-2">
-						<p>The items that you gave added.</p>
+						<h3 className="displayLine">Bizzam Items</h3>
                         <ul className="displayItems">{displayItems}</ul>
 					</div>
 				</div>

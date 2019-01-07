@@ -9,6 +9,11 @@
     color: #ff9900;
 }
 
+.theme-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 .theme-links {
     display: flex;
     flex-direction: row;
@@ -32,7 +37,7 @@
 
 .theme-form{
     margin-top: 53px;
-    margin-left: 41%;
+    margin-left: 0%;
     height: 300px;
     width: 150%;
 }
@@ -57,23 +62,17 @@
     margin-left: 15%;
 }
 
-.theme-grid-2 p {
-    margin-bottom: 30px;
-}
-
-.theme-grid-2 p span{
-    font-family: Bungee Shade;
-    font-size: 18px;
-}
-
 .theme-form .theme-input{
-    inherit: none;
     margin-left: 30px;
     /* font-size: %; */
     border: 1px solid black;
     padding: 10px 10px;
     color: black;
     width: 25%;
+}
+
+.theme-form .add-item {
+    margin-left: 83px;
 }
 
 .theme-form .theme-input-1{
@@ -128,6 +127,10 @@
     margin-left: 30px;
 }
 
+.add-btn {
+    margin-left: 50px;
+}
+
 .item-label{
     margin-left: 0;
 }
@@ -155,9 +158,35 @@
     color: #ff9900;
 }
 
+.theme-grid-2 {
+    border: 2px solid #ff9900;
+    height: 387px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 27px;
+    text-shadow: 2px 0px #ff9900;
+}
+
+.displayLine {
+   font-size: 20px;
+   font-weight: 500;
+   color: blue;
+   text-align: center;
+}
+
 .theme-grid-2 .displayItems {
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
+    margin-left: 24%;
 }
+
+.displayList {
+    font-size: 18px;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+
 
 
