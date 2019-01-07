@@ -50,11 +50,11 @@
     letter-spacing: .8px;
 }
 
-.main-page-link{
+.main-page-links{
     display: flex;
     flex-direction: row;
-    /* margin-top: 28px; */
-    /* margin-left: 12%; */
+    margin-top: 28px;
+    margin-left: 12%;
 }
 
 .links1{
