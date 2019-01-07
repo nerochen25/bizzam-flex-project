@@ -10,6 +10,7 @@ import { logout } from './actions/session_actions';
 import axios from 'axios';
 import { fetchBoards, selectSquare, fetchBoard } from './actions/board_actions'
 
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
   
@@ -48,6 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
   
     ReactDOM.render(<Root store={store} />, root);
+
+
+
+    //WebSocket Code
+
+
+
+
+
   });
 
   window.axios = axios;

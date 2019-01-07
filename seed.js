@@ -98,17 +98,15 @@ const shuffle = require('./seed/shuffle');
 
     console.log("\n\n--- Exiting database seed progam ---");
     // Exit the process to get back to terrminal console 
-    // process.exit(0);
+    process.exit(0);
     })
     
 }
 
 // // functional multiseeding
 // const multiItemSet = [travel, teamBuilding, food]
-
 //  async.eachSeries(multiItemSet,
-//     (item) => seedOneTheme(item),
-    
+//     (item) => seedOneTheme(item), 
 // );
 
    
@@ -128,7 +126,7 @@ const shuffle = require('./seed/shuffle');
 //     (item) => seedOneTheme(item)
 // );
 
-const oneItemSet4 = [scavenger]
-async.eachSeries(oneItemSet4,
-    (item) => seedOneTheme(item)
-);
+// const oneItemSet4 = [scavenger]
+// async.eachSeries(oneItemSet4,
+//     (item) => seedOneTheme(item)
+// );
