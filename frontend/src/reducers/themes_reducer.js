@@ -1,4 +1,4 @@
-import { RECEIVE_NEW_THEME, RECEIVE_NEW_THEME_ITEM, RECEIVE_NEW_THEME_ITEMS  } from '../actions/theme_actions';
+import { RECEIVE_NEW_THEME, RECEIVE_NEW_THEME_ITEM, RECEIVE_NEW_THEME_ITEMS, RECEIVE_THEMES  } from '../actions/theme_actions';
 
   
 const ThemesReducer = (state = { 
@@ -12,6 +12,9 @@ const ThemesReducer = (state = {
     let newState = Object.assign({}, state);
 
     switch(action.type) {
+        case RECEIVE_THEMES:
+            return action.themes.data;
+            
         case RECEIVE_NEW_THEME:
             newState.newTheme = action.theme.data;
             return newState;

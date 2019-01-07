@@ -6,16 +6,17 @@ import './create_game.css';
 class CreateGame extends React.Component {
     constructor(props) {
         super(props);
-  
+        
         this.state = {
             gameType: "",
             boards: [],
             //hard-coding themeId for now, still waiting for theme component to pass theme_id over
             themeId: '5c2e9b3a2506593d64be02ef',
             winnerId: null,
-            errors: {}
+            errors: {},
+            themes: this.props.themes
         }
-  
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     } 
@@ -25,6 +26,7 @@ class CreateGame extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchThemes();
         this.props.fetchBoards();
     }
 
@@ -64,11 +66,20 @@ class CreateGame extends React.Component {
         )
     }
     render() {
+        let themesOptions;
+        if (this.props.themes.length > 4) {
+            themesOptions = this.props.themes.map((theme, idx) => {
+                return (
+                 <option className="game-type-option" key={idx}>{theme.name}</option>
+                )
+            })
+        }
         const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
             return (
               <option className="game-type-option" key={idx}>{gameType}</option>
             );
           });
+
         return (
             <div className='create-game-div'>
                 <div className="create-game-message">
@@ -83,7 +94,10 @@ class CreateGame extends React.Component {
                     <br />
                     <br />
                     Theme:
-                    <input className="theme-input" type='text' onChange={this.updateThemeId('themeId')} value={this.state.themeId}/>
+                    <select className="game-type-select" onChange={this.updateThemeId('themeId')} value={this.state.themeId}>
+                        <option className='default-game-type-select'>Select your theme</option>
+                        {themesOptions}
+                    </select>
                     <br />
                     <br />
                     <input className="create-game-btn" type='submit' value="Create Game"/>
@@ -95,3 +109,8 @@ class CreateGame extends React.Component {
 }
 
 export default CreateGame;
+
+/* <input className="theme-input" type='text' onChange={this.updateThemeId('themeId')} value={this.state.themeId}/>
+<br />
+<br />
+<input className="create-game-btn" type='submit' value="Create Game"/> */

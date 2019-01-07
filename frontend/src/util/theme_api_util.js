@@ -16,6 +16,11 @@ export const createThemeWithItems = data => {
 
 };
 
+//Get all themes for a user
+export const getThemes = () => {
+  return axios.get('/api/themes/');
+};
+
 
 // delete a theme
 // delete a theme item
