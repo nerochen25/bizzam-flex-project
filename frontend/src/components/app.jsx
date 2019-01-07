@@ -12,7 +12,7 @@ import ThemeIndexContainer from './theme/theme_index_container';
 import ThemeContainer from './theme/theme_container';
 import EditThemeContainer from './theme/edit_theme_container';
 import CreateGameContainer from './game/create_game_container';
-
+import PinPageContainer from './pin_page/pin_page_container';
 
 const App = () => (
   <div className="splash">
@@ -22,6 +22,7 @@ const App = () => (
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
       <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />
+      <ProtectedRoute exact path='/pin-page' component={PinPageContainer}/>
       <ProtectedRoute path='/newTheme' component={ThemeContainer} />
       <ProtectedRoute path='/theme/:themeId/edit' component={EditThemeContainer} />
       <AuthRoute  path="/login" component={LoginFormContainer} />

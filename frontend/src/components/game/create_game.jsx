@@ -1,6 +1,7 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
 import './create_game.css';
+import { Link } from 'react-router-dom'
 
 
 class CreateGame extends React.Component {
@@ -8,10 +9,9 @@ class CreateGame extends React.Component {
         super(props);
         
         this.state = {
-            gameType: "",
+            gameType: "Classic",
             boards: [],
-            //hard-coding themeId for now, still waiting for theme component to pass theme_id over
-            themeId: '5c2e9b3a2506593d64be02ef',
+            themeId: 'no theme selected yet',
             winnerId: null,
             errors: {},
             themes: this.props.themes
@@ -39,7 +39,7 @@ class CreateGame extends React.Component {
       };
   
       this.props.createGame(game); 
-      this.setState({gameType: '', errors: {}})
+      this.setState({errors: {}})
     }
 
     updateGameType() {
@@ -50,7 +50,7 @@ class CreateGame extends React.Component {
 
     updateThemeId() {
         return e => this.setState({
-            themeId: e.currentTarget.value
+            themeId: e.currentTarget.name
         });
     }
 
@@ -73,15 +73,24 @@ class CreateGame extends React.Component {
             
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
-                 <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
+                
+                    <input  
+                        className="create-game-btn"
+                        key={idx} 
+                        type='submit' 
+                        onClick={this.updateThemeId('themeId')} 
+                        value={theme.name} 
+                        name={theme._id}
+                    /> 
+                 
                 )
             })
         }
-        const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
-            return (
-              <option className="game-type-option" key={idx} >{gameType}</option>
-            );
-          });
+        // const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
+        //     return (
+        //       <option className="game-type-option" key={idx} >{gameType}</option>
+        //     );
+        //   });
         
         return (
             <div className='create-game-div'>
@@ -91,19 +100,17 @@ class CreateGame extends React.Component {
                 <form onSubmit={this.handleSubmit} className='create-game-form'>
                     Game type:
                     <select className="game-type-select" onChange={this.updateGameType('gameType')} value={this.state.gameType}>
-                        <option className='default-game-type-select'>Select your game type</option>
-                        {gameTypeOptions}
+                        <option className='default-game-type-select'>Classic</option>
                     </select>
                     <br />
                     <br />
                     Theme:
-                    <select className="game-type-select" onChange={this.updateThemeId('themeId')} value={this.state.themeId}>
-                        <option className='default-game-type-select'>Select your theme</option>
-                        {themesOptions}
-                    </select>
+                    {themesOptions}
                     <br />
                     <br />
-                    <input className="create-game-btn" type='submit' value="Create Game"/>
+                    <Link to='/pin-page'>
+                    <input className="create-game-btn" type='submit' value="Go to pin"/>
+                    </Link>
                 </form>
                 <br />
                 Theme ID: {" "}
@@ -116,7 +123,29 @@ class CreateGame extends React.Component {
 
 export default CreateGame;
 
-/* <input className="theme-input" type='text' onChange={this.updateThemeId('themeId')} value={this.state.themeId}/>
-<br />
-<br />
-<input className="create-game-btn" type='submit' value="Create Game"/> */
+
+
+// if (this.props.themes[0].length > 1) {
+//     console.log('inside if state');
+    
+//     themesOptions = this.props.themes[0].map((theme, idx) => {
+//         return (
+//          <option className="game-type-option" key={idx} onChange={this.updateThemeId('themeId')} value={theme._id}>{theme.name}</option>
+//         )
+//     })
+// }
+
+
+// const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
+        //     return (
+        //       <option className="game-type-option" key={idx} >{gameType}</option>
+        //     );
+        //   });
+
+// Theme:
+// <select className="game-type-select" onChange={this.updateThemeId('themeId')} value={this.state.themeId}>
+//     <option className='default-game-type-select'>Select your theme</option>
+//     {themesOptions}
+// </select>
+
+///* <input className="create-game-btn" type='submit' value="Go to pin"/> */
