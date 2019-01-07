@@ -20,7 +20,7 @@ class MainPage extends React.Component {
 					<p>Step 1: Make your theme.</p>
 					<p>Step 2: Make your list of Todos. </p>
 					<p>Step 3: Invite your friends.</p>
-					<p>First Player to complete a row wins!</p>
+					<p>The first player to complete a row wins!</p>
 				</section>
 
 				<section className="what-bizzam">
