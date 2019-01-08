@@ -83,13 +83,14 @@
 }
 
 .create-game-message {
-    font-size: 23px;
-    border-bottom: 0.5px solid #23273ebf;
+    font-size: 35px;
+    /* border-bottom: 0.5px solid #23273ebf; */
 }
 
 .create-game-message p{
     margin-bottom: 10px;
     font-size: 80%;
+    margin-left: 300px;
 }
 
 
@@ -141,4 +142,10 @@
 
 .themes-options-btn:hover{
     background-color: #0000ffab;
+}
+
+.theme-message {
+    margin-left: 300px;
+    font-size: 75%;
+    margin-bottom: 36px;
 }

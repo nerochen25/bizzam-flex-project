@@ -119,13 +119,7 @@ class CreateGame extends React.Component {
                     <p>Let's create a board game now!</p>
                 </div>
                 <form onSubmit={this.handleSubmit} className='create-game-form'>
-                    Choose you Game type:
-                    <select className="game-type-select" onChange={this.updateGameType('gameType')} value={this.state.gameType}>
-                        <option className='default-game-type-select'>Classic</option>
-                    </select>
-                    <br />
-                    <br />
-                    Choose your Theme:
+                    <p3 className='theme-message'>Choose your Theme:</p3>
                     <div className="themes-options-div">
                         {themesOptions}
                     </div>
