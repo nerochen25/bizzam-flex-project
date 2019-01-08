@@ -46,30 +46,43 @@
 
 .selected {
     background-color: #ff8000;
-   -webkit-animation-name: squares;
-   /* Safari 4.0 - 8.0 */
-   -webkit-animation-duration: 4s;
-   /* Safari 4.0 - 8.0 */
-   animation-name: squares;
-   animation-duration: 4s;
+   -webkit-animation-name: flash;
+   animation-name: flash;
+   -webkit-animation-duration: 1s;
+   animation-duration: 1s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
    }
 
-   /* Safari 4.0 - 8.0 */
-   @-webkit-keyframes squares {
-        40% {
-            background-color: red;
-            left: 0px;
-            top: 0px;
-        }
-   }
-   /* Standard syntax */
-   @keyframes squares {
-       40% {
-           background-color: red;
-           left: 0px;
-           top: 0px;
+   @-webkit-keyframes flash {
+
+       0%,
+       50%,
+       100% {
+           opacity: 1;
+       }
+
+       25%,
+       75% {
+           opacity: 0;
        }
    }
+
+   @keyframes flash {
+
+       0%,
+       50%,
+       100% {
+           opacity: 1;
+       }
+
+       25%,
+       75% {
+           opacity: 0;
+       }
+   }
+
+   ×
 
 .board-form{
     margin-top: 50px;
