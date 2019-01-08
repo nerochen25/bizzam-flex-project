@@ -4,7 +4,7 @@ import './board.css';
 
 
 const BoardIndexItem = ({key, id, board, selectBoard}) => {
-		
+	debugger
 	return (
 		<div className="board" >
 			

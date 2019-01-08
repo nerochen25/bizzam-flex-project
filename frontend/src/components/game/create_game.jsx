@@ -80,7 +80,7 @@ class CreateGame extends React.Component {
         let gamePin;
         if (this.props.game) {
             gamePin = this.props.game.pin;
-            console.log(gamePin)
+            
         } else {
             gamePin = null;
         }

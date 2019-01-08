@@ -191,6 +191,8 @@
     font-size: 18px;
     font-weight: normal;
     text-shadow: none;
+    width: 300px;
+    overflow: hidden;
 }
 
 

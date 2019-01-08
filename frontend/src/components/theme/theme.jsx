@@ -10,7 +10,7 @@ class Theme extends React.Component {
 		const { name, description } = this.props.theme;
         this.state = { name, description, item: '', allItems: this.props.theme.themeItems.map(i => i.text)};
 
-        console.log("this.props.theme.themeItems:====>", this.props.theme.themeItems);
+
         
 
 		if (this.props.theme._id) {

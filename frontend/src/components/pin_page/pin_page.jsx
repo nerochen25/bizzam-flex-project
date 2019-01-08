@@ -21,8 +21,7 @@ class PinPage extends React.Component {
       }
 
     render() {
-        console.log("Game pin =====> ", this.state.pin)
-        console.log("Game pin =====> ", this.props.pin)
+       
         
         if (this.props.games) {
             return (
