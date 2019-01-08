@@ -28,9 +28,6 @@ class PinPage extends React.Component {
                 <div className='pin-page-div'>
                     This is your Game pin, share it with your friends!
                     <br />
-                  
-                    <Link to={'/board/join'}> Use this pin to log in here!</Link>
-                    <br />
                     Pin: {' '} 
                     <div 
                         onClick={this.updatePin('pin')} 
