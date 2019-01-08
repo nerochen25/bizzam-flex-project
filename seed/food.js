@@ -1,8 +1,8 @@
 
 
 const rawFoodThemes = [
-    {name: "Frank's Food Theme", description: "High quality local food"},
-    {name: "Nero's Food Theme", description: "Local and delicious"}
+    {name: "Frank's Food Bizzam", description: "High quality local food"},
+    {name: "Nero's Food Bizzam", description: "Local and delicious"}
     // {name: "Food Demo Theme 3", description: "I have seeded random theme items"},
     // {name: "Food Demo Theme 4", description: "I have seeded random theme items"},
     // {name: "Food Demo Theme 5", description: "I have seeded random theme items"},
