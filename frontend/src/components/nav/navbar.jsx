@@ -26,7 +26,7 @@ class NavBar extends React.Component {
                     {/* <br /> */}
                     <Link className="links1" to={'/create-game'}>Create Game</Link>
                     {/* <br /> */}
-                    <Link className="links1" to={'/board'}>Board</Link>
+                    <Link className="links1" to={'/board/index'}>Board</Link>
                     {/* <br /> */}
                     <Link className="links1" id='current-user-name' to={'/profile'}>Welcome,{' '}{this.props.currentUser.username}</Link>
                     {/* <br /> */}

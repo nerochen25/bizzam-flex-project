@@ -129,13 +129,15 @@ router.post('/square',
                 board = await Board.findById(req.body.id)
                 board.squares[req.body.position].checked = !(board.squares[req.body.position].checked);
                 game = await Game.findById(board.gameID)
-                console.log(game.winnerID)
+
                 if ((game.winnerID) && game.winnerID !== board.userID) {
                     board.gameOn = false
                 } else if (hasWon(board.squares)) {
                     board.won = true
                     game.winnerID = board.userID
+                    console.log(board)
                     await game.save()
+                    console.log(game)
                 }
                 await board.save()
 
