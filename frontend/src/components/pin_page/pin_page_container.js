@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import PinPage from './pin_page';
 import {fetchBoards, fetchBoard} from '../../actions/board_actions';
 import {getThemes} from '../../actions/theme_actions';
+import {fetchUserGames} from '../../actions/game_actions';
 
 const mapStateToProps = (state) => {
-    let game = Object.values(state.entities.games)[0];
+    let games = Object.values(state.entities.games);
     let themes = Object.values(state.entities.themes);
     return {
-        game: game,
+        games: games,
         themes: themes,
         currentUser: state.session.user,
         gameType: '',
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     return {
         getThemes: () => dispatch(getThemes()),
         fetchBoards: () => dispatch(fetchBoards()),
-        fetchBoard: id => dispatch(fetchBoard(id))
+        fetchBoard: id => dispatch(fetchBoard(id)),
+        fetchUserGames: id => dispatch(fetchUserGames(id))
     };
 };
 

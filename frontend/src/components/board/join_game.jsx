@@ -1,4 +1,5 @@
 import React from 'react'
+import './join_game.css'
 
 class JoinGame extends React.Component {
     constructor(props) {
@@ -28,12 +29,12 @@ class JoinGame extends React.Component {
     render() {
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="pin-form">
+                    <h3 className='pin-title'>Enter a Pin</h3>
                     <label>
-                        <span>Enter a Pin</span>
-                        <input type="text" value={this.state.pin}  placeholder='PIN' onChange={this.handleInput()}/>
+                        <input className="pin-title" type="text" value={this.state.pin}  placeholder='PIN' onChange={this.handleInput()}/>
                     </label>
-                    <input className="create-game-btn" type='submit' value="Join Game"/>     
+                    <input className="submit-pin-btn" type='submit' value="Join Game"/>     
                 </form>
                 
             </div>

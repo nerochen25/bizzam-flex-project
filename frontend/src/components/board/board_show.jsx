@@ -50,7 +50,6 @@ class BoardShow extends React.Component {
 		let won
 
 		if (this.state.board) {
-
 			if (!this.state.board.gameOn) {
 				won = <div>
 					Oh no! Someone beat you to it. GAME OVER
@@ -75,14 +74,10 @@ class BoardShow extends React.Component {
 			}	
 		}
 
-		return (
-			<div className="board">
-				<h1 className="board-title">Board</h1>
-				<div className="grid-container">
-					{won ? won : squares}
-				</div>
-			</div>
-		);
+		return <div className="board .board-index">
+					<h1 className="board-title-1">Board</h1>
+					<div className="grid-container board-containter">{won ? won : squares}</div>
+			</div>;
 	}
 }
 

@@ -9,6 +9,7 @@ class CreateGame extends React.Component {
         super(props);
         
         this.state = {
+            game: this.props.game,
             gameType: "Classic",
             boards: [],
             themeId: 'no theme selected yet',
@@ -55,6 +56,12 @@ class CreateGame extends React.Component {
         });
     }
 
+    updatePin() {
+        return e => this.setState({
+            gamePin: e.currentTarget.name
+        });
+    }
+
     renderErrors() {
         return (
             <ul className="login-form-container">
@@ -67,11 +74,14 @@ class CreateGame extends React.Component {
         )
     }
     render() {
-        
+        let gamePin;
+        if (this.props.game) {
+            gamePin = this.props.game.pin;
+        } else {
+            gamePin = null;
+        }
         let themesOptions;
-        if (this.props.themes[0].length > 1) {
-            console.log('inside if state');
-            
+        if (this.props.themes[0].length > 1) {            
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
                 
@@ -87,12 +97,6 @@ class CreateGame extends React.Component {
                 )
             })
         }
-        // const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
-        //     return (
-        //       <option className="game-type-option" key={idx} >{gameType}</option>
-        //     );
-        //   });
-        
         return (
             <div className='create-game-div'>
                 <div className="thumbnail-path">
@@ -120,11 +124,24 @@ class CreateGame extends React.Component {
                     
                     <br />
                     <br />
+<<<<<<< HEAD
                     
                 </form>
                 <br />
             
                 
+=======
+                    <Link to={`/pin-page/${this.state.gamePin}`}>
+                    <input onChange={this.updatePin()} name={gamePin} className="create-game-btn" type='submit' value="Go to pin"/>
+                    </Link>
+                </form>
+                <br />
+                Theme ID: {" "}
+                {this.state.themeId}
+                <br />
+                PIN ID: {" "}
+                {gamePin}
+>>>>>>> 62b7135542425bfad465fe57feaea454af5cec28
                 {this.renderErrors()}
             </div>
         )

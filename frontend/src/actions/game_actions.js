@@ -28,7 +28,9 @@ export const postGame = data => dispatch => (
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
-export const fetchUserGames = id => dispatch => (
-  getUsersGames(id)
+export const fetchUserGames = id => dispatch => {
+  
+  return getUsersGames(id)
   .then(response => dispatch(recieveGames(response.data)))
-)
+  .catch(err => dispatch(receiveErrors(err.response.data)))
+}

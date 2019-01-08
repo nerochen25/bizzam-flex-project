@@ -10,24 +10,25 @@ const BoardIndex = ({boards, selectBoard, dummy}) => {
         display = Object.values(boards).map(board => {
             
             return (
-                <BoardIndexItem
-                    key={board._id}
-                    id={board._id}
-                    board={board}
-                    selectBoard={selectBoard(board._id)}
-                />
+                
+                    <BoardIndexItem
+                        key={board._id}
+                        id={board._id}
+                        board={board}
+                        selectBoard={selectBoard(board._id)}
+                    />
+                
+                
             )
         })
     }
     
-    return(
-        <div>
-            <div className="join-game-link">
-                <Link to='/board/join'> Join a New Game</Link>
-            </div>
-            {display}
-        </div>
-    )
+    return <div>
+			<div className="join-game-link">
+				<Link to="/board/join"> Join a New Game</Link>
+			</div>
+			<div className='display-boards'>{display}</div>
+		</div>;
 }
 
 export default BoardIndex

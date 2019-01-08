@@ -100,8 +100,10 @@
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
-    line-height: 2rem;
+    /* line-height: 2rem; */
     /* padding: 0 7rem; */
+    line-height: 4rem;
+    padding: 0 7rem;
     font-size: 1rem;
     border: none;
     position: relative;
@@ -129,4 +131,9 @@
 .thumbnail-path{
     /* width: 25%;
     height: 1000px; */
+    margin: 15px;
+}
+
+.themes-options-btn:hover{
+    background-color: #0000ffab;
 }
