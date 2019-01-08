@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
   // Once the user has been authenticated, redirect to the BizZam page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/profile');
+      this.props.history.push('/login');
     }
 
     // Set or clear errors
