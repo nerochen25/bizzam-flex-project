@@ -21,10 +21,7 @@ class PinPage extends React.Component {
       }
 
     render() {
-<<<<<<< HEAD
-=======
         
->>>>>>> landing
         if (this.props.games) {
 
             return (
