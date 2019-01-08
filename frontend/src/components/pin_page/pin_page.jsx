@@ -35,6 +35,7 @@ class PinPage extends React.Component {
                         {this.props.match.params.pin}
                         <br />
                     </div>
+                    <Link className="pin-to-board-btn" to='/board/index'>Join a Game Now</Link>
                 </div>
             )
         } else {

@@ -3,9 +3,6 @@
     width: 800px;
     text-align: center;
     color: #23273ebf;
-    /* display: flex; */
-    /* flex-direction: row; */
-
 }
 
 .create-game-form {
@@ -18,11 +15,6 @@
 }
 
 .game-type-select {
-    /* font-size: 25px;
-    text-align: center;
-    text-align-last:center;
-    width: 50%;
-    border: solid 2px; */
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
     background-color: #FFFFFF;
     border-color: transparent;
@@ -49,7 +41,6 @@
     color: #23273ebf;
     border: solid 0.6px grey;
     font-size: 75%;
-    /* border-color: transparent; */
     transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1);
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
 }
@@ -84,7 +75,6 @@
 
 .create-game-message {
     font-size: 35px;
-    /* border-bottom: 0.5px solid #23273ebf; */
 }
 
 .create-game-message p{
@@ -96,8 +86,6 @@
 
 
 .themes-options-btn {
-    /* width: 170px; */
-    /* width: 15%; */
     background-color: #ff9900b5;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -115,7 +103,6 @@
     transition: all 0.25s ease-in-out !important;
     text-align: center;
     text-decoration: none;
-    /* align-items: flex-start; */
     align-items: center;
     font-family: 'Viga', sans-serif;
     margin: 10px;
@@ -127,17 +114,13 @@
     left: 0px;
     top: 450px;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column; 
 }
 
 .thumbnail-path{
-    /* width: 25%;
-    height: 1000px; */
     margin: 15px;
     display: flex;
     flex-direction: column;
-
 }
 
 .themes-options-btn:hover{
@@ -151,7 +134,6 @@
 }
 
 .games-options-btn {
-    /* width: 170px; */
     width: 50%;
     background-color: #ff9900b5;
     box-sizing: inherit;
@@ -170,7 +152,6 @@
     transition: all 0.25s ease-in-out !important;
     text-align: center;
     text-decoration: none;
-    /* align-items: flex-start; */
     align-items: center;
     font-family: 'Viga', sans-serif;
     margin: 10px;
