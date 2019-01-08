@@ -53,7 +53,9 @@ class BoardShow extends React.Component {
 			if (!this.state.board.gameOn) {
 				won = <div className="message-won">Oh no! Someone beat you to it. GAME OVER</div>;
 			} else if (this.state.board.won) {
-				won = <div className="message-won">Congratulations You Have Won!</div>;
+				won = <div className="message-won">
+						Congratulations You Have Won!
+					</div>;
 			} else {
 				squares = this.state.board.squares.map((square) => {
 				
@@ -72,7 +74,7 @@ class BoardShow extends React.Component {
 
 		return <div className="board">
 					<h1 className="board-title-1">Board</h1>
-					<div className="grid-container board-containter">{won ? won : squares}</div>
+			<div className="grid-container board-containter element-animation">{won ? won : squares}</div>
 			</div>;
 	}
 }
