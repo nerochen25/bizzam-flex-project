@@ -55,13 +55,13 @@
 }
 
 .create-game-btn {
-    width: 20%;
-    background-color: #d4c0a2;
+    width: 35%;
+    background-color: #0000ffab;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
     line-height: 2rem;
-    padding: 0 7rem;
+    padding: 0 5rem;
     font-size: 1.6rem;
     border: none;
     position: relative;
@@ -75,20 +75,22 @@
     text-decoration: none;
     align-items: flex-start;
     font-family: 'Viga', sans-serif;
+    margin-left: 45px;
 }
 
 .create-game-btn:hover{
-    background-color: #0000ffab;
+    background-color: black;
 }
 
 .create-game-message {
-    font-size: 23px;
-    border-bottom: 0.5px solid #23273ebf;
+    font-size: 35px;
+    /* border-bottom: 0.5px solid #23273ebf; */
 }
 
 .create-game-message p{
     margin-bottom: 10px;
     font-size: 80%;
+    margin-left: 300px;
 }
 
 
@@ -96,7 +98,7 @@
 .themes-options-btn {
     /* width: 170px; */
     /* width: 15%; */
-    background-color: #ff99008c;
+    background-color: #ff9900b5;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
@@ -140,4 +142,41 @@
 
 .themes-options-btn:hover{
     background-color: #0000ffab;
+}
+
+.theme-message {
+    margin-left: 300px;
+    font-size: 75%;
+    margin-bottom: 36px;
+}
+
+.games-options-btn {
+    /* width: 170px; */
+    width: 50%;
+    background-color: #ff9900b5;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 2rem;
+    line-height: 4rem;
+    font-size: 1.4rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    /* align-items: flex-start; */
+    align-items: center;
+    font-family: 'Viga', sans-serif;
+    margin: 10px;
+
+}
+
+.games-options-btn:hover{
+    background-color:#0000ffab;
 }

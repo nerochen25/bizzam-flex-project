@@ -1,16 +1,16 @@
 
 
 const rawFoodThemes = [
-    {name: "Food Demo Theme 1", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 2", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 3", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 4", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 5", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 6", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 7", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 8", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 9", description: "I have seeded random theme items"},
-    {name: "Food Demo Theme 10", description: "I have seeded random theme items"}
+    {name: "Frank's Food Theme", description: "High quality local food"},
+    {name: "Nero's Food Theme", description: "Local and delicious"}
+    // {name: "Food Demo Theme 3", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 4", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 5", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 6", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 7", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 8", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 9", description: "I have seeded random theme items"},
+    // {name: "Food Demo Theme 10", description: "I have seeded random theme items"}
 ];
 
 

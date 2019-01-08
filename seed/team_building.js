@@ -1,16 +1,16 @@
 
 
 const rawTeamBuildingThemes = [
-    {name: "Teambuilding Demo Theme 1", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 2", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 3", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 4", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 5", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 6", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 7", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 8", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 9", description: "I have seeded random theme items"},
-    {name: "Teambuilding Demo Theme 10", description: "I have seeded random theme items"}
+    {name: "Sai's Teambuilding Theme", description: "Teamwork++"},
+    {name: "John's Teambuilding Theme", description: "I love you guys!"}
+    // {name: "Teambuilding Demo Theme 3", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 4", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 5", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 6", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 7", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 8", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 9", description: "I have seeded random theme items"},
+    // {name: "Teambuilding Demo Theme 10", description: "I have seeded random theme items"}
 ];
 
 const rawTeamBuildingThemeItems = [

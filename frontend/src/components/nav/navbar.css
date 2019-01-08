@@ -187,7 +187,7 @@
 }
 
 .navbar .links1:hover {
-    color: #ff99008c;
+    color: #ff9900b5;
     font-size: 130%;
 }
 
@@ -248,17 +248,17 @@
 
 .logout-btn {
     margin-left: 20px;
-    border: 2px solid #ff99008c;
+    border: 2px solid #ff9900b5;
     border-radius: 4px;
     font-size: 17px;
     font-weight: 500;
-    color: #ff99008c;
+    color: #ff9900b5;
     transition: all 0.25s ease-in-out !important;
     font-family: 'Viga', sans-serif;
 }
 
 .logged-in-navbar :hover{
-    color: #ff99008c;
+    color: #ff9900b5;
     font-size: 130%;
 }
 
