@@ -37,7 +37,7 @@ class GameIndex extends React.Component {
         }
         return (
             <div className='game-index-div'>
-                GAME INDEX PAGE
+                Welcome to BizZam! <hr />
                 {gameList}
             </div>
         )
