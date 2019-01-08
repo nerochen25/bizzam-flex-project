@@ -21,9 +21,7 @@
     /* box-shadow: 20px 23px 33px rgba(200, 88, 118, 0.12); */
 }
 
-.square-text {
-    max-width: 60%;
-}
+
 
 .grid-item {
     background-color: #34495e;
@@ -37,6 +35,8 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    width: 84px;
+    height: 79px;
 }
 
 
