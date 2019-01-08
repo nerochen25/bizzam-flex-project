@@ -97,7 +97,7 @@ class Theme extends React.Component {
 								</label>
 							</div>
 
-							<div>
+							<div className="second-label ">
 								<label className="theme-labels">
 									<span>Theme description</span>
 									<input type="text" value={this.state.description} onChange={this.updateDescription()} className="theme-input" />
