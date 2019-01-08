@@ -48,15 +48,15 @@
     background-color: #ff8000;
    -webkit-animation-name: squares;
    /* Safari 4.0 - 8.0 */
-   -webkit-animation-duration: 4s;
+   -webkit-animation-duration: 2s;
    /* Safari 4.0 - 8.0 */
    animation-name: squares;
-   animation-duration: 4s;
+   animation-duration: 2s;
    }
 
    /* Safari 4.0 - 8.0 */
    @-webkit-keyframes squares {
-        50% {
+        20% {
             background-color: red;
             left: 0px;
             top: 0px;
@@ -64,7 +64,7 @@
    }
    /* Standard syntax */
    @keyframes squares {
-       50% {
+       20% {
            background-color: red;
            left: 0px;
            top: 0px;
