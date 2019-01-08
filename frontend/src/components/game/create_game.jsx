@@ -15,7 +15,8 @@ class CreateGame extends React.Component {
             themeId: 'no theme selected yet',
             winnerId: null,
             errors: {},
-            themes: this.props.themes
+            themes: this.props.themes,
+            gamePin: null
         }
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,13 +53,14 @@ class CreateGame extends React.Component {
 
     updateThemeId() {
         return e => this.setState({
-            themeId: e.currentTarget.name
+            themeId: e.currentTarget.name,
+            gamePin: e.currentTarget.value2
         });
     }
 
     updatePin() {
         return e => this.setState({
-            gamePin: e.currentTarget.name
+            gamePin: e.currentTarget.value2
         });
     }
 
@@ -74,12 +76,15 @@ class CreateGame extends React.Component {
         )
     }
     render() {
+    
         let gamePin;
         if (this.props.game) {
             gamePin = this.props.game.pin;
+            console.log(gamePin)
         } else {
             gamePin = null;
         }
+        
         let themesOptions;
         if (this.props.themes[0].length > 1) {            
             themesOptions = this.props.themes[0].map((theme, idx) => {
@@ -92,11 +97,13 @@ class CreateGame extends React.Component {
                         onClick={this.updateThemeId('themeId')} 
                         value={theme.name} 
                         name={theme._id}
+                        value2={gamePin}
                     /> 
                  
                 )
             })
         }
+        
         return (
             <div className='create-game-div'>
                 <div className="create-game-message">
@@ -116,8 +123,8 @@ class CreateGame extends React.Component {
                     
                     <br />
                     <br />
-                    <Link to={`/pin-page/${this.state.gamePin}`}>
-                    <input onChange={this.updatePin()} name={gamePin} className="create-game-btn" type='submit' value="Go to pin"/>
+                    <Link to={`/pin-page/${gamePin}`} params={gamePin}>
+                    <input className="create-game-btn" type='submit' value="Go to pin"/>
                     </Link>
                 </form>
                 <br />
