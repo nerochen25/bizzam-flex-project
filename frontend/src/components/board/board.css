@@ -6,6 +6,10 @@
     margin-top: 60px;
 }
 
+.board-title-1{
+    color: #2c3e50;
+}
+
 .grid-container {
     display: grid;
     grid-column-gap: 0px;
@@ -14,6 +18,14 @@
     height: 350px;
     margin: 5% auto;
     /* box-shadow: 20px 23px 33px rgba(200, 88, 118, 0.12); */
+}
+
+.board-index .grid-container{
+    margin: 5% 31%;
+}
+
+.hi{
+    margin: 5% 31%;
 }
 
 .grid-item {
@@ -44,8 +56,9 @@
     height: 200px;
 }
 
-.board-labels span {
-    
+.display-boards{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 
