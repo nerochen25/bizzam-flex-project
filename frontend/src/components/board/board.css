@@ -3,11 +3,13 @@
     text-align: center;
     font-size: 16px;
     height: 500px;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 150px;
 }
 
 .board-title-1{
     color: #2c3e50;
+    padding-left: 20px;
 }
 
 .grid-container {
@@ -17,11 +19,9 @@
     width: 350px;
     height: 350px;
     margin: 7% auto;
-    padding-right: 9%;
+    padding-right: 2%;
     /* box-shadow: 20px 23px 33px rgba(200, 88, 118, 0.12); */
 }
-
-
 
 .grid-item {
     background-color: #34495e;
@@ -37,8 +37,8 @@
     -o-border-radius: 10px;
     width: 84px;
     height: 79px;
+    font-size: 20px;
 }
-
 
 .selected {
     background-color: #ff8000;
