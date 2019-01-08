@@ -11,12 +11,12 @@ class MainPage extends React.Component {
 					<h3>What is BizZam?</h3>
 					<p>
 						BizZam is an online platform for playing user created bingo boards! 
-						Make your own Bizzam board modes such as 'scavenger hunt' Bazzam , 'travel' Bazzam, or even 'team-building Bazzam!
+						Make your own Bizzam board modes such as 'scavenger hunt' Bizzam , 'travel' Bizzam, or even 'team-building' Bizzam!
 					</p>
 				</section>
 
 				<section className="what-bizzam">
-					<h3>Playing Bazzam is easy as one, two, three!</h3>
+					<h3>Playing Bizzam is easy as one, two, three!</h3>
 					<p>Step 1: Make your theme.</p>
 					<p>Step 2: Make your list of Todos. </p>
 					<p>Step 3: Invite your friends.</p>

@@ -3,6 +3,8 @@
     width: 800px;
     text-align: center;
     color: #23273ebf;
+    /* display: flex; */
+    /* flex-direction: row; */
 
 }
 
@@ -53,8 +55,8 @@
 }
 
 .create-game-btn {
-    width: 30%;
-    background-color: #ff99008c;
+    width: 20%;
+    background-color: #d4c0a2;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
@@ -92,13 +94,14 @@
 
 
 .themes-options-btn {
-    /* width: 50px; */
+    /* width: 170px; */
+    /* width: 15%; */
     background-color: #ff99008c;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
+    line-height: 2rem;
     line-height: 4rem;
-    padding: 0 7rem;
     font-size: 1rem;
     border: none;
     position: relative;
@@ -110,9 +113,29 @@
     transition: all 0.25s ease-in-out !important;
     text-align: center;
     text-decoration: none;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
     font-family: 'Viga', sans-serif;
+    margin: 10px;
+
+}
+
+.pin-cart{
+    position: fixed;
+    left: 0px;
+    top: 450px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.thumbnail-path{
+    /* width: 25%;
+    height: 1000px; */
     margin: 15px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .themes-options-btn:hover{

@@ -7,7 +7,7 @@
 
 .themes-options-div {
     padding: 0;
-    margin: 0;
+    margin-left: 300px;
     list-style: none;
 
     display: -webkit-box;
@@ -19,5 +19,5 @@
     /* -webkit-flex-flow: row wrap; */
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 1300px;
+    width: 1000px;
 }
