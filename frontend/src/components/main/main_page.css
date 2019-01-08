@@ -60,7 +60,7 @@
     font-weight: bold;
     text-transform: capitalize;
     margin-right: 15px;
-    margin-top: 2px;
+    margin-top: -4px;
 }
 
 .main-page-links span{
@@ -106,6 +106,7 @@
 .main-footer h4{
     font-size: 18px;
     margin-top: 14px;
+    color: #23274B
 }
 
 .footer-msg{
@@ -128,7 +129,7 @@
 
 .github-link a{
     text-decoration: none;
-    color: black;
+    color: #23274B;
     font-size: 18px;
     font-weight: 500;
     border: 3px solid #ff9900;
@@ -147,7 +148,7 @@
 
 .footer-links a {
     text-decoration: none;
-    color: black;
+    color: #23274B;
     font-weight: 500;
     padding: 5px;
 }
