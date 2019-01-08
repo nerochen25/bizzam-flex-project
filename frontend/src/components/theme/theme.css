@@ -54,6 +54,7 @@
 .theme-grid{
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 12%;
 }
 
 .theme-grid-1 {
@@ -67,6 +68,7 @@
     margin-left: 25%;
     margin-top: 27px;
     text-shadow: 2px 0px #ff9900;
+    box-shadow: 10px 10px 24px rgba(43, 15, 201, 0.1);
 }
 
 .theme-form .theme-input{
