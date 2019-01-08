@@ -240,6 +240,10 @@
     font-weight: 500;
     color: #23273ebf;
     transition: all 0.25s ease-in-out !important;
+    -webkit-transition: all 0.25s ease-in-out !important;
+    -moz-transition: all 0.25s ease-in-out !important;
+    -ms-transition: all 0.25s ease-in-out !important;
+    -o-transition: all 0.25s ease-in-out !important;
 }
 
 .logout-btn {
