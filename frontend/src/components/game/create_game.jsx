@@ -116,7 +116,7 @@ class CreateGame extends React.Component {
                 </div>
 
                 <div className="create-game-message">
-                    <p>Let's create a board game now!</p>
+                    <p>Let's create a new bizzam game now!</p>
                 </div>
                 <form onSubmit={this.handleSubmit} className='create-game-form'>
                     <p3 className='theme-message'>Choose your Theme:</p3>
