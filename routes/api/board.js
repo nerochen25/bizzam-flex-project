@@ -135,9 +135,9 @@ router.post('/square',
                 } else if (hasWon(board.squares)) {
                     board.won = true
                     game.winnerID = board.userID
-                    console.log(board)
+                    console.log('game', game.winnerID)
                     await game.save()
-                    console.log(game)
+
                 }
                 await board.save()
 
