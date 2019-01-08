@@ -13,16 +13,23 @@
     width: 350px;
     height: 350px;
     margin: 5% auto;
+    /* box-shadow: 20px 23px 33px rgba(200, 88, 118, 0.12); */
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    background-color: #0080ff;
-    border: 1px solid #ff8000;
+    background-color: #34495e;
+    border: 6px solid #2c3e50;
+    color: white;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
+
 
 .selected {
     background-color: #ff8000;
@@ -37,9 +44,10 @@
     height: 200px;
 }
 
-.board-labels span{
-   
+.board-labels span {
+    
 }
+
 
 .board-inputs{
     margin-left: 30px;
