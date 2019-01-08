@@ -111,6 +111,13 @@ class CreateGame extends React.Component {
                     <Link to='/pin-page'>
                         <input className="create-game-btn" type='submit' value="Go to pin"/>
                         </Link>
+
+                        Theme ID: {" "}
+                        {this.state.themeId}
+                        <br />
+                        PIN ID: {" "}
+                        {gamePin}
+                        {this.renderErrors()}
                     </div>
                 </div>
 
@@ -129,19 +136,9 @@ class CreateGame extends React.Component {
                         {themesOptions}
                     </div>
                     
-                    <br />
-                    <br />
-                    <Link to={`/pin-page/${gamePin}`} params={gamePin}>
-                    <input className="create-game-btn" type='submit' value="Go to pin"/>
-                    </Link>
                 </form>
                 <br />
-                Theme ID: {" "}
-                {this.state.themeId}
-                <br />
-                PIN ID: {" "}
-                {gamePin}
-                {this.renderErrors()}
+               
             </div>
         )
     }

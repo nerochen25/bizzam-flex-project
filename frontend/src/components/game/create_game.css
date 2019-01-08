@@ -55,7 +55,7 @@
 }
 
 .create-game-btn {
-    width: 30%;
+    width: 20%;
     background-color: #d4c0a2;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -100,10 +100,8 @@
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
-    /* line-height: 2rem; */
-    /* padding: 0 7rem; */
+    line-height: 2rem;
     line-height: 4rem;
-    padding: 0 7rem;
     font-size: 1rem;
     border: none;
     position: relative;
@@ -126,12 +124,18 @@
     position: fixed;
     left: 0px;
     top: 450px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .thumbnail-path{
     /* width: 25%;
     height: 1000px; */
     margin: 15px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .themes-options-btn:hover{
