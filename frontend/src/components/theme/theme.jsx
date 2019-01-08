@@ -63,7 +63,8 @@ class Theme extends React.Component {
         let listItems = this.state.item;
 
         this.setState({
-            allItems: [...this.state.allItems, listItems]
+            allItems: [...this.state.allItems, listItems],
+            item:""
         });
     }
 
@@ -107,7 +108,7 @@ class Theme extends React.Component {
 								<label className="theme-labels item-label">
 									<span>Bizzam Item</span>
 
-									<input type="text" className="theme-input add-item" placeholder="Enter an item" onChange={this.updateItem()} />
+									<input type="text" className="theme-input add-item" placeholder="Enter an item" onChange={this.updateItem()} value={this.state.item}/>
 
 									<button onClick={this.itemListShow} className="theme-btn item-btn add-btn">
 										Add Item

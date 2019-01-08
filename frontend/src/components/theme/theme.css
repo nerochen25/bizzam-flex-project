@@ -9,10 +9,10 @@
     color: #ff9900;
 }
 
-.theme-grid{
+/* .theme .theme-grid{
     display: grid;
     grid-template-columns: auto auto;
-}
+} */
 
 .theme-links {
     display: flex;
@@ -49,7 +49,6 @@
 .theme-grid{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 15% 50px auto;
 }
 
 .theme-grid-1 {
@@ -58,8 +57,11 @@
 }
 
 .theme-grid-2 {
-    margin-top: 40px;
-    margin-left: 15%;
+    border: 2px solid #ff9900;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 27px;
+    text-shadow: 2px 0px #ff9900;
 }
 
 .theme-form .theme-input{
@@ -158,14 +160,6 @@
     color: #ff9900;
 }
 
-.theme-grid-2 {
-    border: 2px solid #ff9900;
-    height: 387px;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 27px;
-    text-shadow: 2px 0px #ff9900;
-}
 
 .displayLine {
    font-size: 20px;
