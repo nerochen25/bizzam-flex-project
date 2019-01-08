@@ -26,18 +26,17 @@ class GameIndex extends React.Component {
     render() {
         let gameList = [];
         if (this.props.games.length >= 1) {
-
             gameList = this.props.games.map((game, idx) => {
                 return (
                     <ul>
-                        <Link to='/pin-page' key={idx}>{game.gameType} {' '} {idx}</Link>
+                        <Link className="themes-options-btn" to='/pin-page' key={idx}>{game.gameType} {' '} {idx}</Link>
                     </ul>
                 )
             })
         }
         return (
             <div className='game-index-div'>
-                Welcome to BizZam! <hr />
+                <h1>Welcome to BizZam!</h1>
                 {gameList}
             </div>
         )
