@@ -50,9 +50,12 @@ class NavBar extends React.Component {
   }
 
   render() {
+      console.log(this.props.loggedIn);
+      
+      let bizzamLink = this.props.loggedIn ? `/games/${this.props.currentUser.id}` : '/'
       return <div className='home-navbar'>
                 <div>
-                    <Link to='/' className="main-page-link">
+                    <Link to={bizzamLink} className="main-page-link">
                         <h1 className="project-title bounce-top">
                             <span className="blue">Biz</span>Z<span className="orange">am</span>
                         </h1>

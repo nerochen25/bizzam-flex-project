@@ -5,8 +5,9 @@ export const createGame = data => {
   return axios.post('/api/games/', data)
 }
 
-export const getUsersGames = id => {
-  return axios.get(`/api/games/user?creator_id=${id}`)
+export const getUsersGames = () => {
+  return axios.get(`/api/games/user`)
 }
+
 // Edit a game, coming soon
 // Delete a game, coming soon

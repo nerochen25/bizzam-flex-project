@@ -21,9 +21,8 @@ class PinPage extends React.Component {
       }
 
     render() {
-       
-        
         if (this.props.games) {
+
             return (
                 <div className='pin-page-div'>
                     Remember this pin
