@@ -108,7 +108,8 @@ class CreateGame extends React.Component {
             <div className='create-game-div'>
                 <div className="thumbnail-path">
                     <div className="pin-cart">
-                    <Link to='/pin-page'>
+                    
+                        <Link to={`/pin-page/${gamePin}`} params={gamePin}>>
                         <input className="create-game-btn" type='submit' value="Go to pin"/>
                         </Link>
 
