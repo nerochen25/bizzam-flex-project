@@ -55,13 +55,13 @@
 }
 
 .create-game-btn {
-    width: 20%;
-    background-color: #ff99008c;
+    width: 35%;
+    background-color: #0000ffab;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
     line-height: 2rem;
-    padding: 0 7rem;
+    padding: 0 5rem;
     font-size: 1.6rem;
     border: none;
     position: relative;
@@ -75,10 +75,11 @@
     text-decoration: none;
     align-items: flex-start;
     font-family: 'Viga', sans-serif;
+    margin-left: 45px;
 }
 
 .create-game-btn:hover{
-    background-color: #0000ffab;
+    background-color: black;
 }
 
 .create-game-message {
