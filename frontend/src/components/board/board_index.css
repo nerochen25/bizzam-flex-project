@@ -1,0 +1,12 @@
+.join-game-link{
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    
+}
+
+.join-game-link, a {
+    
+    text-decoration: none;
+}
