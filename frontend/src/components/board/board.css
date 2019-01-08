@@ -56,45 +56,18 @@
 
    /* Safari 4.0 - 8.0 */
    @-webkit-keyframes squares {
-       0% {
-           background-color: red;
-           left: 0px;
-           top: 0px;
-       }
-
-       25% {
-           background-color: yellow;
-           left: 200px;
-           top: 0px;
-       }
-
-       75% {
-           background-color: green;
-           left: 0px;
-           top: 200px;
-       }
-
-
+        50% {
+            background-color: red;
+            left: 0px;
+            top: 0px;
+        }
    }
-
    /* Standard syntax */
    @keyframes squares {
-       0% {
+       50% {
            background-color: red;
            left: 0px;
            top: 0px;
-       }
-
-       25% {
-           background-color: yellow;
-           left: 200px;
-           top: 0px;
-       }
-
-       45% {
-           background-color: green;
-           left: 0px;
-           top: 200px;
        }
    }
 
@@ -112,6 +85,7 @@
     margin-right: -27%;
     font-size: 24px;
     width: 150%;
+    color: #2c3e50;
     animation: animationFrames linear 1s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
