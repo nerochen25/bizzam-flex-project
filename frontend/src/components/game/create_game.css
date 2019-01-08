@@ -98,7 +98,7 @@
 .themes-options-btn {
     /* width: 170px; */
     /* width: 15%; */
-    background-color: #ff99008c;
+    background-color: #ff9900b5;
     box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
@@ -148,4 +148,35 @@
     margin-left: 300px;
     font-size: 75%;
     margin-bottom: 36px;
+}
+
+.games-options-btn {
+    /* width: 170px; */
+    width: 50%;
+    background-color: #ff9900b5;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 2rem;
+    line-height: 4rem;
+    font-size: 1.4rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    /* align-items: flex-start; */
+    align-items: center;
+    font-family: 'Viga', sans-serif;
+    margin: 10px;
+
+}
+
+.games-options-btn:hover{
+    background-color:#0000ffab;
 }
