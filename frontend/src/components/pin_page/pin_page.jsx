@@ -21,6 +21,9 @@ class PinPage extends React.Component {
       }
 
     render() {
+        console.log("Game pin =====> ", this.state.pin)
+        console.log("Game pin =====> ", this.props.pin)
+        
         if (this.props.games) {
             return (
                 <div className='pin-page-div'>
@@ -31,7 +34,7 @@ class PinPage extends React.Component {
                         onClick={this.updatePin('pin')} 
                         value={this.state.pin}
                     >
-                        {this.props.pin}
+                        {this.props.match.params.pin}
                         <br />
                     </div>
                 </div>

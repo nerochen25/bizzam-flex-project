@@ -9,7 +9,10 @@ import {getThemes} from '../../actions/theme_actions';
 const mapStateToProps = (state) => {
     let themes = Object.values(state.entities.themes);
     let games = Object.values(state.entities.games);
+    let game = Object.values(state.entities.games)[0]
+
     return {
+        game: game,
         games: games,
         themes: themes,
         currentUser: state.session.user,

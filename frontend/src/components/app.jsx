@@ -24,7 +24,7 @@ const App = () => (
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
       <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />
-      <ProtectedRoute exact path='/pin-page' component={PinPageContainer}/>
+      <ProtectedRoute exact path='/pin-page/:pin' component={PinPageContainer}/>
       <ProtectedRoute path='/newTheme' component={ThemeContainer} />
       <ProtectedRoute path='/theme/:themeId/edit' component={EditThemeContainer} />
       <AuthRoute  path="/login" component={LoginFormContainer} />

@@ -42,11 +42,11 @@ class GameIndex extends React.Component {
                 return (
                     <ul key={idx}>
                         <Link 
-                            onClick={this.updatePIN('pin')}
+                            onClick={this.updatePIN()}
                             className="themes-options-btn" 
-                            to='/pin-page' 
+                            to={`/pin-page/${game.pin}`} 
                             key={idx}
-                            value = {game.pin}
+                            params={game.pin}
                         >
                             {game.gameType} {' '} {'game with PIN: '} {game.pin}
                         </Link>

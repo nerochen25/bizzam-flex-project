@@ -9,7 +9,7 @@ class CreateGame extends React.Component {
         super(props);
         
         this.state = {
-            gamePin: this.props.games.pin,
+            game: this.props.game,
             gameType: "Classic",
             boards: [],
             themeId: 'no theme selected yet',
@@ -74,7 +74,12 @@ class CreateGame extends React.Component {
         )
     }
     render() {
-        
+        let gamePin;
+        if (this.props.game) {
+            gamePin = this.props.game.pin;
+        } else {
+            gamePin = null;
+        }
         let themesOptions;
         if (this.props.themes[0].length > 1) {            
             themesOptions = this.props.themes[0].map((theme, idx) => {
@@ -92,7 +97,6 @@ class CreateGame extends React.Component {
                 )
             })
         }
-        
         return (
             <div className='create-game-div'>
                 <div className="create-game-message">
@@ -112,13 +116,16 @@ class CreateGame extends React.Component {
                     
                     <br />
                     <br />
-                    <Link to='/pin-page'>
-                    <input onClick={this.updatePin('gamePin')} name={this.state.gamePin} className="create-game-btn" type='submit' value="Go to pin"/>
+                    <Link to={`/pin-page/${this.state.gamePin}`}>
+                    <input onChange={this.updatePin()} name={gamePin} className="create-game-btn" type='submit' value="Go to pin"/>
                     </Link>
                 </form>
                 <br />
                 Theme ID: {" "}
                 {this.state.themeId}
+                <br />
+                PIN ID: {" "}
+                {gamePin}
                 {this.renderErrors()}
             </div>
         )
