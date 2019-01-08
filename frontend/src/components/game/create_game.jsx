@@ -95,30 +95,36 @@ class CreateGame extends React.Component {
         
         return (
             <div className='create-game-div'>
+                <div className="thumbnail-path">
+                    <div className="pin-cart">
+                    <Link to='/pin-page'>
+                        <input className="create-game-btn" type='submit' value="Go to pin"/>
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="create-game-message">
-                <p>Let's create a board game now!</p>
+                    <p>Let's create a board game now!</p>
                 </div>
                 <form onSubmit={this.handleSubmit} className='create-game-form'>
-                    Game type:
+                    Choose you Game type:
                     <select className="game-type-select" onChange={this.updateGameType('gameType')} value={this.state.gameType}>
                         <option className='default-game-type-select'>Classic</option>
                     </select>
                     <br />
                     <br />
-                    Theme:
+                    Choose your Theme:
                     <div className="themes-options-div">
                         {themesOptions}
                     </div>
                     
                     <br />
                     <br />
-                    <Link to='/pin-page'>
-                    <input className="create-game-btn" type='submit' value="Go to pin"/>
-                    </Link>
+                    
                 </form>
                 <br />
-                Theme ID: {" "}
-                {this.state.themeId}
+            
+                
                 {this.renderErrors()}
             </div>
         )
