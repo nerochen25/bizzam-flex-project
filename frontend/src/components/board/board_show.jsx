@@ -51,13 +51,9 @@ class BoardShow extends React.Component {
 
 		if (this.state.board) {
 			if (!this.state.board.gameOn) {
-				won = <div>
-					Oh no! Someone beat you to it. GAME OVER
-				</div>
+				won = <div className="message-won">Oh no! Someone beat you to it. GAME OVER</div>;
 			} else if (this.state.board.won) {
-				won = <div>
-					Congratulations You Have Won!
-				</div>
+				won = <div className="message-won">Congratulations You Have Won!</div>;
 			} else {
 				squares = this.state.board.squares.map((square) => {
 				
