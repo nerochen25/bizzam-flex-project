@@ -12,27 +12,7 @@ const shuffle = require('./seed/shuffle');
 
  async function seedOneTheme(themeSetItem){
     async.series([
-    
-    // //   First function - connect to MongoDB, then drop the database
-    //   function(callback) {
-        
-    //     MongoClient.connect(db, function(err, db) {
-        
-    //       if(err) throw err;
-        
-    //       // Drop database which is an asynchronous call
-    //       db.dropDatabase(function(err, result) {
-
-    //         // After successfully dropping database, force close database which is another asynchronous call 
-    //         db.close(true, function(err, result) {
-
-    //           // Close successful so execute callback so second function in async.serial gets called
-    //           callback(null, 'SUCCESS - dropped database');
-    //         });
-    //       });
-    //     });
-    //   },
-        // #1
+ 
         function(callback) {
             
             mongoose.connect(db, { useNewUrlParser: true });  
@@ -42,7 +22,6 @@ const shuffle = require('./seed/shuffle');
             });
         },
 
-        //#2
         function(callback) {
 
             let themes = []
@@ -112,7 +91,8 @@ const shuffle = require('./seed/shuffle');
 // );
 
    
-// demo seed on item
+// demo seed one item
+
 // const oneItemSet = [travel]
 // async.eachSeries(oneItemSet,
 //     (item) => seedOneTheme(item)

@@ -1,8 +1,8 @@
 
 
 const rawTeamBuildingThemes = [
-    {name: "Sai's Teambuilding Theme", description: "Teamwork++"},
-    {name: "John's Teambuilding Theme", description: "I love you guys!"}
+    {name: "Sai's Teambuilding Bizzam", description: "Teamwork++"},
+    {name: "John's Teambuilding Bizzam", description: "I love you guys!"}
     // {name: "Teambuilding Demo Theme 3", description: "I have seeded random theme items"},
     // {name: "Teambuilding Demo Theme 4", description: "I have seeded random theme items"},
     // {name: "Teambuilding Demo Theme 5", description: "I have seeded random theme items"},
