@@ -8,7 +8,7 @@ const Square = ({ text, checked, action, position}) => {
         selected = 'selected'
     }
     return <div className={`grid-item ${selected}`} id={`square-${position}`} onClick={action}>
-			<p className="square-text">{text}</p>
+			{text}
 		</div>;
 }
 
