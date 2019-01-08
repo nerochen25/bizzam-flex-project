@@ -11,7 +11,8 @@ class Board extends React.Component {
 		super(props);
 
 		this.state = {
-			board_id: null
+			board_id: null,
+			init_load: false
 		};
 		
 		this.logoutUser = this.logoutUser.bind(this);
@@ -23,12 +24,10 @@ class Board extends React.Component {
 	}
 
 	componentDidUpdate(oldProps) {
-		if (oldProps.boards !== this.props.boards && !this.state.board_id) {
+		if (oldProps.boards !== this.props.boards && !this.state.init_load) {
 			this.setState({
-				boardLoaded: true
-			},
-			() => {
-				this.props.history.push('/board/index')
+				boardLoaded: true,
+				init_load: true
 			})
 		}
 		
@@ -75,10 +74,10 @@ class Board extends React.Component {
 						/>
 						<Route
 							path='/board/join'
-							component={JoinGame}
+							component={() => <JoinGame
+								selectBoard={this.selectBoard}
+							/>}
 						/>
-
-
 					</Switch>
 				</HashRouter>
 			</div>
