@@ -16,16 +16,13 @@
     grid-template-columns: auto auto auto;
     width: 350px;
     height: 350px;
-    margin: 5% auto;
+    margin: 7% auto;
+    padding-right: 9%;
     /* box-shadow: 20px 23px 33px rgba(200, 88, 118, 0.12); */
 }
 
-.board-index .grid-container{
-    margin: 5% 31%;
-}
-
-.hi{
-    margin: 5% 31%;
+.square-text {
+    max-width: 60%;
 }
 
 .grid-item {
