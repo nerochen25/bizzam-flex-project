@@ -9,6 +9,7 @@ class CreateGame extends React.Component {
         super(props);
         
         this.state = {
+            gamePin: this.props.games.pin,
             gameType: "Classic",
             boards: [],
             themeId: 'no theme selected yet',
@@ -69,9 +70,7 @@ class CreateGame extends React.Component {
     render() {
         
         let themesOptions;
-        if (this.props.themes[0].length > 1) {
-            console.log('inside if state');
-            
+        if (this.props.themes[0].length > 1) {            
             themesOptions = this.props.themes[0].map((theme, idx) => {
                 return (
                 
@@ -87,11 +86,6 @@ class CreateGame extends React.Component {
                 )
             })
         }
-        // const gameTypeOptions = ['Adventure', 'Classic'].map((gameType, idx) => {            
-        //     return (
-        //       <option className="game-type-option" key={idx} >{gameType}</option>
-        //     );
-        //   });
         
         return (
             <div className='create-game-div'>

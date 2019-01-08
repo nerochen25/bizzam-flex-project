@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         return (
             
                 <div className='logged-in-navbar'>
-                    <Link className="links1" to={'/bizzams'}>Game</Link>
+                    <Link className="links1" to={`/games/${this.props.currentUser.id}`}>Game</Link>
                     {/* <br /> */}
                     <Link className="links1" to={'/newTheme'}>Write a BizZam</Link>
                     {/* <br /> */}

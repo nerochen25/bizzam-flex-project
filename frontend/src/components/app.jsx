@@ -13,12 +13,14 @@ import ThemeContainer from './theme/theme_container';
 import EditThemeContainer from './theme/edit_theme_container';
 import CreateGameContainer from './game/create_game_container';
 import PinPageContainer from './pin_page/pin_page_container';
+import GameIndexContainer from './game/game_index_container';
 
 const App = () => (
   <div className="splash">
     <NavBarContainer />
     <Switch>
       <ProtectedRoute path="/board" component={BoardContainer} />
+      <ProtectedRoute path="/games/:id" component={GameIndexContainer} />
       <ProtectedRoute path="/profile" component={ProfileContainer} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
       <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />

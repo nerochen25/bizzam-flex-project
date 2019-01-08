@@ -9,9 +9,12 @@ class PinPage extends React.Component {
             pin: this.props.game,
         }
     }
-    pinGenerator() {
-        
-    }
+
+    updatePin() {
+        return e => this.setState({
+          pin: e.currentTarget.value
+        });
+      }
 
     render() {
         if (this.props.game) {
@@ -19,17 +22,17 @@ class PinPage extends React.Component {
                 <div className='pin-page-div'>
                     Remember this pin
                     <br />
-                    Pin: {' '} {this.state.pin.pin}
+                    Pin: {' '} 
+                    <span onChange={this.updatePin('pin')} value={this.state.pin.pin}>{this.state.pin.pin}</span>
                 </div>
             )
         } else {
             return (
                 <div className='pin-page-div'>
-                    <Link to='/create-game'>You have to create a game first</Link>
+                    <Link to='/create-game' className="">You have to create a game first</Link>
                 </div>
             )
-        }
-        
+        }  
     }
 }
 

@@ -1,19 +1,15 @@
 import { connect } from 'react-redux';
-import { postGame } from '../../actions/game_actions';
-import CreateGame from './create_game';
 import {fetchBoards, fetchBoard} from '../../actions/board_actions';
-import {getThemes} from '../../actions/theme_actions';
-
-
+import GameIndex from './game_index';
+import {fetchUserGames} from '../../actions/game_actions';
 
 const mapStateToProps = (state) => {
     let themes = Object.values(state.entities.themes);
-    let games = Object.values(state.entities.games);
+    let games = Object.values(state.entities.games)
     return {
         games: games,
         themes: themes,
         currentUser: state.session.user,
-        gameType: '',
         boards: state.entities.boards,
         errors: state.errors.session
     };
@@ -21,13 +17,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getThemes: () => dispatch(getThemes()),
-        createGame: data => dispatch(postGame(data)),
+        fetchUserGames: (id) => dispatch(fetchUserGames(id)),
         fetchBoards: () => dispatch(fetchBoards()),
         fetchBoard: id => dispatch(fetchBoard(id))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateGame);
+export default connect(mapStateToProps, mapDispatchToProps)(GameIndex);
 
 
