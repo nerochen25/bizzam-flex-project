@@ -15,11 +15,17 @@ const subSquares = {
     //   }
 }
 
+const boardDescrip = {
+    creator: String,
+    theme: String,
+}
+
 const boardSchema = Schema({
     userID: String,
     won: { type: Boolean, default: false},
     gameOn: { type: Boolean, default: true},
     gameID: String,
+    gameDescription: boardDescrip,
     squares: [ subSquares ]
 })
 
