@@ -92,7 +92,7 @@ class Theme extends React.Component {
 						<form onSubmit={this.handleSubmit} className="theme-form">
 							<div>
 								<label className="theme-labels">
-									<span>Theme title</span>
+									<span className="theme-input-title">Theme title</span>
 									<input type="text" value={this.state.name} onChange={this.updateName()} className="theme-input theme-input-1" />
 								</label>
 							</div>
@@ -106,7 +106,7 @@ class Theme extends React.Component {
 
 							<div>
 								<label className="theme-labels item-label">
-									<span>Bizzam Item</span>
+									<span className="theme-input-bizzam-items">Bizzam Item</span>
 
 									<input type="text" className="theme-input add-item" placeholder="Enter an item" onChange={this.updateItem()} value={this.state.item}/>
 
