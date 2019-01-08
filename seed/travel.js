@@ -4,16 +4,16 @@
 
 
 const rawLocationThemes = [
-    {name: "Location Demo Theme 1", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 2", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 3", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 4", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 5", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 6", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 7", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 8", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 9", description: "I have seeded random theme items"},
-    {name: "Location Demo Theme 10", description: "I have seeded random theme items"}
+    {name: "Carmen's traveling theme", description: "Where in the world is?"},
+    {name: "Bill's traveling theme", description: "just the local sights"}
+    // {name: "Location Demo Theme 3", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 4", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 5", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 6", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 7", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 8", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 9", description: "I have seeded random theme items"},
+    // {name: "Location Demo Theme 10", description: "I have seeded random theme items"}
 ];
 
 const rawLocationThemeItems = [
