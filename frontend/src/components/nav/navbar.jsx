@@ -20,13 +20,13 @@ class NavBar extends React.Component {
         return (
             
                 <div className='logged-in-navbar'>
-                    <Link className="links1" to={`/games/${this.props.currentUser.id}`}>Game</Link>
+                    <Link className="links1" to={`/games/${this.props.currentUser.id}`}>Your Games</Link>
                     {/* <br /> */}
                     <Link className="links1" to={'/newTheme'}>Write a BizZam</Link>
                     {/* <br /> */}
-                    <Link className="links1" to={'/create-game'}>Create Game</Link>
+                    <Link className="links1" to={'/create-game'}>Start a Game</Link>
                     {/* <br /> */}
-                    <Link className="links1" to={'/board/index'}>Board</Link>
+                    <Link className="links1" to={'/board/index'}>Your Board</Link>
                     {/* <br /> */}
                     <Link className="links1" id='current-user-name' to={'/profile'}>Welcome,{' '}{this.props.currentUser.username}</Link>
                     {/* <br /> */}
