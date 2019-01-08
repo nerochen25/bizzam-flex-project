@@ -7,18 +7,9 @@ const BoardIndexItem = ({key, id, board, selectBoard}) => {
 		
 	return (
 		<div className="board" >
-			<h1 className="board-title">{id}</h1>
+			
 			<div className="grid-container" onClick={selectBoard}>
-				{/* {this.populateSquares()} */}
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
-				<div className="grid-item" />
+				<h1>{board.gameDescription.theme} started by {board.gameDescription.creator}</h1>
 			</div>
 		</div>
 	);

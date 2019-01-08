@@ -4,6 +4,7 @@ const passport = require('passport');
 const Board = require('../../models/Board');
 const Theme = require('../../models/Theme');
 const Game = require('../../models/Game');
+const User = require('../../models/User');
 const validateBoardInput = require('../../validation/board');
 const hasWon = require('../../validation/has_won')
 
@@ -48,13 +49,13 @@ const generateBoard = (themeID) => {
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
-        // console.log(req.body)
 
         let gameRequest = await Game.find({pin: req.body.pin})
         let game = gameRequest[0]
-        console.log('game', game)
+
         let theme = await Theme.findById(game.theme)
-        console.log('theme',theme)
+        let game_creator = await User.findById(game.creatorID)
+        
 
         let valData = {
             user_id: req.body.user_id,
@@ -73,7 +74,11 @@ router.post('/',
         let newBoard = new Board({
             userID: req.body.user_id,
             squares: squares,
-            gameID: game._id
+            gameID: game._id,
+            gameDescription: {
+                creator: game_creator.username,
+                theme: theme.name
+            }
         })
 
         await newBoard.save()
