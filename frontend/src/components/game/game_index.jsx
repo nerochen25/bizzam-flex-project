@@ -1,13 +1,14 @@
 import React from 'react';
 import './game_index.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class GameIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            pin: null,
             games: this.props.games,
-            boards: this.props.boards
+            boards: this.props.boards,
         }
     }
 
@@ -23,13 +24,32 @@ class GameIndex extends React.Component {
         }
     }
 
+    updatePIN() {
+        return e => this.setState({
+            pin: e.currentTarget.value
+        })
+    }
+    updateGameType() {
+        return e => this.setState({
+          gameType: e.currentTarget.value
+        });
+      }
+
     render() {
         let gameList = [];
         if (this.props.games.length >= 1) {
             gameList = this.props.games.map((game, idx) => {
                 return (
-                    <ul>
-                        <Link className="themes-options-btn" to='/pin-page' key={idx}>{game.gameType} {' '} {idx}</Link>
+                    <ul key={idx}>
+                        <Link 
+                            onClick={this.updatePIN('pin')}
+                            className="themes-options-btn" 
+                            to='/pin-page' 
+                            key={idx}
+                            value = {game.pin}
+                        >
+                            {game.gameType} {' '} {'game with PIN: '} {game.pin}
+                        </Link>
                     </ul>
                 )
             })

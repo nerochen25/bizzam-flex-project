@@ -1,13 +1,17 @@
 import React from 'react';
 import './pin_page.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class PinPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pin: this.props.game,
+            pin: null
         }
+    }
+
+    componentDidMount() {
+        this.props.fetchUserGames(this.props.currentUser.id)
     }
 
     updatePin() {
@@ -17,13 +21,19 @@ class PinPage extends React.Component {
       }
 
     render() {
-        if (this.props.game) {
+        if (this.props.games) {
             return (
                 <div className='pin-page-div'>
                     Remember this pin
                     <br />
                     Pin: {' '} 
-                    <span onChange={this.updatePin('pin')} value={this.state.pin.pin}>{this.state.pin.pin}</span>
+                    <div 
+                        onClick={this.updatePin('pin')} 
+                        value={this.state.pin}
+                    >
+                        {this.props.pin}
+                        <br />
+                    </div>
                 </div>
             )
         } else {

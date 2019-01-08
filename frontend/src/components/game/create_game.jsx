@@ -56,6 +56,12 @@ class CreateGame extends React.Component {
         });
     }
 
+    updatePin() {
+        return e => this.setState({
+            gamePin: e.currentTarget.name
+        });
+    }
+
     renderErrors() {
         return (
             <ul className="login-form-container">
@@ -107,7 +113,7 @@ class CreateGame extends React.Component {
                     <br />
                     <br />
                     <Link to='/pin-page'>
-                    <input className="create-game-btn" type='submit' value="Go to pin"/>
+                    <input onClick={this.updatePin('gamePin')} name={this.state.gamePin} className="create-game-btn" type='submit' value="Go to pin"/>
                     </Link>
                 </form>
                 <br />
