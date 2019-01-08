@@ -46,6 +46,10 @@
     margin-bottom: 35px;
 }
 
+.theme-form .second-label {
+    margin-bottom: 19px;
+}
+
 .theme-grid{
     display: grid;
     grid-template-columns: 50% 50%;
