@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, exact, currentUser }) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to={`/games/${currentUser.id}`} />
+      <Redirect to={`/landing`} />
     )
   )} />
 );
