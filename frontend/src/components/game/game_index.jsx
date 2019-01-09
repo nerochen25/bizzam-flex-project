@@ -54,7 +54,7 @@ class GameIndex extends React.Component {
                             key={idx}
                             params={game.pin}
                         >
-                            {game.gameType} {' '}{'game with PIN: '}{game.pin}{' '}{won}
+                            {won}{' '}{game.gameType} {' '}{'game with PIN: '}{game.pin}
                         </Link>
                     </ul>
                 )
