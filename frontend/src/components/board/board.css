@@ -96,11 +96,12 @@
 .message-won {
     margin-right: -27%;
     position: absolute;
-    top: 41%;
+    top: 48%;
     left: -24%;
-    font-size: 24px;
+    font-size: 32px;
     width: 150%;
     color: #2c3e50;
+    text-shadow: 2px 0px #ff9900;
     animation: animationFrames linear 1s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
