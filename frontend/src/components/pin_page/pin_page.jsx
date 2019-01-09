@@ -32,7 +32,7 @@ class PinPage extends React.Component {
                     PIN: {' '} {this.props.match.params.pin}
                     <br />
                     <br />
-                    <Link className="pin-to-board-btn" to='/board/index'>Join a Game Now</Link>
+                    <Link className="pin-to-board-btn" to='/board/join'>Join a Game Now</Link>
                 </div>
             )
         } else {
