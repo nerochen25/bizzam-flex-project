@@ -255,6 +255,7 @@
     color: #ff9900b5;
     transition: all 0.25s ease-in-out !important;
     font-family: 'Viga', sans-serif;
+    /* background-color: #6b5656a1; */
 }
 
 .logged-in-navbar :hover{
