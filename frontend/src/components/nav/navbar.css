@@ -7,7 +7,7 @@
 .project-title {
     font-size: 70px;
     font-weight: 700;
-    background: linear-gradient(330deg, #ff9900 0%, #0c2eb7bf 50%, #ff9900 50%, #0C2EB7 75%, #e05252 100%); 
+    background: linear-gradient(330deg, #ff9900 0%, #0c2eb7bf 50%, #ff9900 60%, #0C2EB7 75%, #e05252 100%); 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -255,6 +255,7 @@
     color: #ff9900b5;
     transition: all 0.25s ease-in-out !important;
     font-family: 'Viga', sans-serif;
+    /* background-color: #6b5656a1; */
 }
 
 .logged-in-navbar :hover{

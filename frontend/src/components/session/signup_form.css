@@ -71,9 +71,7 @@
     background-color: #0000ffab;
 }
 
-.demo-btn {
-    margin-left: 17%;
-}
+
 
 .login-btn{
     margin-top: 40px;
@@ -119,7 +117,11 @@
     text-align: center;
     text-decoration: none;
     align-items: flex-start;
-    margin-left: 85px;
+    margin-left: 70px;
+}
+
+.demo-btn {
+    margin-left: 25%;
 }
 
 .login-btn:hover{

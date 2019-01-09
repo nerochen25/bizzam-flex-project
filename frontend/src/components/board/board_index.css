@@ -9,5 +9,46 @@
 .join-game-link, a {
     
     text-decoration: none;
+    color: white;
 }
 
+.join-game-link {
+    margin: 0 auto;
+    background-color: #ff9900b5;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 4rem;
+    font-size: 1.6rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    align-items: flex-start;
+    font-family: 'Viga', sans-serif;
+    margin-left: 550px;
+}
+
+.join-game-link:hover {
+    background-color: #0000ffab;
+}
+
+.board-theme-name {
+    color:  #23273ebf;
+    margin-left: 80px;
+    margin-bottom: -25px;
+    font-size: 35px;
+}
+
+.board-theme-creator{
+    color:  #23273ebf;
+    margin-left: 80px;
+    font-size: 20px;
+}

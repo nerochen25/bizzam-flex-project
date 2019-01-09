@@ -37,8 +37,14 @@ class GameIndex extends React.Component {
 
     render() {
         let gameList = [];
+        let won = '';
         if (this.props.games.length >= 1) {
             gameList = this.props.games.map((game, idx) => {
+                if (game.winnerID === null) {
+                    won = <span className="check-icon"></span>;
+                } else {
+                    won = <span className="check-icon">👑</span>;
+                }
                 return (
                     <ul key={idx}>
                         <Link 
@@ -48,7 +54,7 @@ class GameIndex extends React.Component {
                             key={idx}
                             params={game.pin}
                         >
-                            {game.gameType} {' '} {'game with PIN: '} {game.pin}
+                            {won}{' '}{game.gameType} {' '}{'game with PIN: '}{game.pin}
                         </Link>
                     </ul>
                 )

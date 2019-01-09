@@ -4,11 +4,13 @@ import './board.css';
 
 
 const BoardIndexItem = ({key, id, board, selectBoard}) => {
-	debugger
 	return (
 		<div className="board" >
 			
-				<h1>{board.gameDescription.theme} started by {board.gameDescription.creator}</h1>
+				<h2 className="board-theme-name">{board.gameDescription.theme}</h2> 
+				<br/>
+				<p className="board-theme-creator">started by {board.gameDescription.creator}</p>
+
 			<div className="grid-container" onClick={selectBoard}>
 				<div className="grid-item" />
 				<div className="grid-item" />

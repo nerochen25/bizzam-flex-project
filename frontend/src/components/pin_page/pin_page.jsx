@@ -28,17 +28,11 @@ class PinPage extends React.Component {
                 <div className='pin-page-div'>
                     This is your Game pin, share it with your friends!
                     <br />
-                  
-                    <Link to={'/board/join'}> Use this pin to log in here!</Link>
                     <br />
-                    Pin: {' '} 
-                    <div 
-                        onClick={this.updatePin('pin')} 
-                        value={this.state.pin}
-                    >
-                        {this.props.match.params.pin}
-                        <br />
-                    </div>
+                    PIN: {' '} {this.props.match.params.pin}
+                    <br />
+                    <br />
+                    <Link className="pin-to-board-btn" to='/board/join'>Join a Game Now</Link>
                 </div>
             )
         } else {
