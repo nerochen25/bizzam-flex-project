@@ -94,8 +94,10 @@
 }
 
 .message-won {
-    margin-top: 3%;
     margin-right: -27%;
+    position: absolute;
+    top: 41%;
+    left: -24%;
     font-size: 24px;
     width: 150%;
     color: #2c3e50;

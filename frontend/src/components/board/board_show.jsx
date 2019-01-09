@@ -52,12 +52,19 @@ class BoardShow extends React.Component {
 				gameWon: false
 			}));
 		} else if (this.state.board.won) {
+			console.log("board won?", this.state);
+			
 			this.setState({ 
 				isAnimating: true 
 			});
-			setTimeout(() => this.setState({ 
-				gameOver: true, 
-				gameWon: true }));
+			setTimeout(() => {
+				this.setState({ 
+					board: null,
+					gameOver: true, 
+					gameWon: true });
+				console.log('timeout called', this.state);
+				
+			}, 1000);
 		}
 	}
 
@@ -85,10 +92,12 @@ class BoardShow extends React.Component {
 						checked={square.checked}
 						action={this.handleClick(this.state.board._id, square.position)}
 					/>
-				)
+				);
 			});
 		}else {
 			if(this.state.gameWon) {
+				console.log("inside render");
+				
 				won = <div className="message-won">
 					<p>Congratulations You Have Won!</p>
 					</div>;
