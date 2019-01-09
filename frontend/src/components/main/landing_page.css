@@ -154,3 +154,16 @@
     padding: 5px;
 }
 
+
+.img-play{
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    border-radius: 20px;
+    /* opacity: 0.3;  */
+    border: 1px solid #ff9900;
+    background-image: url('../../assets/board_play.gif');
+    position: absolute;
+    left: 850px;
+    top: 550px;
+}

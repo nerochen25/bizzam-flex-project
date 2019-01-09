@@ -29,10 +29,11 @@ class LandingPage extends React.Component {
 						<Link to={'/create-game'} className="links1">
 							Click Here to start a game.
 						</Link>
+						<div className ="img-play"></div>
 			
 					</div>
 				</section>
-
+				
         
 
 				

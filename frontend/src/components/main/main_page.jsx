@@ -30,6 +30,7 @@ class MainPage extends React.Component {
 							Signup
 						</Link>
 						<span>to play Bizzam with your friends.</span>
+						<div className ="img-play"></div>
 					</div>
 				</section>
 
