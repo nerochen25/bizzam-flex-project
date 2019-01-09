@@ -43,7 +43,7 @@ class GameIndex extends React.Component {
                 if (game.winnerID === null) {
                     won = <span className="check-icon"></span>;
                 } else {
-                    won = <span className="check-icon">✓</span>;
+                    won = <span className="check-icon">👑</span>;
                 }
                 return (
                     <ul key={idx}>
