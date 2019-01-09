@@ -28,24 +28,24 @@ export const receiveThemes = themes => ({
 export const getAllPlayThemes = data => dispatch => (
   getAllPlayableThemes(data)
     .then(themes => dispatch(receiveThemes(themes)))
-    .catch(err => console.log(err))
+
 );
 
-export const getThemes = () => dispatch => {
+export const getThemes = () => dispatch => (
   getAllThemes()
     .then(themes => dispatch(receiveThemes(themes)))
-    .catch(err => console.log(err));
-};
+
+);
 
 export const postTheme = data => dispatch => (
   createTheme(data)
     .then(theme => dispatch(receiveNewTheme(theme)))
-    .catch(err => console.log(err))
+
 );
 
 export const readThemeById = (id) => dispatch => (
   getThemeById(id)
     .then(theme => dispatch(receiveNewTheme(theme)))
-    .catch(err => console.log(err))
+
 );
 

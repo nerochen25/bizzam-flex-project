@@ -1,6 +1,6 @@
 const rawScavengerThemes = [
-    {name: "Craig's Scavenger Hunt", description: "Find these 9 random items"},
-    {name: "Scotts's Scavenger Hunt", description: "Beat me if you can!"}
+    {name: "Craig's Scavenger Hunt Bizzam", description: "Find these 9 random items"},
+    {name: "Scotts's Scavenger Hunt Bizzam", description: "Beat me if you can!"}
     // {name: "Scavenger Demo Theme 3", description: "I have seeded random theme items"},
     // {name: "Scavenger Demo Theme 4", description: "I have seeded random theme items"},
     // {name: "Scavenger Demo Theme 5", description: "I have seeded random theme items"},

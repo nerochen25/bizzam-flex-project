@@ -1,5 +1,6 @@
 import React from 'react'
 import './join_game.css'
+import board from './board';
 
 class JoinGame extends React.Component {
     constructor(props) {
@@ -17,13 +18,16 @@ class JoinGame extends React.Component {
         })
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
+
         e.preventDefault();
 
-        this.props.postBoard({
+        let response = await this.props.postBoard({
             user_id: this.props.currentUser.id,
             pin: this.state.pin
         })
+        
+        this.props.selectBoard(response.board.data._id)()
     }
 
     render() {

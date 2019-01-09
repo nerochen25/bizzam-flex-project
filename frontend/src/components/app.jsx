@@ -14,6 +14,7 @@ import EditThemeContainer from './theme/edit_theme_container';
 import CreateGameContainer from './game/create_game_container';
 import PinPageContainer from './pin_page/pin_page_container';
 import GameIndexContainer from './game/game_index_container';
+import LandingPage from './main/landing_page';
 
 const App = () => (
   <div className="splash">
@@ -21,7 +22,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/board" component={BoardContainer} />
       <ProtectedRoute path="/games/:id" component={GameIndexContainer} />
-      <ProtectedRoute path="/profile" component={ProfileContainer} />
+      <ProtectedRoute path="/landing" component={LandingPage} />
       <ProtectedRoute path = '/create-game' component={CreateGameContainer} />
       <ProtectedRoute path="/allThemes" component={ThemeIndexContainer} />
       <ProtectedRoute exact path='/pin-page/:pin' component={PinPageContainer}/>

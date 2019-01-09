@@ -64,7 +64,7 @@ router.post('/',
         }
 
         const { isValid, errors } = await validateBoardInput(valData);
-        console.log(errors)
+
         if (!isValid) {
             return res.status(400).json(errors);
         }
@@ -82,7 +82,6 @@ router.post('/',
         })
 
         await newBoard.save()
-        console.log('board', newBoard)
         game.boards.push(newBoard)
 
         await game.save()
@@ -140,7 +139,7 @@ router.post('/square',
                 } else if (hasWon(board.squares)) {
                     board.won = true
                     game.winnerID = board.userID
-                    console.log('game', game.winnerID)
+
                     await game.save()
 
                 }
@@ -148,7 +147,7 @@ router.post('/square',
 
                 resolve(res.json(board))
            } catch(err) {
-               console.log(err)
+
                resolve(res.status(400).json(err))
            }
        })

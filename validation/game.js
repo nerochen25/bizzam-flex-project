@@ -21,8 +21,7 @@ module.exports = function validateGameInput(data) {
     if (Validator.isEmpty(data.theme)) {
         errors.theme = 'theme cannot be blank'
     }
-    console.log(data.gameType)
-    console.log(data.gameType === 'Classic')
+
     if (!( Validator.equals('Classic', data.gameType) || Validator.equals('Adventure', data.gameType) )) {
         errors.gameType = 'gameType Error, must be Classic or Adventure'
     }

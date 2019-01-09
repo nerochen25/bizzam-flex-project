@@ -4,8 +4,8 @@
 
 
 const rawLocationThemes = [
-    {name: "Carmen's traveling theme", description: "Where in the world is?"},
-    {name: "Bill's traveling theme", description: "just the local sights"}
+    {name: "Carmen's Travel Bizzam", description: "Where in the world is?"},
+    {name: "Bill's Travel Bizzam", description: "just the local sights"}
     // {name: "Location Demo Theme 3", description: "I have seeded random theme items"},
     // {name: "Location Demo Theme 4", description: "I have seeded random theme items"},
     // {name: "Location Demo Theme 5", description: "I have seeded random theme items"},

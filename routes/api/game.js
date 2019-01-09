@@ -49,7 +49,7 @@ router.post('/',
 router.get('/user',
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
-        let games = await Game.find({creatorID: req.query.creator_id})
+        let games = await Game.find({creatorID: req.user.id})
         let result = games.reduce((acc, game) => {
             acc[game.id] = game
             return acc

@@ -3,6 +3,8 @@
     width: 800px;
     text-align: center;
     color: #23273ebf;
+    font-size: 36px;
+    font-family: 'Viga', sans-serif;
 }
 
 .themes-options-div {
@@ -20,4 +22,32 @@
     justify-content: space-around;
     flex-wrap: wrap;
     width: 1000px;
+}
+
+.pin-to-board-btn {
+    /* width: 35%; */
+    background-color: #0000ffab;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    -webkit-transition: all 0.25s ease-in-out !important;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    align-items: flex-start;
+    font-family: 'Viga', sans-serif;
+}
+
+.pin-to-board-btn:hover{
+    background-color: #ff9900b5;
 }
