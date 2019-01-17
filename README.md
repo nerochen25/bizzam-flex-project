@@ -4,7 +4,7 @@
 
 BizZam is an online platform for playing user created bingo boards! 
 
-[BizZam Live](Coming soon) 
+[BizZam Live](http://bizzam.herokuapp.com/#/) 
 
 ### Background and Overview
 
